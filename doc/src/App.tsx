@@ -5,11 +5,12 @@ import { Link, Route, Routes, useParams } from "react-router-dom"
 import { ComponentProps, useRef } from "react"
 import ReactMardown from "react-markdown"
 
-import model from "./%PACKAGE_NAME%.model.json"
+import model from "./publicodes-evenements.model.json"
 
 const engine = new Engine(model as {})
 
-const baseUrl = process.env.NODE_ENV === "development" ? "" : "/%PACKAGE_NAME%"
+const baseUrl =
+  process.env.NODE_ENV === "development" ? "" : "/publicodes-evenements"
 
 const defaultRule = "%DEFAULT_RULE%"
 
@@ -28,7 +29,7 @@ function Documentation() {
         engine={engine}
         renderers={renderers}
         language={"fr"}
-        npmPackage="%PACKAGE_NAME%"
+        npmPackage="publicodes-evenements"
       />
     </div>
   )

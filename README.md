@@ -31,7 +31,7 @@ Pour utiliser ce template, il suffit de cliquer sur le bouton `Use this
 template`. Puis de remplacer les variables suivantes dans tous les fichiers du
 projet :
 
-- `%PACKAGE_NAME%` : nom du paquet npm / nom du repository GitHub
+- `publicodes-evenements` : nom du paquet npm / nom du repository GitHub
 - `%GITHUB_USER%` : nom d'utilisateur GitHub / organisation GitHub
 
 Pour garantir une utilisation de la documentation sans erreur :
@@ -61,14 +61,14 @@ Pour utiliser les fonctionnalités de la CI :
 Ajouter le paquet à vos dépendances :
 
 ```
-bun add %PACKAGE_NAME%
+bun add publicodes-evenements
 ```
 
 Instancier un nouveau moteur Publicode :
 
 ```typescript
 import Engine from "publicodes"
-import rules from "%PACKAGE_NAME%"
+import rules from "publicodes-evenements"
 
 const engine = new Engine(rules)
 
@@ -80,8 +80,8 @@ Utiliser certaines règles dans un autre modèle publicodes :
 ```yaml
 importer!:
   depuis:
-    nom: %PACKAGE_NAME%
-    url: https://github.com/%GITHUB_USER%/%PACKAGE_NAME%
+    nom: publicodes-evenements
+    url: https://github.com/%GITHUB_USER%/publicodes-evenements
   dans: modèle numérique
   les règles:
     - numérique . internet . consommation horaire
@@ -93,7 +93,7 @@ importer!:
 #### Compiler le modèle
 
 > Les règles publicodes du modèle sont disponible dans le workspace
-> [`rules/`](https://github.com/%GITHUB_USER%/%PACKAGE_NAME%/tree/main/rules).
+> [`rules/`](https://github.com/%GITHUB_USER%/publicodes-evenements/tree/main/rules).
 
 Pour installer les dépendances et compiler tous les fichiers `.publicodes` en
 un seul fichier JSON, il suffit d'exécuter la commande suivante :
@@ -105,7 +105,7 @@ bun && bun run build
 #### Lancer la documentation
 
 > Le code de la documentation est disponible dans le workspace
-> [`doc/`](https://github.com/%GITHUB_USER%/%PACKAGE_NAME%/tree/main/doc).
+> [`doc/`](https://github.com/%GITHUB_USER%/publicodes-evenements/tree/main/doc).
 
 Pour lancer l'app React en local permettant de parcourir la documentation du
 modèle, il suffit d'exécuter la commande suivante :
@@ -119,7 +119,7 @@ bun run doc:start
 #### Lancer l'API
 
 > Le code de l'API est disponible dans le workspace
-> [`api/`](https://github.com/%GITHUB_USER%/%PACKAGE_NAME%/tree/main/api).
+> [`api/`](https://github.com/%GITHUB_USER%/publicodes-evenements/tree/main/api).
 
 Pour lancer le serveur Node permettant d'utiliser l'API REST, il faut utiliser les commandes
 suivantes :

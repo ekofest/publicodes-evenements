@@ -1,5 +1,5 @@
 {
-  "name": "%PACKAGE_NAME%-api",
+  "name": "publicodes-evenements-api",
   "version": "0.1.0",
   "description": "",
   "type": "module",
@@ -11,10 +11,10 @@
   "scripts": {
     "build": "bun run index.js"
   },
-  "repository": "git@github.com:%GITHUB_USER%/%PACKAGE_NAME%.git",
-  "homepage": "https://github.com/%GITHUB_USER%/%PACKAGE_NAME%#readme",
+  "repository": "git@github.com:%GITHUB_USER%/publicodes-evenements.git",
+  "homepage": "https://github.com/%GITHUB_USER%/publicodes-evenements#readme",
   "bugs": {
-    "url": "https://github.com/%GITHUB_USER%/%PACKAGE_NAME%/issues"
+    "url": "https://github.com/%GITHUB_USER%/publicodes-evenements/issues"
   },
   "authors": [],
   "license": "MIT",

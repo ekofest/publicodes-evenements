@@ -1,7 +1,7 @@
 {
-  "name": "%PACKAGE_NAME%",
+  "name": "publicodes-evenements",
   "version": "0.1.0",
-  "repository": "git@github.com:%GITHUB_USER%/%PACKAGE_NAME%.git",
+  "repository": "git@github.com:%GITHUB_USER%/publicodes-evenements.git",
   "main": "index.js",
   "module": "index.js",
   "devDependencies": {
@@ -10,24 +10,24 @@
   },
   "authors": [],
   "bugs": {
-    "url": "https://github.com/%GITHUB_USER%/%PACKAGE_NAME%/issues"
+    "url": "https://github.com/%GITHUB_USER%/publicodes-evenements/issues"
   },
   "description": "",
   "files": [
-    "%PACKAGE_NAME%.model.json",
+    "publicodes-evenements.model.json",
     "index.js",
     "index.d.ts"
   ],
-  "homepage": "https://github.com/%GITHUB_USER%/%PACKAGE_NAME%#readme",
+  "homepage": "https://github.com/%GITHUB_USER%/publicodes-evenements#readme",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "clean": "rm -r %PACKAGE_NAME%.model.json index.d.ts index.js",
+    "clean": "rm -r publicodes-evenements.model.json index.d.ts index.js",
     "build": "bun run build.js",
-    "doc:start": "bun run build && cp %PACKAGE_NAME%.model.json doc/src && cd doc && bun run start",
-    "doc:build": "bun run build && cp %PACKAGE_NAME%.model.json doc/src && cd doc && bun run build"
+    "doc:start": "bun run build && cp publicodes-evenements.model.json doc/src && cd doc && bun run start",
+    "doc:build": "bun run build && cp publicodes-evenements.model.json doc/src && cd doc && bun run build",
   },
   "type": "module",
   "types": "index.d.ts"

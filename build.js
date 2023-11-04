@@ -4,7 +4,7 @@ import { disabledLogger } from "@incubateur-ademe/publicodes-tools"
 import Engine from "publicodes"
 
 const srcFiles = "rules/**/*.publicodes"
-const destPath = "%PACKAGE_NAME%.model.json"
+const destPath = "publicodes-evenements.model.json"
 
 const model = getModelFromSource(srcFiles, { verbose: true })
 

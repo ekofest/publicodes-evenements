@@ -1,6 +1,6 @@
 node_modules
 .yarn
-%PACKAGE_NAME%.model.json
+publicodes-evenements.model.json
 index.d.ts
 index.js
 .DS_Store
