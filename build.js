@@ -24,7 +24,7 @@ writeFileSync(
 import rules from "./${destPath}" assert { type: "json" };
 
 export default rules;
-`,
+`
 )
 console.log(`✅ index.js generated`)
 
@@ -34,7 +34,7 @@ let indexDTypes = Object.keys(model).reduce(
 import { Rule } from "publicodes";
 
 export type DottedName = 
-`,
+`
 )
 
 indexDTypes += `

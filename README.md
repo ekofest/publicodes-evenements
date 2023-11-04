@@ -116,6 +116,8 @@ bun i --cwd doc
 bun run doc:start
 ```
 
+Pour aller plus loin et développer votre propre modèle en "hot reload", utilisez la commande `bun run doc:dev`.
+
 #### Lancer l'API
 
 > Le code de l'API est disponible dans le workspace
