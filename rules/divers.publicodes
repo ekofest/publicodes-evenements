@@ -1,0 +1,14 @@
+divers:
+  formule:
+    somme:
+      - merchandising
+      - déchets
+  unité: kgCO2e
+
+divers . merchandising:
+  formule: 1000
+  unité: kgCO2e
+
+divers . déchets:
+  formule: 1000
+  unité: kgCO2e

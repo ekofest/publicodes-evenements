@@ -1,0 +1,9 @@
+bilan:
+  titre: Bilan Carbone de mon évènement
+  formule:
+    somme:
+      - alimentation
+      - transport
+      - hébergement
+      - divers
+  unité: kgCO2e
