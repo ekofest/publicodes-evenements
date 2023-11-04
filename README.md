@@ -32,7 +32,7 @@ template`. Puis de remplacer les variables suivantes dans tous les fichiers du
 projet :
 
 - `publicodes-evenements` : nom du paquet npm / nom du repository GitHub
-- `%GITHUB_USER%` : nom d'utilisateur GitHub / organisation GitHub
+- `Clemog` : nom d'utilisateur GitHub / organisation GitHub
 
 Pour garantir une utilisation de la documentation sans erreur :
 
@@ -81,7 +81,7 @@ Utiliser certaines règles dans un autre modèle publicodes :
 importer!:
   depuis:
     nom: publicodes-evenements
-    url: https://github.com/%GITHUB_USER%/publicodes-evenements
+    url: https://github.com/Clemog/publicodes-evenements
   dans: modèle numérique
   les règles:
     - numérique . internet . consommation horaire
@@ -93,7 +93,7 @@ importer!:
 #### Compiler le modèle
 
 > Les règles publicodes du modèle sont disponible dans le workspace
-> [`rules/`](https://github.com/%GITHUB_USER%/publicodes-evenements/tree/main/rules).
+> [`rules/`](https://github.com/Clemog/publicodes-evenements/tree/main/rules).
 
 Pour installer les dépendances et compiler tous les fichiers `.publicodes` en
 un seul fichier JSON, il suffit d'exécuter la commande suivante :
@@ -105,7 +105,7 @@ bun && bun run build
 #### Lancer la documentation
 
 > Le code de la documentation est disponible dans le workspace
-> [`doc/`](https://github.com/%GITHUB_USER%/publicodes-evenements/tree/main/doc).
+> [`doc/`](https://github.com/Clemog/publicodes-evenements/tree/main/doc).
 
 Pour lancer l'app React en local permettant de parcourir la documentation du
 modèle, il suffit d'exécuter la commande suivante :
@@ -121,7 +121,7 @@ Pour aller plus loin et développer votre propre modèle en "hot reload", utilis
 #### Lancer l'API
 
 > Le code de l'API est disponible dans le workspace
-> [`api/`](https://github.com/%GITHUB_USER%/publicodes-evenements/tree/main/api).
+> [`api/`](https://github.com/Clemog/publicodes-evenements/tree/main/api).
 
 Pour lancer le serveur Node permettant d'utiliser l'API REST, il faut utiliser les commandes
 suivantes :

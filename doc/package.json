@@ -2,7 +2,7 @@
   "name": "publicodes-evenements-doc",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://%GITHUB_USER%.github.io/publicodes-evenements",
+  "homepage": "https://Clemog.github.io/publicodes-evenements",
   "scripts": {
     "start": "PUBLIC_URL=http://localhost:3000 react-scripts start",
     "build": "react-scripts build",
