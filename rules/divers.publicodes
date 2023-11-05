@@ -6,9 +6,9 @@ divers:
   unité: kgCO2e
 
 divers . merchandising:
-  formule: 1000
+  formule: 0
   unité: kgCO2e
 
 divers . déchets:
-  formule: 1000
+  formule: 0
   unité: kgCO2e

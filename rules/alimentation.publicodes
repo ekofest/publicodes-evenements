@@ -1,3 +1,159 @@
+importer!:
+  depuis:
+    nom: nosgestesclimat
+  les règles:
+    - alimentation . plats . végétalien . empreinte
+    - alimentation . plats . végétarien . empreinte
+    - alimentation . plats . viande 1 . empreinte
+    - alimentation . plats . viande 2 . empreinte
+    # - alimentation . plats . poisson 1 . empreinte
+    # - alimentation . plats . poisson 2 . empreinte
+
 alimentation:
-  formule: 1000
+  formule:
+    somme:
+      - repas
   unité: kgCO2e
+
+alimentation . repas:
+  formule:
+    somme:
+      - végétalien
+      - végétarien
+      - viande 1
+      - viande 2
+      # - poisson 1
+      # - poisson 2
+
+alimentation . repas . végétalien:
+  formule: nombre * nosgestesclimat . alimentation . plats . végétalien . empreinte
+
+alimentation . repas . végétalien . nombre:
+  formule: proportion * informations . nombre de plats
+
+alimentation . repas . végétalien . proportion:
+  formule:
+    variations:
+      - si: proposition = 'végétalien'
+        alors: 100%
+      - sinon: 0%
+
+alimentation . repas . végétarien:
+  formule: nombre * nosgestesclimat . alimentation . plats . végétarien . empreinte
+
+alimentation . repas . végétarien . nombre:
+  formule: proportion * informations . nombre de plats
+
+alimentation . repas . végétarien . proportion:
+  formule:
+    variations:
+      - si: proposition = 'végétarien'
+        alors: 100%
+      - si: proposition = 'mixte végé viande'
+        alors: proposition . mixte végé viande . proportion végétarien
+      - sinon: 0%
+
+alimentation . repas . viande 1:
+  formule: nombre * nosgestesclimat . alimentation . plats . viande 1 . empreinte
+
+alimentation . repas . viande 1 . nombre:
+  formule: proportion * informations . nombre de plats
+
+alimentation . repas . viande 1 . proportion:
+  formule:
+    variations:
+      - si: proposition = 'viande uniquement'
+        alors: proposition . choix viande . proportion viande 1
+      - si: proposition = 'mixte végé viande'
+        alors: proposition . choix viande . proportion viande 1 * proposition . mixte végé viande . proportion viande
+      - sinon: 0%
+
+alimentation . repas . viande 2:
+  formule: nombre * nosgestesclimat . alimentation . plats . viande 2 . empreinte
+
+alimentation . repas . viande 2 . nombre:
+  formule: proportion * informations . nombre de plats
+
+alimentation . repas . viande 2 . proportion:
+  formule:
+    variations:
+      - si: proposition = 'viande uniquement'
+        alors: proposition . choix viande . proportion viande 2
+      - si: proposition = 'mixte végé viande'
+        alors: proposition . choix viande . proportion viande 2 * proposition . mixte végé viande . proportion viande
+      - sinon: 0%
+
+alimentation . repas . proposition:
+  question: Quelle type de régime alimentaire prévoyez-vous ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - végétalien
+        - végétarien
+        - mixte végé viande
+        - viande uniquement
+  par défaut: "'mixte végé viande'"
+
+alimentation . repas . proposition . végétalien:
+  titre: Uniquement végan
+
+alimentation . repas . proposition . végétarien:
+  titre: Uniquement végétarien
+
+alimentation . repas . proposition . mixte végé viande:
+  titre: Mixte végétarien / viande
+
+alimentation . repas . proposition . viande uniquement:
+  titre: Uniquement carné
+
+alimentation . repas . proposition . mixte végé viande . proportion végétarien:
+  applicable si: proposition = 'mixte végé viande'
+  question: Comment allez-vous répartir les régimes proposés ?
+  par défaut: 50%
+  unité: "%"
+
+alimentation . repas . proposition . mixte végé viande . proportion viande:
+  applicable si: proposition = 'mixte végé viande'
+  formule: 100% - proportion végétarien
+  unité: "%"
+
+alimentation . repas . proposition . choix viande:
+  applicable si:
+    une de ces conditions:
+      - proposition = 'mixte végé viande'
+      - proposition = 'viande uniquement'
+  question: Quelle type de régime alimentaire prévoyez-vous ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - viande 1
+        - viande 2
+        - les deux
+  par défaut: "'les deux'"
+
+alimentation . repas . proposition . choix viande . viande 1:
+  titre: Viande blanche
+alimentation . repas . proposition . choix viande . viande 2:
+  titre: Viande rouge
+alimentation . repas . proposition . choix viande . les deux:
+  titre: Les 2
+
+alimentation . repas . proposition . choix viande . proportion viande 1:
+  formule:
+    variations:
+      - si: choix viande = 'viande 1'
+        alors: 100%
+      - si: choix viande = 'les deux'
+        alors: 50%
+      - sinon: 0%
+
+alimentation . repas . proposition . choix viande . proportion viande 2:
+  formule:
+    variations:
+      - si: choix viande = 'viande 2'
+        alors: 100%
+      - si: choix viande = 'les deux'
+        alors: 50%
+      - sinon: 0%
