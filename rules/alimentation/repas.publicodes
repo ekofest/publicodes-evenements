@@ -9,12 +9,6 @@ importer!:
     # - alimentation . plats . poisson 1 . empreinte
     # - alimentation . plats . poisson 2 . empreinte
 
-alimentation:
-  formule:
-    somme:
-      - repas
-  unité: kgCO2e
-
 alimentation . repas:
   formule:
     somme:
@@ -29,7 +23,7 @@ alimentation . repas . végétalien:
   formule: nombre * nosgestesclimat . alimentation . plats . végétalien . empreinte
 
 alimentation . repas . végétalien . nombre:
-  formule: proportion * informations . nombre de plats
+  formule: proportion * informations . nombre de repas total
 
 alimentation . repas . végétalien . proportion:
   formule:
@@ -42,7 +36,7 @@ alimentation . repas . végétarien:
   formule: nombre * nosgestesclimat . alimentation . plats . végétarien . empreinte
 
 alimentation . repas . végétarien . nombre:
-  formule: proportion * informations . nombre de plats
+  formule: proportion * informations . nombre de repas total
 
 alimentation . repas . végétarien . proportion:
   formule:
@@ -57,7 +51,7 @@ alimentation . repas . viande 1:
   formule: nombre * nosgestesclimat . alimentation . plats . viande 1 . empreinte
 
 alimentation . repas . viande 1 . nombre:
-  formule: proportion * informations . nombre de plats
+  formule: proportion * informations . nombre de repas total
 
 alimentation . repas . viande 1 . proportion:
   formule:
@@ -72,7 +66,7 @@ alimentation . repas . viande 2:
   formule: nombre * nosgestesclimat . alimentation . plats . viande 2 . empreinte
 
 alimentation . repas . viande 2 . nombre:
-  formule: proportion * informations . nombre de plats
+  formule: proportion * informations . nombre de repas total
 
 alimentation . repas . viande 2 . proportion:
   formule:
