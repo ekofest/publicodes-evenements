@@ -26,9 +26,9 @@
   "scripts": {
     "clean": "rm -r publicodes-evenements.model.json index.d.ts index.js",
     "build": "bun run build.js",
+    "build:watch": "nodemon -e \"publicodes\" --watch rules/ build.js & nodemon --watch publicodes-evenements.model.json copy.js",
     "doc:start": "bun run build && cp publicodes-evenements.model.json doc/src && cd doc && bun run start",
-    "doc:build": "bun run build && cp publicodes-evenements.model.json doc/src && cd doc && bun run build",
-    "doc:dev": "nodemon -e \"publicodes\" --watch rules/ build.js & nodemon --watch publicodes-evenements.model.json copy.js & cd doc && bun run start"
+    "doc:build": "bun run build && cp publicodes-evenements.model.json doc/src && cd doc && bun run build"
   },
   "type": "module",
   "types": "index.d.ts"
