@@ -1,0 +1,16 @@
+importer!:
+  depuis:
+    nom: "@incubateur-ademe/nosgestesclimat"
+  les règles:
+    - alimentation . petit déjeuner . continental
+
+alimentation . petits déjeuners:
+  formule: 0
+  # nombre * nosgestesclimat . alimentation . petits déjeuner . continental -> "optionnel" pour le moment.
+  note: On considère le petits déjeuner continental de Nos Gestes Climat
+
+alimentation . petits déjeuners . nombre:
+  formule: nombre par jour * informations . nombre de jours
+
+alimentation . petits déjeuners . nombre par jour:
+  formule: 1 repas/jour * informations . nombre de personnes par jour

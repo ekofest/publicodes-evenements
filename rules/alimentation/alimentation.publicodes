@@ -2,5 +2,6 @@ alimentation:
   formule:
     somme:
       - repas
+      - petits déjeuners
       - boissons
   unité: kgCO2e
