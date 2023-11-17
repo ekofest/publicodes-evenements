@@ -1,6 +1,6 @@
 importer!:
   depuis:
-    nom: nosgestesclimat
+    nom: "@incubateur-ademe/nosgestesclimat"
   les règles:
     - alimentation . plats . végétalien . empreinte
     - alimentation . plats . végétarien . empreinte
