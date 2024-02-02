@@ -1,7 +1,10 @@
 {
   "name": "publicodes-evenements",
   "version": "0.3.0",
-  "repository": "git@github.com:Clemog/publicodes-evenements.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Clemog/publicodes-evenements.git"
+  },
   "main": "index.js",
   "module": "index.js",
   "devDependencies": {
@@ -10,7 +13,10 @@
     "@incubateur-ademe/publicodes-tools": "^0.4.2",
     "publicodes": "^1.0.0-beta.77"
   },
-  "authors": [],
+  "authors": [
+    "Clément Auger <clement.auger@beta.gouv.fr>",
+    "Emile Rolley <emile.rolley@tuta.io>"
+  ],
   "bugs": {
     "url": "https://github.com/Clemog/publicodes-evenements/issues"
   },
@@ -22,9 +28,6 @@
   ],
   "homepage": "https://github.com/Clemog/publicodes-evenements#readme",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "clean": "rm -r publicodes-evenements.model.json index.d.ts index.js",
     "build": "bun run build.js",
