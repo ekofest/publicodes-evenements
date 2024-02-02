@@ -1,7 +1,7 @@
 {
   "name": "publicodes-evenements",
   "version": "0.3.0",
-  "repository": "git@github.com:Clemog/publicodes-evenements.git",
+  "repository": "git@github.com:Ecofest/publicodes-evenements.git",
   "main": "index.js",
   "module": "index.js",
   "devDependencies": {
@@ -12,7 +12,7 @@
   },
   "authors": [],
   "bugs": {
-    "url": "https://github.com/Clemog/publicodes-evenements/issues"
+    "url": "https://github.com/Ecofest/publicodes-evenements/issues"
   },
   "description": "",
   "files": [
@@ -20,7 +20,7 @@
     "index.js",
     "index.d.ts"
   ],
-  "homepage": "https://github.com/Clemog/publicodes-evenements#readme",
+  "homepage": "https://github.com/Ecofest/publicodes-evenements#readme",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

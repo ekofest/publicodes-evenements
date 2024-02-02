@@ -11,10 +11,10 @@
   "scripts": {
     "build": "bun run index.js"
   },
-  "repository": "git@github.com:Clemog/publicodes-evenements.git",
-  "homepage": "https://github.com/Clemog/publicodes-evenements#readme",
+  "repository": "git@github.com:Ecofest/publicodes-evenements.git",
+  "homepage": "https://github.com/Ecofest/publicodes-evenements#readme",
   "bugs": {
-    "url": "https://github.com/Clemog/publicodes-evenements/issues"
+    "url": "https://github.com/Ecofest/publicodes-evenements/issues"
   },
   "authors": [],
   "license": "MIT",
