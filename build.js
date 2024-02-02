@@ -1,6 +1,6 @@
 import { writeFileSync } from "fs"
-import { getModelFromSource } from "@incubateur-ademe/publicodes-tools/compilation"
-import { disabledLogger } from "@incubateur-ademe/publicodes-tools"
+import { getModelFromSource } from "@publicodes/tools/compilation"
+import { disabledLogger } from "@publicodes/tools"
 import Engine from "publicodes"
 
 const srcFiles = "rules/**/*.publicodes"
@@ -24,7 +24,7 @@ writeFileSync(
 import rules from "./${destPath}" assert { type: "json" };
 
 export default rules;
-`
+`,
 )
 console.log(`✅ index.js generated`)
 
@@ -34,7 +34,7 @@ let indexDTypes = Object.keys(model).reduce(
 import { Rule } from "publicodes";
 
 export type DottedName = 
-`
+`,
 )
 
 indexDTypes += `
