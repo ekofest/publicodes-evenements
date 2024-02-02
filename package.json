@@ -5,6 +5,8 @@
   "main": "index.js",
   "module": "index.js",
   "devDependencies": {
+    "@incubateur-ademe/nosgestesclimat": "^1.5.0",
+    "@incubateur-ademe/publicodes-commun": "^0.1.2",
     "@incubateur-ademe/publicodes-tools": "^0.4.2",
     "publicodes": "^1.0.0-beta.77"
   },
