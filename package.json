@@ -8,9 +8,9 @@
   "main": "index.js",
   "module": "index.js",
   "devDependencies": {
-    "@incubateur-ademe/nosgestesclimat": "^1.5.0",
-    "@incubateur-ademe/publicodes-commun": "^0.1.2",
-    "@publicodes/tools": "^0.4.6",
+    "@incubateur-ademe/nosgestesclimat": "^1.5.2",
+    "@incubateur-ademe/publicodes-commun": "^0.1.4",
+    "@publicodes/tools": "^0.4.7",
     "publicodes": "1.0.0-beta.77"
   },
   "authors": [
@@ -30,10 +30,10 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -r publicodes-evenements.model.json index.d.ts index.js",
-    "build": "bun run build.js",
+    "build": "node build.js",
     "build:watch": "nodemon -e \"publicodes\" --watch rules/ build.js & nodemon --watch publicodes-evenements.model.json copy.js",
-    "doc:start": "bun run build && cp publicodes-evenements.model.json doc/src && cd doc && bun run start",
-    "doc:build": "bun run build && cp publicodes-evenements.model.json doc/src && cd doc && bun run build"
+    "doc:start": "node build && cp publicodes-evenements.model.json doc/src && cd doc && yarn run start",
+    "doc:build": "node build && cp publicodes-evenements.model.json doc/src && cd doc && yarn run build"
   },
   "type": "module",
   "types": "index.d.ts"

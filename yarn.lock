@@ -2,34 +2,34 @@
 # yarn lockfile v1
 
 
-"@incubateur-ademe/nosgestesclimat@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@incubateur-ademe/nosgestesclimat/-/nosgestesclimat-1.5.0.tgz#e54f9c4a2d1f966363b32b1bfcb1924b4e28f4e3"
-  integrity sha512-Sz60mIzks7hvEE3MU01BVBysorSJQ9CKrcNwL1l2a74mTdB59JMNbX+Us6KCw1TnEmkwuZI2BJR2dlEi7Mgkyg==
+"@incubateur-ademe/nosgestesclimat@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/nosgestesclimat/-/nosgestesclimat-1.5.2.tgz#9f9aded3d564292c4064003be80fbe67fc316f4d"
+  integrity sha512-YN+RhI1oN731pV3Mitvpi8z9hTD5kQHA6oIzjBU2eyN2caq0G6MmcTqbhSc2UC7YBukyjm0HIYiEvKFMZyHIgw==
   dependencies:
     csv-parser "^3.0.0"
-    futureco-data "^0.0.1-beta.7"
+    futureco-data "^0.1.0"
     glob "^8.0.3"
     http-server "^14.1.1"
     nodemon "^3.0.1"
     prettier "^3.1.0"
-    publicodes "^1.0.0-beta.77"
+    publicodes "1.0.0-beta.77"
     yaml "^2.2.2"
 
-"@incubateur-ademe/publicodes-commun@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-commun/-/publicodes-commun-0.1.2.tgz#a3168568dd7ac4090ec7f0af7ff06cdde4a28f49"
-  integrity sha512-1Kq606UIg4zxmduJuO3lQt0BSH9/klHJEz8c2DBuaVJzT78QQ4rW5T7I2NZ9wiXgVEF+4n0u0005xn9sm1u6+w==
+"@incubateur-ademe/publicodes-commun@^0.1.4":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-commun/-/publicodes-commun-0.1.5.tgz#9720644ae83bb4331d447624988a5f4c34b1a7c4"
+  integrity sha512-VMrbYX2tpMccGU8nnyWjeogri0PPOMbEBace40Kek7KT4SbJKFaX6+HU/RnTkGCgkYz0Mb5acfuaoUHqAcXbpA==
   dependencies:
-    publicodes "^1.0.0-beta.71"
+    publicodes "1.0.0-beta.77"
 
-"@publicodes/tools@^0.4.6":
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/@publicodes/tools/-/tools-0.4.6.tgz#76e1229e03103c04120739082a8f75e56e8925da"
-  integrity sha512-ATVNd3Q3K3w/NuThNgt7t2BNeZIwMemPZ3PyH4lNikGGWRwqVzjJdMGX7wwE+0hiDjPjS435w4WCbHAxzaHdtQ==
+"@publicodes/tools@^0.4.7":
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/@publicodes/tools/-/tools-0.4.7.tgz#a9dd113d3569b180b02aae656823ff260c99aaf3"
+  integrity sha512-ujg4Dppcraxc0J955EEnHVk5PWhIOp9VBKMEYggdQtI1U83OQK59nofZkvjgfSK+GwELqZ1+VoQkKIeBbmeUqA==
   dependencies:
     "@types/node" "^18.11.18"
-    publicodes "^1.0.0-beta.77"
+    publicodes "1.0.0-beta.77"
 
 "@types/node@^18.11.18":
   version "18.19.14"
@@ -228,10 +228,10 @@ function-bind@^1.1.2:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.2.tgz#2c02d864d97f3ea6c8830c464cbd11ab6eab7a1c"
   integrity sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==
 
-futureco-data@^0.0.1-beta.7:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/futureco-data/-/futureco-data-0.0.1.tgz#688c6521a2f72d134802992f542da6a8f6414baf"
-  integrity sha512-CRUqhCNlIHOFIoaY/RGCXfK2nAvw+7PBsM9ceWMxTjqr6xCmtAx3uwmmgcaZ0OyxvCmsNazajXcvG3pFrYhOoA==
+futureco-data@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/futureco-data/-/futureco-data-0.1.0.tgz#90724b23699d3cb9689480318ae084005effb90d"
+  integrity sha512-TCy9ghUnDr044XgppOqXfyRJHxxpSqiILOQj/gO3HELAIh1CRQqVCgSjjJnQkPBaMUq4GY84d7STVyKIgkCKJw==
   dependencies:
     csv-parser "^2.3.1"
     glob "^7.2.0"
@@ -538,11 +538,6 @@ publicodes@1.0.0-beta.77:
   version "1.0.0-beta.77"
   resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.77.tgz#45e3c4d2a46bfadcc932e1405ea037e659c28134"
   integrity sha512-F8U3WGUWMo3/rxhWYS1gWIiG20g1Yy/+PpXdHM99d6ZHKWnnyh/4txVEuyVE75glgDs+mTjwZPnmoKWsTMXluA==
-
-publicodes@^1.0.0-beta.71, publicodes@^1.0.0-beta.77:
-  version "1.0.0-rc.7"
-  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-rc.7.tgz#2ed0ce1d091674646477d5fd4d6411daaa283a0c"
-  integrity sha512-Y5WZ1t9BCRJxGFDsOflq0sFyryp7gFe05A9txHfvsW+DMjejnAgvC9O4enaU4+/4fI7+N62jxCWNsmStwqy/ZQ==
 
 qs@^6.4.0:
   version "6.11.2"
