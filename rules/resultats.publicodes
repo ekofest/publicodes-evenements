@@ -16,5 +16,5 @@ resultats . bilan total:
 
 resultats . bilan par festivalier:
   titre: Bilan Carbone de mon évènement par festivalier
-  formule: bilan total / (informations . nombre de jours * informations . nombre de festivaliers par jour)
+  formule: bilan total / informations . nombre de festivaliers
   unité: kgCO2e
