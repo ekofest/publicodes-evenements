@@ -1,0 +1,48 @@
+immobilisations:
+  formule:
+    somme:
+      - batiments
+  unité: kgCO2e
+
+immobilisations . batiments:
+  formule:
+    somme:
+      - béton
+      - métallique
+  unité: kgCO2e
+
+immobilisations . batiments . facteur amortissement:
+  formule: informations . nombre de jours / (commun . jours par an * 50)
+  note: |
+    Bâtiments amortis sur 50 ans. On fait l'hypothèse que le bâtiment reste "non amorti" 
+    même s'il date de plus de 50 ans pour limiter les paramètres, au vu de l'impact négligeable.
+
+immobilisations . batiments . béton:
+  formule: surface * empreinte par m2 * facteur amortissement
+  unité: kgCO2e
+
+immobilisations . batiments . béton . surface:
+  question: Quelle est la surface des bâtiments "structure béton" utilisés pour l'événement ?
+  par défaut: 50
+  unité: m2
+
+immobilisations . batiments . béton . empreinte par m2:
+  formule: 825
+  unité: kgCO2e/m2
+  note: |
+    Facteur d'émission issu de la base empreinte "Bâtiment industriel/structure en béton".
+
+immobilisations . batiments . métallique:
+  formule: surface * empreinte par m2 * facteur amortissement
+  unité: kgCO2e
+
+immobilisations . batiments . métallique . surface:
+  question: Quelle est la surface des bâtiments "structure métallique" utilisés pour l'événement ?
+  par défaut: 50
+  unité: m2
+
+immobilisations . batiments . métallique . empreinte par m2:
+  formule: 275
+  unité: kgCO2e/m2
+  note: |
+    Facteur d'émission issu de la base empreinte "Bâtiment industriel/structure métallique".
