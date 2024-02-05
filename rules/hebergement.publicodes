@@ -1,0 +1,55 @@
+importer!:
+  depuis:
+    nom: "@incubateur-ademe/nosgestesclimat"
+  les règles:
+    - logement . vacances . empreinte hotel par nuit
+
+hebergement:
+  formule:
+    somme:
+      - nuitées hotel
+  unité: kgCO2e
+  note: |
+    Pour le moment, on ne prend en compte que les nuitées en hôtel en considérant que le nombre de nuits 
+    correspond au nombre de jours de l'évènement.
+    Dans un second temps, on pourrait ajouter le camping par exemple. 
+    On pourrait également ajouter la possibilité de renseigner le nombre de nuitées prises en charge durant l'évènement.
+
+hebergement . nuitées hotel:
+  non applicable si: présent = "aucun"
+  formule: nombre de nuits hotel * nosgestesclimat . logement . vacances . empreinte hotel par nuit
+  unité: kgCO2e
+
+hebergement . nuitées hotel . présent:
+  question: Prenez-vous en charge l'hébergement en hôtel des participants, bénévoles ou organisateurs du festival ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - participants et organisateurs
+        - participants
+        - organisateurs
+        - aucun
+  par défaut: "'organisateurs'"
+
+hebergement . nuitées hotel . présent . participants et organisateurs:
+  titre: Oui, pour tous le monde
+hebergement . nuitées hotel . présent . participants:
+  titre: Uniquement pour les festivaliers
+hebergement . nuitées hotel . présent . organisateurs:
+  titre: Uniquement pour les organisateurs et bénévoles
+hebergement . nuitées hotel . présent . aucun:
+  titre: Non, pas d'hébergement en hôtel
+
+hebergement . nuitées hotel . nombre de nuits hotel:
+  formule:
+    variations:
+      - si: présent = "participants et organisateurs"
+        alors: informations . nombre de personnes par jour * informations . nombre de nuits
+      - si: présent = "participants"
+        alors: informations . nombre de personnes par jour * informations . nombre de nuits
+      - si: présent = "organisateurs"
+        alors: informations . bénévoles * informations . nombre de nuits
+      - si: présent = "aucun"
+        alors: 0
+  unité: nuit

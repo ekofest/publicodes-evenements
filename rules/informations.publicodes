@@ -5,6 +5,10 @@ informations . nombre de jours:
   par défaut: 3
   unité: jour
 
+informations . nombre de nuits:
+  formule: informations . nombre de jours * 1 nuit/jour
+  unité: nuit
+
 informations . nombre de participants par jour:
   question: Combien de participants attendez-vous en moyenne par jour ?
   par défaut: 1000

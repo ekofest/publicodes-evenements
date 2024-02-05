@@ -4,6 +4,6 @@ bilan:
     somme:
       - alimentation
       - transport
-      - hébergement
+      - hebergement
       - divers
   unité: kgCO2e
