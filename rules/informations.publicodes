@@ -2,26 +2,26 @@ informations:
 
 informations . nombre de jours:
   question: Combien de jours dure votre évènment ?
-  par défaut: 3
+  par défaut: 2
   unité: jour
 
 informations . nombre de nuits:
   formule: informations . nombre de jours * 1 nuit/jour
   unité: nuit
 
-informations . nombre de participants:
+informations . nombre de festivaliers:
   question: Combien de participants attendez-vous sur l'ensemble de l'évènements (nombre d'entrées) ?
-  par défaut: 3000
+  par défaut: 25000
 
-informations . nombre de participants par jour:
-  formule: nombre de participants / nombre de jours
+informations . nombre de festivaliers par jour:
+  formule: nombre de festivaliers / nombre de jours
 
 informations . bénévoles:
   question: Combien y aura-t-il d'organisateurs/bénévoles ?
-  par défaut: 50
+  par défaut: 100
 
 informations . nombre de personnes par jour:
-  formule: nombre de participants par jour + bénévoles
+  formule: nombre de festivaliers par jour + bénévoles
 
 informations . nombre de repas par jour:
   formule: 2 repas * nombre de personnes par jour

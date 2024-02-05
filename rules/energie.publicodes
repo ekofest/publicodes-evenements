@@ -1,0 +1,104 @@
+importer!:
+  depuis:
+    nom: "@incubateur-ademe/nosgestesclimat"
+  les règles:
+    - logement . chauffage . gaz . facteur d'émission base carbone
+
+energie:
+  titre: Énergie
+  formule:
+    somme:
+      - électricité
+      - autre
+      - groupe électrogène
+  unité: kgCO2e
+
+energie . consommation par défaut:
+  formule: 0.6 kWh * informations . nombre de festivaliers
+  unité: kWh
+  note: |
+    Selon l'étude [Décarbonons la Culture ! The Shift Project](https://theshiftproject.org/wp-content/uploads/2021/12/211130-TSP-PTEF-Rapport-final-Culture-v3.pdf):
+    il est tout à fait pertinent d'utiliser l’[étude d’ENERIS](https://www.ressource0.com/wp-content/uploads/2012/09/guideSpectacle-vivant1.pdf) produite en 2011 
+    qui propose une consommation électrique de 0,6 KWh par festivalier en moyenne.
+
+energie . électricité:
+  formule: consommation * commun . intensité électricité
+  unité: kgCO2e
+
+energie . électricité . consommation:
+  question: Quelle est votre consommation d'électricité pour l'événement ?
+  unité: kWh
+  par défaut:
+    variations:
+      - si: autre présent
+        alors: consommation par défaut / 4
+      - sinon: consommation par défaut / 2
+
+energie . autre:
+  applicable si: autre présent
+  formule:
+    somme:
+      - gaz
+      - fioul
+  unité: kgCO2e
+
+energie . autre présent:
+  question: Utilisez-vous une autre source d'énergie pour l'événement (gaz, fioul) ?
+  par défaut: non
+
+energie . autre . gaz:
+  formule: consommation * nosgestesclimat . logement . chauffage . gaz . facteur d'émission base carbone
+  unité: kgCO2e
+
+energie . autre . gaz . consommation:
+  question: Quelle est votre consommation de gaz pour l'événement ?
+  unité: kWh
+  par défaut: consommation par défaut / 4
+
+energie . autre . fioul:
+  formule: consommation * empreinte
+  unité: kgCO2e
+
+energie . autre . fioul . consommation:
+  question: Quelle est votre consommation de fioul pour l'événement ?
+  unité: kWh
+  par défaut: consommation par défaut / 4
+
+energie . autre . fioul . empreinte:
+  formule: 0.303
+  unité: kgCO2e/kWh
+  note: |
+    Facteur d'émission issu de la base empreinte "Fioul domestique" (kgCO2e/kWhPCS).
+
+energie . groupe électrogène:
+  formule: nombre * empreinte par jour * informations . nombre de jours
+  unité: kgCO2e
+  note: |
+    On fait l'hypothèse que la puissance d'un groupe électrogène utilisé est de 10kW.
+    On estime qu'un groupe électrogène de cette puissance consomme 4l/h.
+
+    Dans un second temps, il s'agira de d'évaluer l'empreinte du groupe électrogène directement 
+    via le type de carburant consommé et la consommation réelle.
+
+energie . groupe électrogène . nombre:
+  question: Combien de groupes électrogènes prévoyez-vous d'utiliser ?
+  par défaut: consommation par défaut / 2 / production
+
+energie . groupe électrogène . production:
+  formule: 10kW * 24 h/jour * 0.75 * informations . nombre de jours
+  unité: kWh
+
+energie . groupe électrogène . empreinte par jour:
+  formule: 0.75 * consommation carburant * empreinte carburant * 24 h/jour
+  note: On considère qu'un groupe électrogène est utilisé 75% de la journée à pleine puissance.
+  unité: kgCO2e/jour
+
+energie . groupe électrogène . consommation carburant:
+  formule: 4
+  unité: l/h
+
+energie . groupe électrogène . empreinte carburant:
+  formule: 2.7
+  unité: kgCO2e/l
+  note: |
+    Facteur d'émission issu de la base empreinte "Essence".
