@@ -9,9 +9,12 @@ informations . nombre de nuits:
   formule: informations . nombre de jours * 1 nuit/jour
   unité: nuit
 
+informations . nombre de participants:
+  question: Combien de participants attendez-vous sur l'ensemble de l'évènements (nombre d'entrées) ?
+  par défaut: 3000
+
 informations . nombre de participants par jour:
-  question: Combien de participants attendez-vous en moyenne par jour ?
-  par défaut: 1000
+  formule: nombre de participants / nombre de jours
 
 informations . bénévoles:
   question: Combien y aura-t-il d'organisateurs/bénévoles ?
@@ -21,7 +24,7 @@ informations . nombre de personnes par jour:
   formule: nombre de participants par jour + bénévoles
 
 informations . nombre de repas par jour:
-  formule: 2 repas/jour * nombre de personnes par jour
+  formule: 2 repas * nombre de personnes par jour
 
 informations . nombre de repas total:
   formule: nombre de repas par jour * nombre de jours

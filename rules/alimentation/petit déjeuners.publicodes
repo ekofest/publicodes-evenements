@@ -17,4 +17,4 @@ alimentation . petits déjeuners . nombre:
   formule: nombre par jour * informations . nombre de jours
 
 alimentation . petits déjeuners . nombre par jour:
-  formule: 1 repas/jour * informations . nombre de personnes par jour
+  formule: 1 repas * informations . nombre de personnes par jour

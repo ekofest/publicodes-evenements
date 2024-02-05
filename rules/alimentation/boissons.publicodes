@@ -29,7 +29,7 @@ alimentation . boissons . froide . eau . quantité:
   formule: quantité par jour * informations . nombre de jours
 
 alimentation . boissons . froide . eau . quantité par jour:
-  formule: 0.5 l/jour * informations . nombre de personnes par jour
+  formule: 0.5 l * informations . nombre de personnes par jour
 
 alimentation . boissons . froide . eau . empreinte:
   formule: 0.000620
@@ -53,7 +53,7 @@ alimentation . boissons . froide . soft . quantité par jour:
 alimentation . boissons . froide . soft . quantité par jour et par personne:
   question: Quelle quantité de boissons "soft" est consommée par personne et par jour ?
   par défaut: 0.5
-  unité: l/jour
+  unité: l
 
 alimentation . boissons . froide . alcool:
   formule: quantité * nosgestesclimat . alimentation . boisson . alcool . facteur
@@ -70,7 +70,7 @@ alimentation . boissons . froide . alcool . quantité par jour:
 alimentation . boissons . froide . alcool . quantité par jour et par personne:
   question: Quelle quantité d'alcool est consommée par personne et par jour ?
   par défaut: 0.5
-  unité: l/jour
+  unité: l
 
 alimentation . boissons . chaude:
   formule:
@@ -91,7 +91,7 @@ alimentation . boissons . chaude . café . nombre par jour:
 alimentation . boissons . chaude . café . quantité par jour et par personne:
   question: Quelle quantité de café est consommée par personne et par jour ?
   par défaut: 1
-  unité: tasse/jour
+  unité: tasse
 
 alimentation . boissons . chaude . thé:
   formule: nombre * nosgestesclimat . alimentation . boisson . tasse de thé
@@ -105,5 +105,5 @@ alimentation . boissons . chaude . thé . nombre par jour:
 
 alimentation . boissons . chaude . thé . quantité par jour et par personne:
   question: Quelle quantité de thé est consommée par personne et par jour ?
-  par défaut: 10% * 1 tasse/jour
-  unité: tasse/jour
+  par défaut: 10% * 1 tasse
+  unité: tasse
