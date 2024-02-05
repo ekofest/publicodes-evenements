@@ -117,7 +117,7 @@ alimentation . repas . proposition . choix viande:
     une de ces conditions:
       - proposition = 'mixte végé viande'
       - proposition = 'viande uniquement'
-  question: Quelle type de régime alimentaire prévoyez-vous ?
+  question: Proposerez-vous de la viande blanche ou viande rouge ?
   formule:
     une possibilité:
       choix obligatoire: oui
