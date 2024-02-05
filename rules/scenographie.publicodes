@@ -1,0 +1,37 @@
+scenographie:
+  titre: Scénographie
+  formule:
+    somme:
+      - matériel
+  unité: kgCO2e
+
+scenographie . matériel:
+  formule: dépenses * ratio monétaire * facteur amortissement
+  unité: kgCO2e
+  note: |
+    Selon la méthode du simulateur [SEEDS](https://nuage.arviva.org/index.php/s/Pzzm9KbAwwL4gPR), 
+    les émissions de CO2 liées à la location de matériel technique sont estimées à partir du montant 
+    dépensés pour leur location puis amorties sur via la durée de location et leur durée de vie.
+
+    A titre indicatif:
+      - Projecteur : 600€ soit 240kgCO2e  
+      - Enceinte : 500€ soit 200kgCO2e 
+      - Console : 1500€ soit 600kgCO2e 
+      - Machine à fumée : 400€ soit 160kgCO2e  
+      - Micros : 200€ soit 80kgCO2e  
+      - Vidéoprojecteur : 145kgCO2e (déjà présent dans la base ADEME)
+
+scenographie . matériel . facteur amortissement:
+  formule: informations . nombre de jours / (commun . jours par an * 5)
+  note: Matériel amorti sur 5 ans.
+
+scenographie . matériel . dépenses:
+  question: A combien estimez-vous vos dépenses de location de matériel technique (son, lumière, vidéo etc...) ?
+  par défaut: 1000
+  unité: €
+
+scenographie . matériel . ratio monétaire:
+  formule: 0.400
+  unité: kgCO2e/€
+  note: |
+    Ratio monétaire issu de la Base Empreinte "Service/Produits informatiques, électroniques et optiques".
