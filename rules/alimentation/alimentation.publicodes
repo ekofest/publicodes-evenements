@@ -4,6 +4,7 @@ alimentation:
       - repas
       - petits déjeuners
       - boissons
+      - artistes
   unité: kgCO2e
   note: |
     A ajouter dans une V2 ?

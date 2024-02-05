@@ -1,0 +1,44 @@
+alimentation . artistes:
+  formule:
+    somme:
+      - repas
+      - petits déjeuners
+  note: |
+    Par défaut, on considère que les artistes consomment un repas sur place, un petit déjeuner s'ils sont hébergés.
+
+alimentation . artistes . repas:
+  formule:
+    recalcul:
+      règle: alimentation . repas
+      avec:
+        informations . nombre de repas total: informations . nombre artistes * 1 repas
+        alimentation . repas . proposition: alimentation . artistes . repas . type
+
+alimentation . artistes . repas . type:
+  question: Quelle type de régime alimentaire prévoyez-vous pour les artistes ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - végétalien
+        - végétarien
+        - mixte végé viande
+        - viande uniquement
+  par défaut: "'mixte végé viande'"
+
+alimentation . artistes . repas . type . végétalien:
+  titre: Uniquement végan
+alimentation . artistes . repas . type . végétarien:
+  titre: Uniquement végétarien
+alimentation . artistes . repas . type . mixte végé viande:
+  titre: Mixte végétarien / viande
+alimentation . artistes . repas . type . viande uniquement:
+  titre: Uniquement carné
+
+alimentation . artistes . petits déjeuners:
+  applicable si: hebergement . artistes . présent
+  formule:
+    recalcul:
+      règle: alimentation . petits déjeuners
+      avec:
+        alimentation . petits déjeuners . nombre: informations . nombre artistes * 1 repas
