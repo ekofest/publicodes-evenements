@@ -3,11 +3,15 @@ importer!:
     nom: "@incubateur-ademe/nosgestesclimat"
   les règles:
     - logement . vacances . empreinte hotel par nuit
+    - logement . vacances . camping . empreinte par nuit
 
 hebergement:
+  titre: Hébergement
   formule:
     somme:
       - nuitées hotel
+      - nuitées camping
+      - artistes
   unité: kgCO2e
   note: |
     Pour le moment, on ne prend en compte que les nuitées en hôtel en considérant que le nombre de nuits 
@@ -27,15 +31,12 @@ hebergement . nuitées hotel . présent:
       choix obligatoire: oui
       possibilités:
         - participants et organisateurs
-        - participants
         - organisateurs
         - aucun
   par défaut: "'organisateurs'"
 
 hebergement . nuitées hotel . présent . participants et organisateurs:
   titre: Oui, pour tous le monde
-hebergement . nuitées hotel . présent . participants:
-  titre: Uniquement pour les festivaliers
 hebergement . nuitées hotel . présent . organisateurs:
   titre: Uniquement pour les organisateurs et bénévoles
 hebergement . nuitées hotel . présent . aucun:
@@ -46,10 +47,51 @@ hebergement . nuitées hotel . nombre de nuits hotel:
     variations:
       - si: présent = "participants et organisateurs"
         alors: informations . nombre de personnes par jour * informations . nombre de nuits
-      - si: présent = "participants"
+      - si: présent = "organisateurs"
+        alors: informations . bénévoles * informations . nombre de nuits
+      - si: présent = "aucun"
+        alors: 0
+  unité: nuit
+
+hebergement . nuitées camping:
+  non applicable si: présent = "aucun"
+  formule: nombre de nuits camping * nosgestesclimat . logement . vacances . camping . empreinte par nuit
+  unité: kgCO2e
+
+hebergement . nuitées camping . présent:
+  question: Prenez-vous en charge l'hébergement en camping des participants, bénévoles ou organisateurs du festival ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - participants et organisateurs
+        - organisateurs
+        - aucun
+  par défaut: "'aucun'"
+
+hebergement . nuitées camping . présent . participants et organisateurs:
+  titre: Oui, pour tous le monde
+hebergement . nuitées camping . présent . organisateurs:
+  titre: Uniquement pour les organisateurs et bénévoles
+hebergement . nuitées camping . présent . aucun:
+  titre: Non, pas d'hébergement en hôtel
+
+hebergement . nuitées camping . nombre de nuits camping:
+  formule:
+    variations:
+      - si: présent = "participants et organisateurs"
         alors: informations . nombre de personnes par jour * informations . nombre de nuits
       - si: présent = "organisateurs"
         alors: informations . bénévoles * informations . nombre de nuits
       - si: présent = "aucun"
         alors: 0
   unité: nuit
+
+hebergement . artistes:
+  applicable si: présent
+  formule: informations . nombre de nuits artistes * nosgestesclimat . logement . vacances . empreinte hotel par nuit
+  unité: kgCO2e
+
+hebergement . artistes . présent:
+  question: Prenez-vous en charge l'hébergement en hôtel des artistes du festival ?
+  par défaut: oui
