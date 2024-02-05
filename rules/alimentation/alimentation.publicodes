@@ -5,3 +5,9 @@ alimentation:
       - petits déjeuners
       - boissons
   unité: kgCO2e
+  note: |
+    A ajouter dans une V2 ?
+      - Part de nourriture bio sur l'ensemble des repas
+      - Part de nourriture de saison sur l'ensemble des repas
+      - Part de nourriture locale sur l'ensemble des repas
+      - Prise en compte du gaspillage ?
