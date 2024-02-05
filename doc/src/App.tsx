@@ -12,7 +12,7 @@ const engine = new Engine(model as {})
 const baseUrl =
   process.env.NODE_ENV === "development" ? "" : "/publicodes-evenements"
 
-const defaultRule = "bilan"
+const defaultRule = "resultats"
 
 function Documentation() {
   const url = useParams()["*"]

@@ -1,6 +1,5 @@
 import { writeFileSync } from "fs"
 import { getModelFromSource } from "@publicodes/tools/compilation"
-import { disabledLogger } from "@publicodes/tools"
 import Engine from "publicodes"
 
 const srcFiles = "rules/**/*.publicodes"
@@ -10,7 +9,7 @@ const model = getModelFromSource(srcFiles, { verbose: true })
 
 try {
   const engine = new Engine(model)
-  engine.evaluate("bilan")
+  engine.evaluate("resultats . bilan total")
 } catch (e) {
   console.error(`❌ Model compilation failed:\n${e.message}\n`)
   process.exit(-1)
