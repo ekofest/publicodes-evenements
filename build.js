@@ -9,7 +9,8 @@ const destPath = "publicodes-evenements.model.json"
 const model = getModelFromSource(srcFiles, { verbose: true })
 
 try {
-  new Engine(model, { logger: disabledLogger })
+  const engine = new Engine(model)
+  engine.evaluate("bilan")
 } catch (e) {
   console.error(`❌ Model compilation failed:\n${e.message}\n`)
   process.exit(-1)
