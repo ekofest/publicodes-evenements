@@ -6,7 +6,7 @@ resultats . bilan total:
   formule:
     somme:
       - alimentation
-      - transport
+      - mobilite
       - hebergement
       - energie
       - immobilisations

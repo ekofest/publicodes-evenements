@@ -10,14 +10,15 @@ informations . nombre de nuits:
   unité: nuit
 
 informations . nombre de festivaliers:
-  question: Combien de participants attendez-vous sur l'ensemble de l'évènements (nombre d'entrées) ?
+  question: Combien de participants attendez-vous sur l'ensemble de l'évènements (compter 2 entrées si une personne est présente 2 jours) ?
+  note: On parle de la somme des entrées uniques par jour.
   par défaut: 25000
 
 informations . nombre de festivaliers par jour:
   formule: nombre de festivaliers / nombre de jours
 
 informations . bénévoles:
-  question: Combien y aura-t-il d'organisateurs/bénévoles ?
+  question: Combien y aura-t-il d'organisateurs et bénévoles ?
   par défaut: 100
 
 informations . nombre de personnes par jour:
@@ -28,3 +29,32 @@ informations . nombre de repas par jour:
 
 informations . nombre de repas total:
   formule: nombre de repas par jour * nombre de jours
+
+informations . nombre artistes en voiture:
+  question: Combien d'artistes (équipe incluse) seront présents sur le festival ?
+  par défaut: 10
+
+informations . nombre artistes en train:
+  question: Combien d'artistes (équipe incluse) seront présents sur le festival ?
+  par défaut: 10
+
+informations . nombre artistes en tour bus:
+  question: Combien d'artistes (équipe incluse) seront présents sur le festival ?
+  par défaut: 30
+
+informations . nombre artistes en avion:
+  question: Combien d'artistes (équipe incluse) seront présents sur le festival ?
+  par défaut: 10
+
+informations . nombre artistes:
+  question: Combien d'artistes (équipe incluse) seront présents sur le festival ?
+  par défaut:
+    somme:
+      - nombre artistes en voiture
+      - nombre artistes en train
+      - nombre artistes en tour bus
+      - nombre artistes en avion
+
+informations . nombre de nuits artistes:
+  formule: nombre artistes * 1 nuit
+  unité: nuit
