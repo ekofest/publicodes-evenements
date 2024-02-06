@@ -1,0 +1,39 @@
+importer!:
+  depuis:
+    nom: "@incubateur-ademe/nosgestesclimat"
+  les règles:
+    - logement . vacances . camping . empreinte par nuit
+
+hébergement . camping:
+  non applicable si: présent = "aucun"
+  formule: nombre de nuits camping * nosgestesclimat . logement . vacances . camping . empreinte par nuit
+  unité: kgCO2e
+
+hébergement . camping . présent:
+  question: Prenez-vous en charge l'hébergement en camping des participants, bénévoles ou organisateurs du festival ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - participants et organisateurs
+        - organisateurs
+        - aucun
+  par défaut: "'aucun'"
+
+hébergement . camping . présent . participants et organisateurs:
+  titre: Oui, pour tous le monde
+hébergement . camping . présent . organisateurs:
+  titre: Uniquement pour les organisateurs et bénévoles
+hébergement . camping . présent . aucun:
+  titre: Non, pas d'hébergement en hôtel
+
+hébergement . camping . nombre de nuits camping:
+  formule:
+    variations:
+      - si: présent = "participants et organisateurs"
+        alors: informations . nombre de personnes par jour * informations . nombre de nuits
+      - si: présent = "organisateurs"
+        alors: informations . nombre de bénévoles * informations . nombre de nuits
+      - si: présent = "aucun"
+        alors: 0
+  unité: nuit

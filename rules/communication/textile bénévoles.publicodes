@@ -5,7 +5,7 @@ importer!:
     - divers . textile . t-shirt . empreinte
     - divers . textile . sweat . empreinte
 
-textile bénévoles:
+communication . textile bénévoles:
   titre: Textile bénévoles
   formule:
     variations:
@@ -17,7 +17,7 @@ textile bénévoles:
         alors: 0
   unité: kgCO2e
 
-textile bénévoles . type:
+communication . textile bénévoles . type:
   question: Prévoyez-vous des vêtements pour votre équipe ?
   formule:
     une possibilité:
@@ -28,22 +28,22 @@ textile bénévoles . type:
         - aucun
   par défaut: "'t shirt'"
 
-textile bénévoles . type . t shirt:
+communication . textile bénévoles . type . t shirt:
   titre: T-shirt
 
-textile bénévoles . type . sweat:
+communication . textile bénévoles . type . sweat:
   titre: Sweat
 
-textile bénévoles . type . aucun:
+communication . textile bénévoles . type . aucun:
   titre: Non, aucun vêtement
 
-textile bénévoles . amortissement:
+communication . textile bénévoles . amortissement:
   formule:
     variations:
       - si: textile bénévoles . réutilisation
         alors: 2
       - sinon: 1
 
-textile bénévoles . réutilisation:
+communication . textile bénévoles . réutilisation:
   question: Est-il prévu de réutiliser les vêtements pour une autre édition ?
   par défaut: non

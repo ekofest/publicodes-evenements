@@ -17,18 +17,18 @@ transport . public . nombre de déplacements:
     variations:
       - si:
           toutes ces conditions:
-            - hébergement . nuitées hotel . présent = "aucun"
-            - hébergement . nuitées camping . présent = "aucun"
+            - hébergement . hôtel . présent = "aucun"
+            - hébergement . camping . présent = "aucun"
         alors: informations . nombre de festivaliers + informations . nombre de bénévoles * informations . nombre de jours
       - si:
           une de ces conditions:
-            - hébergement . nuitées hotel . présent = "organisateurs"
-            - hébergement . nuitées camping . présent = "organisateurs"
+            - hébergement . hôtel . présent = "organisateurs"
+            - hébergement . camping . présent = "organisateurs"
         alors: informations . nombre de festivaliers
       - si:
           une de ces conditions:
-            - hébergement . nuitées hotel . présent = "participants et organisateurs"
-            - hébergement . nuitées camping . présent = "participants et organisateurs"
+            - hébergement . hôtel . présent = "participants et organisateurs"
+            - hébergement . camping . présent = "participants et organisateurs"
         alors: informations . nombre de festivaliers par jour + informations . nombre de bénévoles
   note: Erreur d'unité dans la formule "informations . nombre de festivaliers par jour + informations . nombre de bénévoles"
 

@@ -1,5 +1,5 @@
 infrastructures:
-  titre: Gestion des infrastructures
+  titre: Infrastructures
   formule:
     somme:
       - fret

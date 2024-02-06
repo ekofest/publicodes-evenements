@@ -3,6 +3,7 @@ communication:
   formule:
     somme:
       - merchandising
-      - numérique
       - textile bénévoles
+      - numérique
+      - impressions
   unité: kgCO2e

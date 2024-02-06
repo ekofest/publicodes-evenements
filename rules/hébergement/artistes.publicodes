@@ -1,0 +1,9 @@
+hébergement . artistes:
+  titre: Hébergement des artistes
+  applicable si: présent
+  formule: informations . nombre de nuits artistes * nosgestesclimat . logement . vacances . empreinte hotel par nuit
+  unité: kgCO2e
+
+hébergement . artistes . présent:
+  question: Prenez-vous en charge l'hébergement en hôtel des artistes du festival ?
+  par défaut: oui
