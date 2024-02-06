@@ -1,0 +1,68 @@
+merchandising:
+  formule:
+    somme:
+      - textile
+      - plastique
+  unité: kgCO2e
+  note: |
+    Pour cette modélisation, nous nous inspirons de l'étude [Décarbonons la Culture ! The Shift Project](https://theshiftproject.org/wp-content/uploads/2021/12/211130-TSP-PTEF-Rapport-final-Culture-v3.pdf)
+    en estimant le chiffre d'affaires réalisé grâce au merchandising réparti sur différents produits textiles (t-shirts et sweat shirts) 
+    mais également des produits dérivés "plastiques".
+
+    D'après [le baromètre 2023 de Weezevent](https://weezevent.com/fr/blog/barometre-festivals-2023/#:~:text=Notons%20que%20le%20prix%20moyen,%E2%82%AC)%20pour%20les%20festivals%20urbains.)
+    sur les consommations et les achats des festivaliers, le panier moyen pour du merch est de 4€ par jour et par personne.
+
+    Dans une V2, il s'agira d'affiner l'empreinte carbone associée aux produits vendu en passant par des FE "physiques"
+    et en incluant des variations selon l'approvisionnement des produits.
+
+merchandising . surplus production:
+  formule: 110%
+  note: |
+    On estime que 10% le surplus de production.
+
+merchandising . chiffre d affaires:
+  formule: informations . nombre de festivaliers * merchandising . panier moyen par jour et par personne
+  unité: €
+  note: |
+    D'après [le baromètre 2023 de Weezevent](https://weezevent.com/fr/blog/barometre-festivals-2023/#:~:text=Notons%20que%20le%20prix%20moyen,%E2%82%AC)%20pour%20les%20festivals%20urbains.)
+    sur les consommations et les achats des festivaliers, le panier moyen pour du merch est de 4€ par jour et par personne.
+
+merchandising . chiffre d affaires . part textile:
+  formule: 70%
+
+merchandising . chiffre d affaires . part plastique:
+  formule: 30%
+
+merchandising . panier moyen par jour et par personne:
+  formule: 4
+  unité: €
+  note: |
+    D'après [le baromètre 2023 de Weezevent](https://weezevent.com/fr/blog/barometre-festivals-2023/#:~:text=Notons%20que%20le%20prix%20moyen,%E2%82%AC)%20pour%20les%20festivals%20urbains.)
+
+merchandising . textile:
+  formule: surplus production * chiffre d affaires . part textile * chiffre d affaires * ratio monétaire
+  unité: kgCO2e
+
+merchandising . textile . ratio monétaire:
+  formule: ratio monétaire HT / 1.2 €/€HT
+  unité: kgCO2e/€
+
+merchandising . textile . ratio monétaire HT:
+  formule: 0.600
+  unité: kgCO2e/€HT
+  note: |
+    Facteur d'émission issu de la base empreinte "Service/Textile et habillement".
+
+merchandising . plastique:
+  formule: surplus production * chiffre d affaires . part plastique * chiffre d affaires * ratio monétaire
+  unité: kgCO2e
+
+merchandising . plastique . ratio monétaire:
+  formule: ratio monétaire HT / 1.2 €/€HT
+  unité: kgCO2e/€
+
+merchandising . plastique . ratio monétaire HT:
+  formule: 0.800
+  unité: kgCO2e/€HT
+  note: |
+    Facteur d'émission issu de la base empreinte "Service/Textile et habillement".
