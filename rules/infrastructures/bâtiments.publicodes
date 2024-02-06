@@ -18,7 +18,7 @@ bâtiments . béton:
 
 bâtiments . béton . surface:
   question: Quelle est la surface des bâtiments "structure béton" utilisés pour l'événement ?
-  par défaut: 50
+  par défaut: 0
   unité: m2
 
 bâtiments . béton . empreinte par m2:
@@ -33,7 +33,7 @@ bâtiments . métallique:
 
 bâtiments . métallique . surface:
   question: Quelle est la surface des bâtiments "structure métallique" utilisés pour l'événement ?
-  par défaut: 50
+  par défaut: 500
   unité: m2
 
 bâtiments . métallique . empreinte par m2:
