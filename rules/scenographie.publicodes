@@ -27,11 +27,11 @@ scenographie . matériel . facteur amortissement:
 
 scenographie . matériel . dépenses:
   question: A combien estimez-vous vos dépenses de location de matériel technique (son, lumière, vidéo etc...) ?
-  par défaut: 1000
-  unité: €
+  par défaut: 10000
+  unité: €HT
 
 scenographie . matériel . ratio monétaire:
   formule: 0.400
-  unité: kgCO2e/€
+  unité: kgCO2e/€HT
   note: |
     Ratio monétaire issu de la Base Empreinte "Service/Produits informatiques, électroniques et optiques".
