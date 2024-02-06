@@ -48,7 +48,7 @@ hebergement . nuitées hotel . nombre de nuits hotel:
       - si: présent = "participants et organisateurs"
         alors: informations . nombre de personnes par jour * informations . nombre de nuits
       - si: présent = "organisateurs"
-        alors: informations . bénévoles * informations . nombre de nuits
+        alors: informations . nombre de bénévoles * informations . nombre de nuits
       - si: présent = "aucun"
         alors: 0
   unité: nuit
@@ -82,7 +82,7 @@ hebergement . nuitées camping . nombre de nuits camping:
       - si: présent = "participants et organisateurs"
         alors: informations . nombre de personnes par jour * informations . nombre de nuits
       - si: présent = "organisateurs"
-        alors: informations . bénévoles * informations . nombre de nuits
+        alors: informations . nombre de bénévoles * informations . nombre de nuits
       - si: présent = "aucun"
         alors: 0
   unité: nuit

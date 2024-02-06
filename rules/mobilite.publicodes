@@ -26,7 +26,7 @@ mobilite . public . nombre de déplacements:
           toutes ces conditions:
             - hebergement . nuitées hotel . présent = "aucun"
             - hebergement . nuitées camping . présent = "aucun"
-        alors: informations . nombre de festivaliers + informations . bénévoles * informations . nombre de jours
+        alors: informations . nombre de festivaliers + informations . nombre de bénévoles * informations . nombre de jours
       - si:
           une de ces conditions:
             - hebergement . nuitées hotel . présent = "organisateurs"
@@ -36,8 +36,8 @@ mobilite . public . nombre de déplacements:
           une de ces conditions:
             - hebergement . nuitées hotel . présent = "participants et organisateurs"
             - hebergement . nuitées camping . présent = "participants et organisateurs"
-        alors: informations . nombre de festivaliers par jour + informations . bénévoles
-  note: Erreur d'unité dans la formule "informations . nombre de festivaliers par jour + informations . bénévoles"
+        alors: informations . nombre de festivaliers par jour + informations . nombre de bénévoles
+  note: Erreur d'unité dans la formule "informations . nombre de festivaliers par jour + informations . nombre de bénévoles"
 
 mobilite . public . distance AR:
   question: Quelle est la distane moyenne aller/retour parcourue par un festivalier ?

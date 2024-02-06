@@ -52,7 +52,7 @@ alimentation . boissons . froide . eau en bouteille . quantité:
   formule: quantité par jour * informations . nombre de jours
 
 alimentation . boissons . froide . eau en bouteille . quantité par jour:
-  formule: 0.5 l/jour * informations . bénévoles
+  formule: 0.5 l/jour * informations . nombre de bénévoles
 
 alimentation . boissons . froide . soft:
   formule: quantité * nosgestesclimat . alimentation . boisson . sucrées . facteur

@@ -17,12 +17,12 @@ informations . nombre de festivaliers:
 informations . nombre de festivaliers par jour:
   formule: nombre de festivaliers / nombre de jours
 
-informations . bénévoles:
+informations . nombre de bénévoles:
   question: Combien y aura-t-il d'organisateurs et bénévoles ?
   par défaut: 100
 
 informations . nombre de personnes par jour:
-  formule: nombre de festivaliers par jour + bénévoles
+  formule: nombre de festivaliers par jour + nombre de bénévoles
 
 informations . nombre de repas par jour:
   formule: 2 repas * nombre de personnes par jour
