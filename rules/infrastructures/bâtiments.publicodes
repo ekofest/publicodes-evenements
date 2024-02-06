@@ -4,6 +4,7 @@ bâtiments:
     somme:
       - béton
       - métallique
+      - temporaire
   unité: kgCO2e
 
 bâtiments . facteur amortissement:
@@ -41,3 +42,9 @@ bâtiments . métallique . empreinte par m2:
   unité: kgCO2e/m2
   note: |
     Facteur d'émission issu de la base empreinte "Bâtiment industriel/structure métallique".
+
+bâtiments . temporaire:
+  titre: Barnums
+  formule: 0
+  unité: kgCO2e
+  note: A venir
