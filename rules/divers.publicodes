@@ -1,0 +1,143 @@
+importer!:
+  depuis:
+    nom: "@incubateur-ademe/nosgestesclimat"
+  les règles:
+    - divers . textile . t-shirt . empreinte
+    - divers . textile . sweat . empreinte
+
+divers:
+  formule:
+    somme:
+      - déchets
+      - ecocups
+      - textile bénévoles
+  unité: kgCO2e
+
+divers . déchets:
+  formule:
+    somme:
+      - gobelets
+  unité: kgCO2e
+
+divers . déchets . gobelets:
+  non applicable si: ecocups présent
+  formule: 2 gobelet * informations . nombre de jours * informations . nombre de personnes par jour * empreinte
+  unité: kgCO2e
+  note: On considère 2 gobelets par personne par jour.
+
+divers . déchets . gobelets . empreinte:
+  formule:
+    variations:
+      - si: gobelets . type = "plastique"
+        alors: type . plastique . poids * empreinte plastique par kg
+      - si: gobelets . type = "carton"
+        alors: type . carton . poids * empreinte carton par kg
+  unité: kgCO2e/gobelet
+
+divers . déchets . gobelets . type:
+  question: Quel type de gobelets allez-vous utiliser ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - plastique
+        - carton
+  par défaut: "'plastique'"
+
+divers . déchets . gobelets . type . plastique:
+  titre: Plastique jetable
+divers . déchets . gobelets . type . plastique . poids:
+  formule: 0.010
+  unité: kg/gobelet
+
+divers . déchets . gobelets . type . carton:
+divers . déchets . gobelets . type . carton . poids:
+  formule: 0.010
+  unité: kg/gobelet
+  note: On considère 10g par gobelet.
+
+divers . déchets . empreinte plastique par kg:
+  formule: 2 + 0.101
+  unité: kgCO2e/kg
+  note: |
+    On considère du platisque polypropylène (PP) neuf et l'impact fin de vie.
+    FE issus de la base empreinte (PP - polypropylène et Emballages/Plastique rigide biosourcé PP autres emballages/Fin de vie moyenne filière - Impacts)
+
+divers . déchets . empreinte carton par kg:
+  formule: 0.670 + 0.737
+  unité: kgCO2e/kg
+  note: |
+    On considère que le carton est recyclé (hypothèse conservatrice, contrairement à ce qu'on peut penser, 
+    le carton recyclé est plus impactant que le carton neuf).
+    FE issus de la base empreinte (Carton/recyclé et Emballages/Carton/Fin de vie moyenne filière - Impacts)
+
+divers . ecocups:
+  applicable si: ecocups présent
+  formule: 1 ecocup.jour * informations . nombre de personnes par jour * empreinte / amortissement
+  unité: kgCO2e
+
+divers . ecocups présent:
+  question: Allez-vous utiliser des ecocups pour l'événement ?
+  par défaut: oui
+
+divers . ecocups . réutilisation:
+  question: Est-il prévu de réutiliser les ecocups pour une autre édition ?
+  par défaut: non
+
+divers . ecocups . amortissement:
+  formule:
+    variations:
+      - si: ecocups . réutilisation
+        alors: 3
+      - sinon: 1
+  note: On considère que les ecocups servirons sur 3 éditions.
+
+divers . ecocups . empreinte:
+  formule: poids * déchets . empreinte plastique par kg
+  unité: kgCO2e/ecocup
+
+divers . ecocups . poids:
+  formule: 0.030
+  unité: kg/ecocup
+
+divers . textile bénévoles:
+  formule:
+    variations:
+      - si: textile bénévoles . type = "t shirt"
+        alors: informations . nombre de bénévoles * nosgestesclimat . divers . textile . t-shirt . empreinte / amortissement
+      - si: textile bénévoles . type = "sweat"
+        alors: informations . nombre de bénévoles * nosgestesclimat . divers . textile . sweat . empreinte / amortissement
+      - si: textile bénévoles . type = "aucun"
+        alors: 0
+  unité: kgCO2e
+
+divers . textile bénévoles . type:
+  question: Prévoyez-vous des vêtements pour votre équipe ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - t shirt
+        - sweat
+        - aucun
+  par défaut: "'t shirt'"
+
+divers . textile bénévoles . type . t shirt:
+  titre: T-shirt
+
+divers . textile bénévoles . type . sweat:
+  titre: Sweat
+
+divers . textile bénévoles . type . aucun:
+  titre: Non, aucun vêtement
+
+divers . textile bénévoles . amortissement:
+  formule:
+    variations:
+      - si: textile bénévoles . réutilisation
+        alors: 2
+      - sinon: 1
+
+divers . textile bénévoles . réutilisation:
+  question: Est-il prévu de réutiliser les vêtements pour une autre édition ?
+  par défaut: non
