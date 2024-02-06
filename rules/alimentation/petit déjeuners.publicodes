@@ -5,6 +5,7 @@ importer!:
     - alimentation . petit déjeuner . continental
 
 alimentation . petits déjeuners:
+  titre: Petits déjeuners
   applicable si: petits déjeuners présent
   formule: nombre * nosgestesclimat . alimentation . petit déjeuner . continental
   note: On considère le petits déjeuner continental de Nos Gestes Climat

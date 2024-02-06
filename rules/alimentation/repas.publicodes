@@ -10,6 +10,7 @@ importer!:
     # - alimentation . plats . poisson 2 . empreinte
 
 alimentation . repas:
+  titre: Repas
   formule:
     somme:
       - végétalien

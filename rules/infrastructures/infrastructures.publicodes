@@ -1,0 +1,8 @@
+infrastructures:
+  titre: Gestion des infrastructures
+  formule:
+    somme:
+      - fret
+      - bâtiments
+      - scénographie
+  unité: kgCO2e

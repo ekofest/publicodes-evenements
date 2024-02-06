@@ -1,0 +1,14 @@
+fret:
+  titre: Fret
+  formule:
+    somme:
+      - infrastructures
+      - artistes
+
+fret . infrastructures:
+  formule: 0
+  unité: kgCO2e
+
+fret . artistes:
+  formule: 0
+  unité: kgCO2e

@@ -9,6 +9,7 @@ importer!:
     - alimentation . boisson . eau en bouteille . empreinte
 
 alimentation . boissons:
+  titre: Boissons
   formule:
     somme:
       - froide

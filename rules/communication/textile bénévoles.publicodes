@@ -1,0 +1,49 @@
+importer!:
+  depuis:
+    nom: "@incubateur-ademe/nosgestesclimat"
+  les règles:
+    - divers . textile . t-shirt . empreinte
+    - divers . textile . sweat . empreinte
+
+textile bénévoles:
+  titre: Textile bénévoles
+  formule:
+    variations:
+      - si: textile bénévoles . type = "t shirt"
+        alors: informations . nombre de bénévoles * nosgestesclimat . divers . textile . t-shirt . empreinte / amortissement
+      - si: textile bénévoles . type = "sweat"
+        alors: informations . nombre de bénévoles * nosgestesclimat . divers . textile . sweat . empreinte / amortissement
+      - si: textile bénévoles . type = "aucun"
+        alors: 0
+  unité: kgCO2e
+
+textile bénévoles . type:
+  question: Prévoyez-vous des vêtements pour votre équipe ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - t shirt
+        - sweat
+        - aucun
+  par défaut: "'t shirt'"
+
+textile bénévoles . type . t shirt:
+  titre: T-shirt
+
+textile bénévoles . type . sweat:
+  titre: Sweat
+
+textile bénévoles . type . aucun:
+  titre: Non, aucun vêtement
+
+textile bénévoles . amortissement:
+  formule:
+    variations:
+      - si: textile bénévoles . réutilisation
+        alors: 2
+      - sinon: 1
+
+textile bénévoles . réutilisation:
+  question: Est-il prévu de réutiliser les vêtements pour une autre édition ?
+  par défaut: non

@@ -1,0 +1,8 @@
+communication:
+  titre: Communication
+  formule:
+    somme:
+      - merchandising
+      - numérique
+      - textile bénévoles
+  unité: kgCO2e

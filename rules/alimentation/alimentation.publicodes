@@ -1,9 +1,12 @@
 alimentation:
+  titre: Alimentation
   formule:
     somme:
       - repas
       - petits déjeuners
       - boissons
+      - ecocups
+      - déchets
       - artistes
   unité: kgCO2e
   note: |

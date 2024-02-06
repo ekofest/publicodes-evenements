@@ -1,4 +1,5 @@
 alimentation . artistes:
+  titre: Alimentation des artistes
   formule:
     somme:
       - repas
@@ -36,7 +37,7 @@ alimentation . artistes . repas . type . viande uniquement:
   titre: Uniquement carné
 
 alimentation . artistes . petits déjeuners:
-  applicable si: hebergement . artistes . présent
+  applicable si: hébergement . artistes . présent
   formule:
     recalcul:
       règle: alimentation . petits déjeuners

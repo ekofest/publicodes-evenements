@@ -1,0 +1,66 @@
+infrastructures . scénographie:
+  titre: Scénographie
+  formule:
+    somme:
+      - scène
+      - matériel
+      - décor
+  unité: kgCO2e
+
+# Prendre en compte le montage, démontage, l'empreinte amortie de la fabrication et dans énergie, la consommation associée.
+infrastructures . scénographie . scène:
+  formule: 0
+  note: |
+    Le seul montage des scènes d’un festival comme Les Vieilles Charrues implique une vingtaine
+    de semi-remorques d’après certaines sources53 et quarante pour d’autres54. Nous sommes
+    partis d’une moyenne à trente semi-remorques et d’une hypothèse où le festival ne cherche
+    pas à réduire les distances parcourues par le choix de fournisseurs locaux, comptant ainsi
+    2000 kilomètres par véhicule en incluant les retours à vide.
+    Nous insistons sur un point : nous n’affirmons pas que ces données sont celles des Vieilles
+    Charrues, il s’agit d’une première estimation pour un grand festival en périphérie. Par ailleurs,
+    nous ignorons si cette donnée inclut la logistique alimentaire.
+    Si l’on estime que les fournisseurs ne sont pas locaux et que le tonnage transporté est en
+    moyenne à 8,5 tonnes, nous pensons que l’impact global du fret lié à la logistique avoisine
+    les 190 tonnes de carbone.
+
+infrastructures . scénographie . matériel:
+  formule: dépenses * ratio monétaire * facteur amortissement
+  unité: kgCO2e
+  note: |
+    Selon la méthode du simulateur [SEEDS](https://nuage.arviva.org/index.php/s/Pzzm9KbAwwL4gPR), 
+    les émissions de CO2 liées à la location de matériel technique sont estimées à partir du montant 
+    dépensés pour leur location puis amorties sur via la durée de location et leur durée de vie.
+
+    A titre indicatif:
+      - Projecteur : 600€ soit 240kgCO2e  
+      - Enceinte : 500€ soit 200kgCO2e 
+      - Console : 1500€ soit 600kgCO2e 
+      - Machine à fumée : 400€ soit 160kgCO2e  
+      - Micros : 200€ soit 80kgCO2e  
+      - Vidéoprojecteur : 145kgCO2e (déjà présent dans la base ADEME)
+
+infrastructures . scénographie . matériel . facteur amortissement:
+  formule: informations . nombre de jours / (commun . jours par an * 5)
+  note: Matériel amorti sur 5 ans.
+
+infrastructures . scénographie . matériel . dépenses:
+  question: A combien estimez-vous vos dépenses de location de matériel technique (son, lumière, vidéo etc...) ?
+  par défaut: 10000
+  unité: €HT
+
+infrastructures . scénographie . matériel . ratio monétaire:
+  formule: 0.400
+  unité: kgCO2e/€HT
+  note: |
+    Ratio monétaire issu de la Base Empreinte "Service/Produits informatiques, électroniques et optiques".
+
+infrastructures . scénographie . décor:
+  applicable si: décor présent
+  formule: 0
+  unité: kgCO2e
+  note: |
+    Pour le moment, nous faisons l'hypothèse que les décors et costumes sont de la responsabilité des artistes.
+
+infrastructures . scénographie . décor présent:
+  question: Prévoyez-vous des décors et costumes pour la scénographie de l'événement ?
+  par défaut: non

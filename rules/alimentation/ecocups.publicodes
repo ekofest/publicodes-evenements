@@ -1,0 +1,28 @@
+alimentation . ecocups:
+  applicable si: ecocups présent
+  formule: 1 ecocup.jour * informations . nombre de personnes par jour * empreinte / amortissement
+  unité: kgCO2e
+
+alimentation . ecocups présent:
+  question: Allez-vous utiliser des ecocups pour l'événement ?
+  par défaut: oui
+
+alimentation . ecocups . réutilisation:
+  question: Est-il prévu de réutiliser les ecocups pour une autre édition ?
+  par défaut: non
+
+alimentation . ecocups . amortissement:
+  formule:
+    variations:
+      - si: ecocups . réutilisation
+        alors: 3
+      - sinon: 1
+  note: On considère que les ecocups servirons sur 3 éditions.
+
+alimentation . ecocups . empreinte:
+  formule: poids * déchets . empreinte plastique par kg
+  unité: kgCO2e/ecocup
+
+alimentation . ecocups . poids:
+  formule: 0.030
+  unité: kg/ecocup

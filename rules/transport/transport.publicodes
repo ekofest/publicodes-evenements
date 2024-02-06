@@ -1,12 +1,12 @@
-mobilite:
-  titre: Mobilité
+transport:
+  titre: Transport
   formule:
     somme:
       - public
       - artistes
   unité: kgCO2e
 
-mobilite . public:
+transport . public:
   formule:
     somme:
       - voiture
@@ -15,42 +15,42 @@ mobilite . public:
       - commun
   unité: kgCO2e
 
-mobilite . public . accessible en transports en commun:
+transport . public . accessible en transports en commun:
   question: Votre festival est-il facilement accessible en transport en commun ?
   par défaut: non
 
-mobilite . public . nombre de déplacements:
+transport . public . nombre de déplacements:
   formule:
     variations:
       - si:
           toutes ces conditions:
-            - hebergement . nuitées hotel . présent = "aucun"
-            - hebergement . nuitées camping . présent = "aucun"
+            - hébergement . nuitées hotel . présent = "aucun"
+            - hébergement . nuitées camping . présent = "aucun"
         alors: informations . nombre de festivaliers + informations . nombre de bénévoles * informations . nombre de jours
       - si:
           une de ces conditions:
-            - hebergement . nuitées hotel . présent = "organisateurs"
-            - hebergement . nuitées camping . présent = "organisateurs"
+            - hébergement . nuitées hotel . présent = "organisateurs"
+            - hébergement . nuitées camping . présent = "organisateurs"
         alors: informations . nombre de festivaliers
       - si:
           une de ces conditions:
-            - hebergement . nuitées hotel . présent = "participants et organisateurs"
-            - hebergement . nuitées camping . présent = "participants et organisateurs"
+            - hébergement . nuitées hotel . présent = "participants et organisateurs"
+            - hébergement . nuitées camping . présent = "participants et organisateurs"
         alors: informations . nombre de festivaliers par jour + informations . nombre de bénévoles
   note: Erreur d'unité dans la formule "informations . nombre de festivaliers par jour + informations . nombre de bénévoles"
 
-mobilite . public . distance AR:
+transport . public . distance AR:
   question: Quelle est la distane moyenne aller/retour parcourue par un festivalier ?
   unité: km
   par défaut: 100
   note: On inclue ici les festivaliers mais également les bénévoles et les organisateurs.
 
-mobilite . public . part mobilité douce:
+transport . public . part mobilité douce:
   formule: 100% - parts totales modes de transport
   unité: "%"
   note: On considère que l'impact de la marche ou du vélo est négligeable.
 
-mobilite . public . parts totales modes de transport:
+transport . public . parts totales modes de transport:
   formule:
     somme:
       - voiture . part
@@ -60,7 +60,7 @@ mobilite . public . parts totales modes de transport:
   plafond: 100
   unité: "%"
 
-mobilite . public . voiture . part:
+transport . public . voiture . part:
   question: Quelle part des festivaliers viennent en voiture ?
   par défaut:
     variations:
@@ -68,7 +68,7 @@ mobilite . public . voiture . part:
         alors: 20%
       - sinon: 80%
 
-mobilite . public . avion . part:
+transport . public . avion . part:
   question: Quelle part des festivaliers viennent en avion ?
   par défaut:
     variations:
@@ -76,7 +76,7 @@ mobilite . public . avion . part:
         alors: 3%
       - sinon: 3%
 
-mobilite . public . train . part:
+transport . public . train . part:
   question: Quelle part des festivaliers viennent en train ?
   par défaut:
     variations:
@@ -84,7 +84,7 @@ mobilite . public . train . part:
         alors: 20%
       - sinon: 10%
 
-mobilite . public . commun . part:
+transport . public . commun . part:
   question: Quelle part des festivaliers viennent en transports en commun (bus, tramway, métro) ?
   par défaut:
     variations:
@@ -92,28 +92,28 @@ mobilite . public . commun . part:
         alors: 50%
       - sinon: 5%
 
-mobilite . public . voiture:
+transport . public . voiture:
   formule: part * nombre de déplacements * distance AR * voiture . empreinte par km / voiture . remplissage moyen
   unité: kgCO2e
   note: On fait l'hypothèse d'un aller/retour par festivalier.
 
-mobilite . public . avion:
+transport . public . avion:
   formule: part * nombre de déplacements * distance avion AR * avion . empreinte par km
   unité: kgCO2e
 
-mobilite . public . avion . distance avion AR:
+transport . public . avion . distance avion AR:
   formule: 1500
   unité: km
 
-mobilite . public . train:
+transport . public . train:
   formule: part * nombre de déplacements * distance AR * train . empreinte par km
   unité: kgCO2e
 
-mobilite . public . commun:
+transport . public . commun:
   formule: part * nombre de déplacements * distance AR * commun . empreinte par km
   unité: kgCO2e
 
-mobilite . artistes:
+transport . artistes:
   formule:
     somme:
       - voiture
@@ -122,62 +122,62 @@ mobilite . artistes:
       - tour bus
   unité: kgCO2e
 
-mobilite . artistes . voiture:
+transport . artistes . voiture:
   formule: informations . nombre artistes en train * distance * voiture . empreinte par km / voiture . remplissage moyen
   unité: kgCO2e
 
-mobilite . artistes . voiture . distance:
+transport . artistes . voiture . distance:
   question: Quelle est la distance (A/R) parcourue en voiture en moyenne par les artistes pour venir au festival ?
   par défaut: 100
   unité: km
 
-mobilite . artistes . avion:
+transport . artistes . avion:
   formule: informations . nombre artistes en avion * distance * avion . empreinte par km
   unité: kgCO2e
 
-mobilite . artistes . avion . distance:
+transport . artistes . avion . distance:
   question: Quelle est la distance (A/R) parcourue en avion en moyenne par les artistes pour venir au festival ?
   par défaut: 1500
   unité: km
 
-mobilite . artistes . train:
+transport . artistes . train:
   formule: informations . nombre artistes en train * distance * train . empreinte par km
   unité: kgCO2e
 
-mobilite . artistes . train . distance:
+transport . artistes . train . distance:
   question: Quelle est la distance en moyenne (A/R) parcourue en train par les artistes pour venir au festival ?
   par défaut: 500
   unité: km
 
-mobilite . artistes . tour bus:
+transport . artistes . tour bus:
   formule: informations . nombre artistes en tour bus * distance * tour bus . empreinte par km
   unité: kgCO2e
 
-mobilite . artistes . tour bus . distance:
+transport . artistes . tour bus . distance:
   question: Quelle est la distance en moyenne (A/R) parcourue en tour bus par les artistes pour venir au festival ?
   par défaut: 1000
   unité: km
 
-mobilite . voiture:
-mobilite . voiture . empreinte par km:
+transport . voiture:
+transport . voiture . empreinte par km:
   formule: 0.231
   unité: kgCO2e/km
   note: |
     Facteur d'émission issu de la base empreinte "Voiture/Motorisation moyenne/2018".
 
-mobilite . voiture . remplissage moyen:
+transport . voiture . remplissage moyen:
   formule: 1.8
   note: On considère un taux de remplissage moyen de 1,8 personnes par voiture.
 
-mobilite . avion:
-mobilite . avion . empreinte par km:
+transport . avion:
+transport . avion . empreinte par km:
   formule: 0.187
   unité: kgCO2e/km
   note: |
     Facteur d'émission issu de la base empreinte "Avion passagers/Moyen courrier, 2018/AVEC trainées".
 
-mobilite . train:
-mobilite . train . empreinte par km:
+transport . train:
+transport . train . empreinte par km:
   formule:
     moyenne:
       - TGV
@@ -186,39 +186,39 @@ mobilite . train . empreinte par km:
   note: |
     Moyenne entre TGV et TER.
 
-mobilite . train . empreinte par km . TGV:
+transport . train . empreinte par km . TGV:
   formule: 0.00293
   unité: kgCO2e/km
   note: |
     Facteur d'émission issu de la base empreinte "TGV/2022".
 
-mobilite . train . empreinte par km . TER:
+transport . train . empreinte par km . TER:
   formule: 0.0277
   unité: kgCO2e/km
   note: |
     Facteur d'émission issu de la base empreinte "TER/2022/Traction moyenne".
 
-mobilite . commun . empreinte par km:
+transport . commun . empreinte par km:
   formule:
     moyenne:
       - bus
       - métro ou tram
   unité: kgCO2e/km
 
-mobilite . commun . empreinte par km . bus:
+transport . commun . empreinte par km . bus:
   formule: 0.146
   unité: kgCO2e/km
   note: |
     Facteur d'émission issu de la base empreinte "Autobus moyen/Agglomération de 100 000 à 250 000 habitants".
 
-mobilite . commun . empreinte par km . métro ou tram:
+transport . commun . empreinte par km . métro ou tram:
   formule: 0.00503
   unité: kgCO2e/km
   note: |
     Facteur d'émission issu de la base empreinte "Métro, tramway, trolleybus/2018/Agglomération de 100 000 à 250 000 habitants".
 
-mobilite . tour bus:
-mobilite . tour bus . empreinte par km:
+transport . tour bus:
+transport . tour bus . empreinte par km:
   formule: 0.0295
   unité: kgCO2e/km
   note: |

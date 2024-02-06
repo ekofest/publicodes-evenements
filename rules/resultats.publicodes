@@ -6,13 +6,11 @@ resultats . bilan total:
   formule:
     somme:
       - alimentation
-      - mobilite
-      - hebergement
-      - energie
-      - immobilisations
-      - scenographie
-      - merchandising
-      - divers
+      - transport
+      - infrastructures
+      - hébergement
+      - énergie
+      - communication
   unité: kgCO2e
 
 resultats . bilan par festivalier:

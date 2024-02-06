@@ -1,0 +1,81 @@
+# déchets:
+#   formule: 0
+#   unité: kgCO2e
+#   note: |
+#     La production des déchets, se cache ici une production et non seulement la comptabilité de l'empreinte de la fin de vie des déchets assez
+#     finalement dérisoire. On a donc ici ce que contiendront les poubelles et qui sont des éléments directement issus du festival
+#     (vaisselle en cartons, papier).
+
+#     Carbone :  Il  y  a  peu  de  données  disponibles  sur  le  poids  et  la  répartition  des
+#     déchets  générés  par  les  publics  au  sein  des  structures  culturelles.  Pour  cette
+#     première  version,  les  calculs  de  SEEDS  sont  basés  sur  les  données  de  l’étude
+#     Modecom  2017,  qui  fournit  une  estimation  par  habitant  et  par  an  du  poids  de
+#     plusieurs  catégories  de  déchets.  Pour  les  catégories  principales,  on  obtient les
+#     chiffres suivants :
+#     - 254kg/hab/an pour les OMR
+#     - 30kg/hab/an pour le verre collecté
+#     - 22,8kg/hab/an pour le papier collecté
+#     - 12,5kg/hab/an pour le carton collecté
+#     - 7,5kg/hab/an pour le plastique collecté
+#     A  partir  de  ces  chiffres,  SEEDS  obtient  des  données  de  poids  et  répartition  des
+#     déchets par jour et par habitant. Ces données sont ensuite associées aux facteurs
+#     d’émission des déchets et à la fréquentation du projet pour déterminer l’impact
+#     carbone des déchets de son public.
+
+alimentation . déchets:
+  formule:
+    somme:
+      - gobelets
+  unité: kgCO2e
+
+alimentation . déchets . gobelets:
+  non applicable si: ecocups présent
+  formule: 2 gobelet * informations . nombre de jours * informations . nombre de personnes par jour * empreinte
+  unité: kgCO2e
+  note: On considère 2 gobelets par personne par jour.
+
+alimentation . déchets . gobelets . empreinte:
+  formule:
+    variations:
+      - si: gobelets . type = "plastique"
+        alors: type . plastique . poids * empreinte plastique par kg
+      - si: gobelets . type = "carton"
+        alors: type . carton . poids * empreinte carton par kg
+  unité: kgCO2e/gobelet
+
+alimentation . déchets . gobelets . type:
+  question: Quel type de gobelets allez-vous utiliser ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - plastique
+        - carton
+  par défaut: "'plastique'"
+
+alimentation . déchets . gobelets . type . plastique:
+  titre: Plastique jetable
+alimentation . déchets . gobelets . type . plastique . poids:
+  formule: 0.010
+  unité: kg/gobelet
+
+alimentation . déchets . gobelets . type . carton:
+alimentation . déchets . gobelets . type . carton . poids:
+  formule: 0.010
+  unité: kg/gobelet
+  note: On considère 10g par gobelet.
+
+alimentation . déchets . empreinte plastique par kg:
+  formule: 2 + 0.101
+  unité: kgCO2e/kg
+  note: |
+    On considère du platisque polypropylène (PP) neuf et l'impact fin de vie.
+    FE issus de la base empreinte (PP - polypropylène et Emballages/Plastique rigide biosourcé PP autres emballages/Fin de vie moyenne filière - Impacts)
+
+alimentation . déchets . empreinte carton par kg:
+  formule: 0.670 + 0.737
+  unité: kgCO2e/kg
+  note: |
+    On considère que le carton est recyclé (hypothèse conservatrice, contrairement à ce qu'on peut penser, 
+    le carton recyclé est plus impactant que le carton neuf).
+    FE issus de la base empreinte (Carton/recyclé et Emballages/Carton/Fin de vie moyenne filière - Impacts)
