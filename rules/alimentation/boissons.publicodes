@@ -19,7 +19,7 @@ alimentation . boissons . froide:
   formule:
     somme:
       - eau
-      - eau en bouteille
+      - eau en bouteille bénévoles
       - soft
       - alcool
   note: On fait l'hypothèse que les boissons ne sont pas servies en bouteilles individuelles.
@@ -41,18 +41,18 @@ alimentation . boissons . froide . eau . empreinte:
     Facteur d'émission issu de la base empreinte "Eau potable, mix de provenances".
     Si eau en bouteille: 0.27 kgCO2e/l
 
-alimentation . boissons . froide . eau en bouteille:
-  applicable si: eau en bouteille présent
+alimentation . boissons . froide . eau en bouteille bénévoles:
+  applicable si: eau en bouteille bénévoles présent
   formule: quantité * nosgestesclimat . alimentation . boisson . eau en bouteille . empreinte
 
-alimentation . boissons . froide . eau en bouteille présent:
+alimentation . boissons . froide . eau en bouteille bénévoles présent:
   question: Allez-vous prévoir de l'eau en bouteille pour les équipes ?
   par défaut: oui
 
-alimentation . boissons . froide . eau en bouteille . quantité:
+alimentation . boissons . froide . eau en bouteille bénévoles . quantité:
   formule: quantité par jour * informations . nombre de jours
 
-alimentation . boissons . froide . eau en bouteille . quantité par jour:
+alimentation . boissons . froide . eau en bouteille bénévoles . quantité par jour:
   formule: 0.5 l/jour * informations . nombre de bénévoles
 
 alimentation . boissons . froide . soft:
