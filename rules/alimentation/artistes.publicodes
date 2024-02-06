@@ -4,6 +4,7 @@ alimentation . artistes:
     somme:
       - repas
       - petits déjeuners
+      - eau en bouteille
   note: |
     Par défaut, on considère que les artistes consomment un repas sur place, un petit déjeuner s'ils sont hébergés.
 
@@ -43,3 +44,17 @@ alimentation . artistes . petits déjeuners:
       règle: alimentation . petits déjeuners
       avec:
         alimentation . petits déjeuners . nombre: informations . nombre artistes * 1 repas
+
+alimentation . artistes . eau en bouteille:
+  applicable si: présent
+  formule: quantité * nosgestesclimat . alimentation . boisson . eau en bouteille . empreinte
+  note: |
+    On fait l'hypothèse que les artistes consomment de l'eau en bouteille.
+    Si eau en bouteille: 0.27 kgCO2e/l
+
+alimentation . artistes . eau en bouteille . présent:
+  question: Allez-vous prévoir de l'eau en bouteille pour les artistes ?
+  par défaut: oui
+
+alimentation . artistes . eau en bouteille . quantité:
+  formule: 0.5 l * informations . nombre artistes
