@@ -1,32 +1,24 @@
-# déchets:
-#   formule: 0
-#   unité: kgCO2e
-#   note: |
-#     La production des déchets, se cache ici une production et non seulement la comptabilité de l'empreinte de la fin de vie des déchets assez
-#     finalement dérisoire. On a donc ici ce que contiendront les poubelles et qui sont des éléments directement issus du festival
-#     (vaisselle en cartons, papier).
-
-#     Carbone :  Il  y  a  peu  de  données  disponibles  sur  le  poids  et  la  répartition  des
-#     déchets  générés  par  les  publics  au  sein  des  structures  culturelles.  Pour  cette
-#     première  version,  les  calculs  de  SEEDS  sont  basés  sur  les  données  de  l’étude
-#     Modecom  2017,  qui  fournit  une  estimation  par  habitant  et  par  an  du  poids  de
-#     plusieurs  catégories  de  déchets.  Pour  les  catégories  principales,  on  obtient les
-#     chiffres suivants :
-#     - 254kg/hab/an pour les OMR
-#     - 30kg/hab/an pour le verre collecté
-#     - 22,8kg/hab/an pour le papier collecté
-#     - 12,5kg/hab/an pour le carton collecté
-#     - 7,5kg/hab/an pour le plastique collecté
-#     A  partir  de  ces  chiffres,  SEEDS  obtient  des  données  de  poids  et  répartition  des
-#     déchets par jour et par habitant. Ces données sont ensuite associées aux facteurs
-#     d’émission des déchets et à la fréquentation du projet pour déterminer l’impact
-#     carbone des déchets de son public.
-
 alimentation . déchets:
   formule:
     somme:
-      - gobelets
+      - gobelets * surplus
+      - couverts * surplus
+      - assiettes * surplus
   unité: kgCO2e
+  note: |
+    Derrière la production des déchets, se cache ici une production et non seulement la comptabilité de l'empreinte de la fin de vie des déchets 
+    finalement assez dérisoire. On a donc ici ce que contiendront les poubelles et qui sont des éléments directement issus du festival
+    (vaisselle en cartons, papier).
+
+alimentation . déchets . surplus:
+  formule: 110%
+  note: |
+    L'objectif ici est d'avoir une idée de l'impact du reste des déchets du festival en aplicant un facteur correctif (défini arbitrairement)
+    qui a l'avantage de tenir compte des pratiques du festival.
+
+alimentation . déchets . recyclage:
+  question: Allez-vous mettre en place un tri sélectif et un recyclage des déchets ?
+  par défaut: non
 
 alimentation . déchets . gobelets:
   non applicable si: ecocups présent
@@ -65,17 +57,174 @@ alimentation . déchets . gobelets . type . carton . poids:
   unité: kg/gobelet
   note: On considère 10g par gobelet.
 
+alimentation . déchets . couverts:
+  formule: 2 couvert/repas * informations . nombre de jours * informations . nombre de repas par jour * empreinte
+  unité: kgCO2e
+
+alimentation . déchets . couverts . empreinte:
+  formule:
+    variations:
+      - si: couverts . type = "plastique"
+        alors: type . plastique . poids * empreinte plastique par kg
+      - si: couverts . type = "bois"
+        alors: type . bois . poids * empreinte bois par kg
+  unité: kgCO2e/couvert
+
+alimentation . déchets . couverts . type:
+  question: Quel type de couverts allez-vous utiliser ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - plastique
+        - bois
+  par défaut: "'plastique'"
+
+alimentation . déchets . couverts . type . plastique:
+  titre: Plastique jetable
+alimentation . déchets . couverts . type . plastique . poids:
+  formule: 0.002
+  unité: kg/couvert
+
+alimentation . déchets . couverts . type . bois:
+alimentation . déchets . couverts . type . bois . poids:
+  formule: 0.002
+  unité: kg/couvert
+  note: On considère 2g par couvert.
+
+alimentation . déchets . assiettes:
+  formule: 1 assiette/repas * informations . nombre de jours * informations . nombre de repas par jour * empreinte
+  unité: kgCO2e
+
+alimentation . déchets . assiettes . empreinte:
+  formule:
+    variations:
+      - si: assiettes . type = "plastique"
+        alors: type . plastique . poids * empreinte plastique par kg
+      - si: assiettes . type = "carton"
+        alors: type . carton . poids * empreinte carton par kg
+  unité: kgCO2e/assiette
+
+alimentation . déchets . assiettes . type:
+  question: Quel type de gobelets allez-vous utiliser ?
+  formule:
+    une possibilité:
+      choix obligatoire: oui
+      possibilités:
+        - plastique
+        - carton
+  par défaut: "'plastique'"
+
+alimentation . déchets . assiettes . type . plastique:
+  titre: Plastique jetable
+alimentation . déchets . assiettes . type . plastique . poids:
+  formule: 0.005
+  unité: kg/assiette
+
+alimentation . déchets . assiettes . type . carton:
+alimentation . déchets . assiettes . type . carton . poids:
+  formule: 0.005
+  unité: kg/assiette
+  note: On considère 10g par assiette.
+
 alimentation . déchets . empreinte plastique par kg:
-  formule: 2 + 0.101
+  formule: fabrication + fin de vie
   unité: kgCO2e/kg
   note: |
     On considère du platisque polypropylène (PP) neuf et l'impact fin de vie.
-    FE issus de la base empreinte (PP - polypropylène et Emballages/Plastique rigide biosourcé PP autres emballages/Fin de vie moyenne filière - Impacts)
+
+alimentation . déchets . empreinte plastique par kg . fabrication:
+  formule: 2
+  unité: kgCO2e/kg
+  note: |
+    On considère du platisque polypropylène (PP) neuf.
+    FE issus de la base empreinte (PP - polypropylène)
+
+alimentation . déchets . empreinte plastique par kg . fin de vie:
+  formule:
+    variations:
+      - si: recyclage
+        alors: fin de vie recyclage
+      - sinon: fin de vie non recyclé
+  unité: kgCO2e/kg
+
+alimentation . déchets . empreinte plastique par kg . fin de vie recyclage:
+  formule: 0.434
+  unité: kgCO2e/kg
+  note: |
+    FE issus de la base empreinte (Emballages/Plastique rigide PP bouteilles/Recyclage - Impacts)
+
+alimentation . déchets . empreinte plastique par kg . fin de vie non recyclé:
+  formule: 2.77
+  unité: kgCO2e/kg
+  note: |
+    FE issus de la base empreinte (Emballages/Plastique pétrosourcé PP/Incinération - Impacts)
 
 alimentation . déchets . empreinte carton par kg:
-  formule: 0.670 + 0.737
+  formule: fabrication + fin de vie
   unité: kgCO2e/kg
   note: |
     On considère que le carton est recyclé (hypothèse conservatrice, contrairement à ce qu'on peut penser, 
     le carton recyclé est plus impactant que le carton neuf).
-    FE issus de la base empreinte (Carton/recyclé et Emballages/Carton/Fin de vie moyenne filière - Impacts)
+
+alimentation . déchets . empreinte carton par kg . fabrication:
+  formule: 0.670
+  unité: kgCO2e/kg
+  note: |
+    On considère que le carton est recyclé (hypothèse conservatrice, contrairement à ce qu'on peut penser, 
+    le carton recyclé est plus impactant que le carton neuf).
+
+    FE issus de la base empreinte (Carton/recyclé)
+
+alimentation . déchets . empreinte carton par kg . fin de vie:
+  formule:
+    variations:
+      - si: recyclage
+        alors: fin de vie recyclage
+      - sinon: fin de vie non recyclé
+  unité: kgCO2e/kg
+
+alimentation . déchets . empreinte carton par kg . fin de vie recyclage:
+  formule: 0.992
+  unité: kgCO2e/kg
+  note: |
+    FE issus de la base empreinte (Emballages/Carton/Recyclage - Impacts)
+
+alimentation . déchets . empreinte carton par kg . fin de vie non recyclé:
+  formule: 0.120
+  unité: kgCO2e/kg
+  note: |
+    FE issus de la base empreinte (Emballages/Carton/Incinération - Impacts)
+
+alimentation . déchets . empreinte bois par kg:
+  formule: fabrication + fin de vie
+  unité: kgCO2e/kg
+  note: |
+    On considère que le carton est recyclé (hypothèse conservatrice, contrairement à ce qu'on peut penser, 
+    le carton recyclé est plus impactant que le carton neuf).
+
+alimentation . déchets . empreinte bois par kg . fabrication:
+  formule: 0.670
+  unité: kgCO2e/kg
+  note: |
+    FE issus de la base empreinte (Carton/recyclé)
+
+alimentation . déchets . empreinte bois par kg . fin de vie:
+  formule:
+    variations:
+      - si: recyclage
+        alors: fin de vie recyclage
+      - sinon: fin de vie non recyclé
+  unité: kgCO2e/kg
+
+alimentation . déchets . empreinte bois par kg . fin de vie recyclage:
+  formule: 0.992
+  unité: kgCO2e/kg
+  note: |
+    FE issus de la base empreinte (Emballages/Carton/Recyclage - Impacts)
+
+alimentation . déchets . empreinte bois par kg . fin de vie non recyclé:
+  formule: 0.120
+  unité: kgCO2e/kg
+  note: |
+    FE issus de la base empreinte (Emballages/Carton/Incinération - Impacts)
