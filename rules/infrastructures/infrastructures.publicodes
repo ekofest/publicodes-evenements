@@ -2,7 +2,7 @@ infrastructures:
   titre: Infrastructures
   formule:
     somme:
-      - fret
       - bâtiments
       - scénographie
+      - toilettes
   unité: kgCO2e

@@ -2,26 +2,68 @@ infrastructures . scénographie:
   titre: Scénographie
   formule:
     somme:
-      - scène
+      - fret
       - matériel
       - décor
   unité: kgCO2e
 
 # Prendre en compte le montage, démontage, l'empreinte amortie de la fabrication et dans énergie, la consommation associée.
-infrastructures . scénographie . scène:
-  formule: 0
+infrastructures . scénographie . fret:
+  formule: tonnes km total * empreinte par tonnes km
   note: |
-    Le seul montage des scènes d’un festival comme Les Vieilles Charrues implique une vingtaine
-    de semi-remorques d’après certaines sources53 et quarante pour d’autres54. Nous sommes
-    partis d’une moyenne à trente semi-remorques et d’une hypothèse où le festival ne cherche
-    pas à réduire les distances parcourues par le choix de fournisseurs locaux, comptant ainsi
-    2000 kilomètres par véhicule en incluant les retours à vide.
-    Nous insistons sur un point : nous n’affirmons pas que ces données sont celles des Vieilles
-    Charrues, il s’agit d’une première estimation pour un grand festival en périphérie. Par ailleurs,
-    nous ignorons si cette donnée inclut la logistique alimentaire.
-    Si l’on estime que les fournisseurs ne sont pas locaux et que le tonnage transporté est en
-    moyenne à 8,5 tonnes, nous pensons que l’impact global du fret lié à la logistique avoisine
-    les 190 tonnes de carbone.
+    On considère que l'empreinte des scènes réside dans le fret.
+
+    Selon l'étude [Décarbonons la Culture ! The Shift Project](https://theshiftproject.org/wp-content/uploads/2021/12/211130-TSP-PTEF-Rapport-final-Culture-v3.pdf),
+    Le seul montage des scènes d’un festival comme Les Vieilles Charrues implique une quarantaine de semi-remorques pour 4 scènes (voir [cet artcle de France Info](https://france3-regions.francetvinfo.fr/bretagne/2013/07/18/l-antiseche-pour-etre-incollable-sur-les-vieilles-charrues-289717.html)).
+
+    Néanmoins, il est fait l'hypothèse de partir sur une moyenne de 7 semi-remorques pour une grande scène, 3 pour une plus petite.
+
+    Comme expliqué dans l'étude "Décarbonons la Culture !", ces données sont celles des Vieilles Charrues, 
+    Par ailleurs, on ne sait pas si cette donnée inclut la logistique alimentaire.
+
+    Pour cette première estimation, il est considéré que le tonnage transporté est en moyenne à 8,5 tonnes sur 1500km (A/R)
+  unité: kgCO2e
+
+infrastructures . scénographie . fret . nombre de camion par petite scène:
+  formule: 3
+  unité: camion/scène
+  note: |
+    Nombre de camions nécessaires pour le transport d'une petite scène.
+
+infrastructures . scénographie . fret . nombre de camion par grande scène:
+  formule: 7
+  unité: camion/scène
+  note: |
+    Nombre de camions nécessaires pour le transport d'une grande scène.
+
+infrastructures . scénographie . fret . empreinte par tonnes km:
+  formule: 0.0823
+  unité: kgCO2e/t.km
+  note: |
+    Facteur d'émission issu de la base empreinte "Articulé/< 34 tonnes/Diesel routier, incorporation 7 % de biodiesel".
+
+infrastructures . scénographie . fret . tonnes km total:
+  formule:
+    somme:
+      - informations . scènes . nombre petites scènes * fret . nombre de camion par petite scène * tonnes km par camion
+      - informations . scènes . nombre grandes scènes * fret . nombre de camion par grande scène * tonnes km par camion
+  unité: t.km
+
+infrastructures . scénographie . fret . tonnes km par camion:
+  formule: charge moyenne * distance moyenne
+  unité: t.km/camion
+
+infrastructures . scénographie . fret . distance moyenne:
+  formule: 1500
+  unité: km
+  note: |
+    Distance moyenne parcourue par les semi-remorques pour le transport du matériel de scène en incluant le retour à vide.
+
+infrastructures . scénographie . fret . charge moyenne:
+  formule: 8.5
+  unité: t/camion
+  note: |
+    Charge moyenne des semi-remorques pour le transport du matériel de scène.
 
 infrastructures . scénographie . matériel:
   formule: dépenses * ratio monétaire * facteur amortissement
@@ -44,8 +86,8 @@ infrastructures . scénographie . matériel . facteur amortissement:
   note: Matériel amorti sur 5 ans.
 
 infrastructures . scénographie . matériel . dépenses:
-  question: A combien estimez-vous vos dépenses de location de matériel technique (son, lumière, vidéo etc...) ?
-  par défaut: 10000
+  question: A combien estimez-vous vos dépenses de location de matériel technique (scène, son, lumière, vidéo etc...) ?
+  par défaut: 10000000
   unité: €HT
 
 infrastructures . scénographie . matériel . ratio monétaire:
