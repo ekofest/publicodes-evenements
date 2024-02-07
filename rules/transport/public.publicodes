@@ -61,6 +61,7 @@ transport . public . voiture . part:
   question: Quelle part des festivaliers viennent en voiture ?
   plancher: 0
   plafond: 100
+  unité: "%"
   par défaut:
     variations:
       - si: accessible en transports en commun
@@ -72,6 +73,7 @@ transport . public . avion . part:
   question: Quelle part des festivaliers viennent en avion ?
   plancher: 0
   plafond: 100
+  unité: "%"
   par défaut:
     variations:
       - si: accessible en transports en commun
@@ -83,6 +85,7 @@ transport . public . train . part:
   question: Quelle part des festivaliers viennent en train ?
   plancher: 0
   plafond: 100
+  unité: "%"
   par défaut:
     variations:
       - si: accessible en transports en commun
@@ -94,6 +97,7 @@ transport . public . commun . part:
   question: Quelle part des festivaliers viennent en transports en commun (bus, tramway, métro) ?
   plancher: 0
   plafond: 100
+  unité: "%"
   par défaut:
     variations:
       - si: accessible en transports en commun
