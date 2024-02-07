@@ -2,8 +2,8 @@ hébergement:
   titre: Hébergement
   formule:
     somme:
-      - hôtel
-      - camping
+      - bénévoles
+      - public
       - artistes
   unité: kgCO2e
   note: |

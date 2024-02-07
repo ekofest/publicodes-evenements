@@ -1,0 +1,34 @@
+importer!:
+  depuis:
+    nom: "@incubateur-ademe/nosgestesclimat"
+  les règles:
+    - logement . vacances . camping . empreinte par nuit
+
+hébergement . public:
+  applicable si: présent
+  formule: nombre de nuits camping * nosgestesclimat . logement . vacances . camping . empreinte par nuit
+  unité: kgCO2e
+  note: On considère que l'hébergement se fait en camping.
+
+hébergement . public . présent:
+  titre: Hébergement des festivaliers en camping
+  question: Prenez-vous en charge l'hébergement en camping des participants du festival ?
+  par défaut: oui
+
+hébergement . public . nombre de nuits camping:
+  formule: nombre de festivaliers hébergés * informations . nombre de nuits
+  unité: nuit
+
+hébergement . public . nombre de festivaliers hébergés:
+  formule: part * informations . nombre de festivaliers
+
+hébergement . public . nombre de festivaliers journée:
+  formule: (100% - part) * informations . nombre de festivaliers
+
+hébergement . public . part:
+  titre: Part des festivaliers qui dorment sur place
+  question: Quelle part des festivaliers dorment sur place ?
+  par défaut: 30
+  plancher: 0
+  plafond: 100
+  unité: "%"
