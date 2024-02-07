@@ -1,4 +1,5 @@
 énergie . groupes électrogènes:
+  applicable si: groupes électrogènes présent
   formule: nombre * empreinte par jour * informations . nombre de jours
   unité: kgCO2e
   note: |
@@ -8,10 +9,19 @@
     Dans un second temps, il s'agira de d'évaluer l'empreinte du groupe électrogène directement 
     via le type de carburant consommé et la consommation réelle.
 
+énergie . groupes électrogènes présent:
+  titre: Utilisation de groupes électrogènes
+  question: Allez-vous utiliser des groupes électrogènes pour l'événement ?
+  par défaut: oui
+
 énergie . groupes électrogènes . nombre:
   titre: Nombre de groupes électrogènes
   question: Combien de groupes électrogènes prévoyez-vous d'utiliser ?
-  par défaut: consommation par défaut / 2 / production
+  par défaut:
+    variations:
+      - si: autre présent
+        alors: consommation par défaut / 4 / production
+      - sinon: consommation par défaut / 2 / production
 
 énergie . groupes électrogènes . production:
   formule: 10kW * 24 h/jour * 0.75 * informations . nombre de jours

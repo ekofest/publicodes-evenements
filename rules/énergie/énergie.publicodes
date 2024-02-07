@@ -31,9 +31,17 @@ importer!:
   unité: kWh
   par défaut:
     variations:
-      - si: autre présent
+      - si:
+          toutes ces conditions:
+            - autre présent
+            - groupes électrogènes présent
         alors: consommation par défaut / 4
-      - sinon: consommation par défaut / 2
+      - si:
+          toutes ces conditions:
+            - autre présent = non
+            - groupes électrogènes présent
+        alors: consommation par défaut / 2
+      - sinon: consommation par défaut
 
 énergie . autre:
   applicable si: autre présent
@@ -56,7 +64,11 @@ importer!:
   titre: Consommation de gaz totale
   question: Quelle est votre consommation de gaz pour l'événement ?
   unité: kWh
-  par défaut: consommation par défaut / 4
+  par défaut:
+    variations:
+      - si: groupes électrogènes présent
+        alors: consommation par défaut / 4
+      - sinon: consommation par défaut / 2
 
 énergie . autre . fioul:
   formule: consommation * empreinte
