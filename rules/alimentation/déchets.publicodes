@@ -17,6 +17,7 @@ alimentation . déchets . surplus:
     qui a l'avantage de tenir compte des pratiques du festival.
 
 alimentation . déchets . recyclage:
+  titre: Mise en place du tri sélectif
   question: Allez-vous mettre en place un tri sélectif et un recyclage des déchets ?
   par défaut: non
 
@@ -36,6 +37,7 @@ alimentation . déchets . gobelets . empreinte:
   unité: kgCO2e/gobelet
 
 alimentation . déchets . gobelets . type:
+  titre: Type de gobelets
   question: Quel type de gobelets allez-vous utiliser ?
   formule:
     une possibilité:
@@ -71,6 +73,7 @@ alimentation . déchets . couverts . empreinte:
   unité: kgCO2e/couvert
 
 alimentation . déchets . couverts . type:
+  titre: Type de couverts
   question: Quel type de couverts allez-vous utiliser ?
   formule:
     une possibilité:
@@ -106,6 +109,7 @@ alimentation . déchets . assiettes . empreinte:
   unité: kgCO2e/assiette
 
 alimentation . déchets . assiettes . type:
+  titre: Type d'assiettes
   question: Quel type de gobelets allez-vous utiliser ?
   formule:
     une possibilité:

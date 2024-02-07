@@ -9,6 +9,7 @@
     via le type de carburant consommé et la consommation réelle.
 
 énergie . groupes électrogènes . nombre:
+  titre: Nombre de groupes électrogènes
   question: Combien de groupes électrogènes prévoyez-vous d'utiliser ?
   par défaut: consommation par défaut / 2 / production
 

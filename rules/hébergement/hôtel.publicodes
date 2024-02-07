@@ -11,6 +11,7 @@ hébergement . hôtel:
   unité: kgCO2e
 
 hébergement . hôtel . présent:
+  titre: Hébergement en hôtel
   question: Prenez-vous en charge l'hébergement en hôtel des participants, bénévoles ou organisateurs du festival ?
   formule:
     une possibilité:

@@ -17,6 +17,7 @@ alimentation . artistes . repas:
         alimentation . repas . proposition: alimentation . artistes . repas . type
 
 alimentation . artistes . repas . type:
+  titre: Régime alimentaire des artistes
   question: Quelle type de régime alimentaire prévoyez-vous pour les artistes ?
   formule:
     une possibilité:
@@ -53,6 +54,7 @@ alimentation . artistes . eau en bouteille:
     Si eau en bouteille: 0.27 kgCO2e/l
 
 alimentation . artistes . eau en bouteille . présent:
+  titre: Eau en bouteille pour les artistes
   question: Allez-vous prévoir de l'eau en bouteille pour les artistes ?
   par défaut: oui
 

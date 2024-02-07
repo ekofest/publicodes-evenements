@@ -26,6 +26,7 @@ importer!:
   unité: kgCO2e
 
 énergie . électricité . consommation:
+  titre: Consommation d'électricité totale
   question: Quelle est votre consommation d'électricité pour l'événement ?
   unité: kWh
   par défaut:
@@ -43,6 +44,7 @@ importer!:
   unité: kgCO2e
 
 énergie . autre présent:
+  titre: Utilisation d'une autre source d'énergie
   question: Utilisez-vous une autre source d'énergie pour l'événement (gaz, fioul) ?
   par défaut: non
 
@@ -51,6 +53,7 @@ importer!:
   unité: kgCO2e
 
 énergie . autre . gaz . consommation:
+  titre: Consommation de gaz totale
   question: Quelle est votre consommation de gaz pour l'événement ?
   unité: kWh
   par défaut: consommation par défaut / 4
@@ -60,6 +63,7 @@ importer!:
   unité: kgCO2e
 
 énergie . autre . fioul . consommation:
+  titre: Consommation de fioul totale
   question: Quelle est votre consommation de fioul pour l'événement ?
   unité: kWh
   par défaut: consommation par défaut / 4

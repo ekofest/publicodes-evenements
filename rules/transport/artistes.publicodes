@@ -9,37 +9,45 @@ transport . artistes:
   unité: kgCO2e
 
 transport . artistes . voiture:
+  applicable si: informations . nombre artistes en voiture > 0
   formule: informations . nombre artistes en train * distance * voiture . empreinte par km / voiture . remplissage moyen
   unité: kgCO2e
 
 transport . artistes . voiture . distance:
+  titre: Distance moyenne parcourue par les artistes en voiture
   question: Quelle est la distance (A/R) parcourue en voiture en moyenne par les artistes pour venir au festival ?
   par défaut: 100
   unité: km
 
 transport . artistes . avion:
+  applicable si: informations . nombre artistes en avion > 0
   formule: informations . nombre artistes en avion * distance * avion . empreinte par km
   unité: kgCO2e
 
 transport . artistes . avion . distance:
+  titre: Distance moyenne parcourue par les artistes en avion
   question: Quelle est la distance (A/R) parcourue en avion en moyenne par les artistes pour venir au festival ?
   par défaut: 1500
   unité: km
 
 transport . artistes . train:
+  applicable si: informations . nombre artistes en train > 0
   formule: informations . nombre artistes en train * distance * train . empreinte par km
   unité: kgCO2e
 
 transport . artistes . train . distance:
+  titre: Distance moyenne parcourue par les artistes en train
   question: Quelle est la distance en moyenne (A/R) parcourue en train par les artistes pour venir au festival ?
   par défaut: 500
   unité: km
 
 transport . artistes . tour bus:
+  applicable si: informations . nombre artistes en tour bus > 0
   formule: informations . nombre artistes en tour bus * distance * tour bus . empreinte par km
   unité: kgCO2e
 
 transport . artistes . tour bus . distance:
+  titre: Distance moyenne parcourue par les artistes en tour bus
   question: Quelle est la distance en moyenne (A/R) parcourue en tour bus par les artistes pour venir au festival ?
   par défaut: 1000
   unité: km

@@ -46,6 +46,7 @@ alimentation . boissons . froide . eau en bouteille bénévoles:
   formule: quantité * nosgestesclimat . alimentation . boisson . eau en bouteille . empreinte
 
 alimentation . boissons . froide . eau en bouteille bénévoles présent:
+  titre: Eau en bouteille pour les équipes
   question: Allez-vous prévoir de l'eau en bouteille pour les équipes ?
   par défaut: oui
 
@@ -68,6 +69,7 @@ alimentation . boissons . froide . soft . quantité par jour:
   formule: quantité par jour et par personne * informations . nombre de personnes par jour
 
 alimentation . boissons . froide . soft . quantité par jour et par personne:
+  titre: Quantité de boissons "soft" par personne et par jour
   question: Quelle quantité de boissons "soft" est consommée par personne et par jour ?
   par défaut: 0.5
   unité: l
@@ -85,6 +87,7 @@ alimentation . boissons . froide . alcool . quantité par jour:
   formule: quantité par jour et par personne * informations . nombre de personnes par jour
 
 alimentation . boissons . froide . alcool . quantité par jour et par personne:
+  titre: Quantité d'alcool par personne et par jour
   question: Quelle quantité d'alcool est consommée par personne et par jour ?
   par défaut: 0.5
   unité: l
@@ -106,6 +109,7 @@ alimentation . boissons . chaude . café . nombre par jour:
   note: On fait l'hypothèse qu'en moyenne, la consommation sera de 1 café par personne et par jour.
 
 alimentation . boissons . chaude . café . quantité par jour et par personne:
+  titre: Tasses de café par personne et par jour
   question: Quelle quantité de café est consommée par personne et par jour ?
   par défaut: 1
   unité: tasse
@@ -121,6 +125,7 @@ alimentation . boissons . chaude . thé . nombre par jour:
   note: On fait l'hypothèse qu'en moyenne, la consommation sera de 1 thé pour 10 personnes par jour.
 
 alimentation . boissons . chaude . thé . quantité par jour et par personne:
+  titre: Tasses de thé par personne et par jour
   question: Quelle quantité de thé est consommée par personne et par jour ?
   par défaut: 10% * 1 tasse
   unité: tasse

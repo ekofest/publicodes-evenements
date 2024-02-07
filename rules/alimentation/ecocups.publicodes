@@ -4,10 +4,12 @@ alimentation . ecocups:
   unité: kgCO2e
 
 alimentation . ecocups présent:
+  titre: Utilisation d'ecocups
   question: Allez-vous utiliser des ecocups pour l'événement ?
   par défaut: oui
 
 alimentation . ecocups . réutilisation:
+  titre: Réutilisation des ecocups
   question: Est-il prévu de réutiliser les ecocups pour une autre édition ?
   par défaut: non
 

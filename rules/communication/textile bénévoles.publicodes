@@ -18,6 +18,7 @@ communication . textile bénévoles:
   unité: kgCO2e
 
 communication . textile bénévoles . type:
+  titre: Vêtements pour les équipes et bénévoles
   question: Prévoyez-vous des vêtements pour votre équipe ?
   formule:
     une possibilité:
@@ -45,5 +46,6 @@ communication . textile bénévoles . amortissement:
       - sinon: 1
 
 communication . textile bénévoles . réutilisation:
+  titre: Réutilisation des vêtements pour une autre édition
   question: Est-il prévu de réutiliser les vêtements pour une autre édition ?
   par défaut: non

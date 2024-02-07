@@ -10,6 +10,7 @@ hébergement . camping:
   unité: kgCO2e
 
 hébergement . camping . présent:
+  titre: Hébergement en camping
   question: Prenez-vous en charge l'hébergement en camping des participants, bénévoles ou organisateurs du festival ?
   formule:
     une possibilité:

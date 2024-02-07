@@ -79,6 +79,7 @@ alimentation . repas . viande 2 . proportion:
       - sinon: 0%
 
 alimentation . repas . proposition:
+  titre: Régime des repas proposés
   question: Quelle type de régime alimentaire prévoyez-vous ?
   formule:
     une possibilité:
@@ -104,6 +105,7 @@ alimentation . repas . proposition . viande uniquement:
 
 alimentation . repas . proposition . mixte végé viande . proportion végétarien:
   applicable si: proposition = 'mixte végé viande'
+  titre: Proportion de repas végétariens
   question: Comment allez-vous répartir les régimes proposés ?
   par défaut: 50%
   unité: "%"
@@ -118,6 +120,7 @@ alimentation . repas . proposition . choix viande:
     une de ces conditions:
       - proposition = 'mixte végé viande'
       - proposition = 'viande uniquement'
+  titre: Choix de viande
   question: Proposerez-vous de la viande blanche ou viande rouge ?
   formule:
     une possibilité:

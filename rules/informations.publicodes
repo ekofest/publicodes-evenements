@@ -1,6 +1,7 @@
 informations:
 
 informations . nombre de jours:
+  titre: Durée de l'évènement
   question: Combien de jours dure votre évènment ?
   par défaut: 2
   unité: jour
@@ -10,6 +11,8 @@ informations . nombre de nuits:
   unité: nuit
 
 informations . nombre de festivaliers:
+  titre: Nombre de festivaliers
+  description: Compter 2 si une même personne vient 2 jours.
   question: Combien de participants attendez-vous sur l'ensemble de l'évènements (compter 2 entrées si une personne est présente 2 jours) ?
   note: On parle de la somme des entrées uniques par jour.
   par défaut: 25000
@@ -18,6 +21,7 @@ informations . nombre de festivaliers par jour:
   formule: nombre de festivaliers / nombre de jours
 
 informations . nombre de bénévoles:
+  titre: Nombre d'organisateurs et bénévoles
   question: Combien y aura-t-il d'organisateurs et bénévoles ?
   par défaut: 100
 
@@ -31,24 +35,27 @@ informations . nombre de repas total:
   formule: nombre de repas par jour * nombre de jours
 
 informations . nombre artistes en voiture:
+  titre: Nombre d'artistes (équipe incluse) en voiture
   question: Combien d'artistes (équipe incluse) seront présents sur le festival ?
   par défaut: 10
 
 informations . nombre artistes en train:
+  titre: Nombre d'artistes (équipe incluse) en train
   question: Combien d'artistes (équipe incluse) seront présents sur le festival ?
   par défaut: 10
 
 informations . nombre artistes en tour bus:
+  titre: Nombre d'artistes (équipe incluse) en tour bus
   question: Combien d'artistes (équipe incluse) seront présents sur le festival ?
   par défaut: 30
 
 informations . nombre artistes en avion:
+  titre: Nombre d'artistes (équipe incluse) en avion
   question: Combien d'artistes (équipe incluse) seront présents sur le festival ?
   par défaut: 10
 
 informations . nombre artistes:
-  question: Combien d'artistes (équipe incluse) seront présents sur le festival ?
-  par défaut:
+  formule:
     somme:
       - nombre artistes en voiture
       - nombre artistes en train
@@ -61,10 +68,12 @@ informations . nombre de nuits artistes:
 
 informations . scènes:
 informations . scènes . nombre petites scènes:
+  titre: Nombre de petites scènes
   question: Quel est le nombre de petites scènes prévus pour l'événement ?
   par défaut: 2
   unité: scène
 informations . scènes . nombre grandes scènes:
+  titre: Nombre de grandes scènes
   question: Quel est le nombre de grandes scènes prévues pour l'événement ?
   par défaut: 2
   unité: scène
