@@ -71,6 +71,7 @@ alimentation . boissons . froide . soft . quantité par jour:
 alimentation . boissons . froide . soft . quantité par jour et par personne:
   titre: Quantité de boissons "soft" par personne et par jour
   question: Quelle quantité de boissons "soft" est consommée par personne et par jour ?
+  plancher: 0
   par défaut: 0.5
   unité: l
 
@@ -89,6 +90,7 @@ alimentation . boissons . froide . alcool . quantité par jour:
 alimentation . boissons . froide . alcool . quantité par jour et par personne:
   titre: Quantité d'alcool par personne et par jour
   question: Quelle quantité d'alcool est consommée par personne et par jour ?
+  plancher: 0
   par défaut: 0.5
   unité: l
 
@@ -111,6 +113,7 @@ alimentation . boissons . chaude . café . nombre par jour:
 alimentation . boissons . chaude . café . quantité par jour et par personne:
   titre: Tasses de café par personne et par jour
   question: Quelle quantité de café est consommée par personne et par jour ?
+  plancher: 0
   par défaut: 1
   unité: tasse
 
@@ -127,5 +130,6 @@ alimentation . boissons . chaude . thé . nombre par jour:
 alimentation . boissons . chaude . thé . quantité par jour et par personne:
   titre: Tasses de thé par personne et par jour
   question: Quelle quantité de thé est consommée par personne et par jour ?
+  plancher: 0
   par défaut: 10% * 1 tasse
   unité: tasse

@@ -28,6 +28,7 @@ importer!:
 énergie . électricité . consommation:
   titre: Consommation d'électricité totale
   question: Quelle est votre consommation d'électricité pour l'événement ?
+  plancher: 0
   unité: kWh
   par défaut:
     variations:
@@ -63,6 +64,7 @@ importer!:
 énergie . autre . gaz . consommation:
   titre: Consommation de gaz totale
   question: Quelle est votre consommation de gaz pour l'événement ?
+  plancher: 0
   unité: kWh
   par défaut:
     variations:
@@ -77,6 +79,7 @@ importer!:
 énergie . autre . fioul . consommation:
   titre: Consommation de fioul totale
   question: Quelle est votre consommation de fioul pour l'événement ?
+  plancher: 0
   unité: kWh
   par défaut: consommation par défaut / 4
 

@@ -20,6 +20,7 @@ bâtiments . béton:
 bâtiments . béton . surface:
   titre: Surface des bâtiments béton
   question: Quelle est la surface des bâtiments "structure béton" utilisés pour l'événement ?
+  plancher: 0
   par défaut: 0
   unité: m2
 
@@ -36,6 +37,7 @@ bâtiments . métallique:
 bâtiments . métallique . surface:
   titre: Surface des bâtiments structure métallique
   question: Quelle est la surface des bâtiments "structure métallique" utilisés pour l'événement ?
+  plancher: 0
   par défaut: 500
   unité: m2
 

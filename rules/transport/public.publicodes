@@ -37,6 +37,7 @@ transport . public . distance AR:
   titre: Distance moyenne aller/retour parcourue par un festivalier
   question: Quelle est la distane moyenne aller/retour parcourue par un festivalier ?
   unité: km
+  plancher: 0
   par défaut: 100
   note: On inclue ici les festivaliers mais également les bénévoles et les organisateurs.
 
@@ -58,6 +59,8 @@ transport . public . parts totales modes de transport:
 transport . public . voiture . part:
   titre: Part des festivaliers venant en voiture
   question: Quelle part des festivaliers viennent en voiture ?
+  plancher: 0
+  plafond: 100
   par défaut:
     variations:
       - si: accessible en transports en commun
@@ -67,6 +70,8 @@ transport . public . voiture . part:
 transport . public . avion . part:
   titre: Part des festivaliers venant en avion
   question: Quelle part des festivaliers viennent en avion ?
+  plancher: 0
+  plafond: 100
   par défaut:
     variations:
       - si: accessible en transports en commun
@@ -76,6 +81,8 @@ transport . public . avion . part:
 transport . public . train . part:
   titre: Part des festivaliers venant en train
   question: Quelle part des festivaliers viennent en train ?
+  plancher: 0
+  plafond: 100
   par défaut:
     variations:
       - si: accessible en transports en commun
@@ -85,6 +92,8 @@ transport . public . train . part:
 transport . public . commun . part:
   titre: Part des festivaliers venant en transports en commun
   question: Quelle part des festivaliers viennent en transports en commun (bus, tramway, métro) ?
+  plancher: 0
+  plafond: 100
   par défaut:
     variations:
       - si: accessible en transports en commun

@@ -17,6 +17,7 @@
 énergie . groupes électrogènes . nombre:
   titre: Nombre de groupes électrogènes
   question: Combien de groupes électrogènes prévoyez-vous d'utiliser ?
+  plancher: 0
   par défaut:
     variations:
       - si: autre présent

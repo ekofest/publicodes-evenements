@@ -107,6 +107,8 @@ alimentation . repas . proposition . mixte végé viande . proportion végétari
   applicable si: proposition = 'mixte végé viande'
   titre: Proportion de repas végétariens
   question: Comment allez-vous répartir les régimes proposés ?
+  plancher: 0
+  plafond: 100
   par défaut: 50%
   unité: "%"
 

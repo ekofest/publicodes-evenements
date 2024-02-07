@@ -16,6 +16,7 @@ transport . artistes . voiture:
 transport . artistes . voiture . distance:
   titre: Distance moyenne parcourue par les artistes en voiture
   question: Quelle est la distance (A/R) parcourue en voiture en moyenne par les artistes pour venir au festival ?
+  plancher: 0
   par défaut: 100
   unité: km
 
@@ -27,6 +28,7 @@ transport . artistes . avion:
 transport . artistes . avion . distance:
   titre: Distance moyenne parcourue par les artistes en avion
   question: Quelle est la distance (A/R) parcourue en avion en moyenne par les artistes pour venir au festival ?
+  plancher: 0
   par défaut: 1500
   unité: km
 
@@ -38,6 +40,7 @@ transport . artistes . train:
 transport . artistes . train . distance:
   titre: Distance moyenne parcourue par les artistes en train
   question: Quelle est la distance en moyenne (A/R) parcourue en train par les artistes pour venir au festival ?
+  plancher: 0
   par défaut: 500
   unité: km
 
@@ -49,5 +52,6 @@ transport . artistes . tour bus:
 transport . artistes . tour bus . distance:
   titre: Distance moyenne parcourue par les artistes en tour bus
   question: Quelle est la distance en moyenne (A/R) parcourue en tour bus par les artistes pour venir au festival ?
+  plancher: 0
   par défaut: 1000
   unité: km
