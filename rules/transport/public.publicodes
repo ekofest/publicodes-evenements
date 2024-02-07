@@ -36,7 +36,7 @@ transport . public . nombre de déplacements . bénévoles:
       - sinon: informations . nombre de bénévoles
 
 transport . public . distance AR:
-  titre: Distance moyenne aller/retour parcourue par un festivalier
+  titre: Distance moyenne aller/retour parcourue par un festivalier (hors avion)
   question: Quelle est la distane moyenne aller/retour parcourue par un festivalier ?
   unité: km
   plancher: 0

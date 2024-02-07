@@ -3,6 +3,7 @@ informations:
 informations . nombre de jours:
   titre: Durée de l'évènement
   question: Combien de jours dure votre évènment ?
+  description: Compter 1 jour pour une soirée.
   par défaut: 2
   plancher: 0
   unité: jour
