@@ -1,5 +1,9 @@
 hébergement:
   titre: Hébergement
+  icônes: ⛺️
+  description: |
+    Ce poste d'émission inclut l'impact de l'hébergement des festivaliers, des bénévoles et des artistes.
+    *La part des festivaliers qui dorment sur place impacte directement le nombre de **déplacements** du public.*
   formule:
     somme:
       - bénévoles

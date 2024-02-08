@@ -5,7 +5,7 @@ informations:
     Pour calculer l'empreinte carbone de votre festival, nous avons besoin de quelques informations sur celui-ci.
     Renseignez la **durée** de l'évènement, le total des **entrées** journalières, le nombre d'**organisateurs et bénévoles**, le nombre de **scènes**.
 
-    > Essayez également d'estimer le nombre d'**artistes (équipe incluse)** par mode de transport.
+    *Essayez également d'estimer le nombre d'**artistes (équipe incluse)** par mode de transport.*
 
 informations . nombre de jours:
   titre: Durée de l'évènement

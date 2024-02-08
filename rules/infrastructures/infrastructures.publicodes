@@ -1,5 +1,9 @@
 infrastructures:
   titre: Infrastructures
+  icônes: 🏗️
+  description: |
+    Ce poste d'émission inclut l'impact des **bâtiments** et de la **scénographie** du festival. 
+    Pour le moment, il est possible de paramétrer seulement les **dépenses** liées à la location du matériel.
   formule:
     somme:
       - bâtiments

@@ -1,5 +1,9 @@
 communication:
   titre: Communication
+  icônes: 📢
+  description: |
+    Ce poste d'émission inclut l'impact de liée à la communication du festival, incluant le textile, le merchandising, les supports numériques et les impressions.
+    Pour le moment, seuls les impacts du **textile pour les équipes** et le **merchandising** sont pris en compte.
   formule:
     somme:
       - merchandising

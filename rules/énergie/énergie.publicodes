@@ -6,6 +6,12 @@ importer!:
 
 énergie:
   titre: Énergie
+  icônes: ⚡️
+  description: |
+    Cette section concerne la consommation d'**électricité**, de **fioul et gaz** et des **groupes électrogènes** pour l'événement. 
+    Les valeurs pré-entrées sont basées sur des **consommations moyennes par festivalier** pour ce type d'évènement.
+
+    *L'empreinte des groupes électrogènes est particulièrement importante devant celle de l'électricité.*
   formule:
     somme:
       - électricité

@@ -35,7 +35,9 @@ communication . merchandising . chiffre d affaires . part plastique:
   formule: 30%
 
 communication . merchandising . panier moyen par jour et par personne:
-  formule: 4
+  titre: Montant du panier moyen d'un festivalier par jour pour le merch.
+  question: Quel est le montant du panier moyen d'un festivalier par jour ?
+  par défaut: 4
   unité: €
   note: |
     D'après [le baromètre 2023 de Weezevent](https://weezevent.com/fr/blog/barometre-festivals-2023/#:~:text=Notons%20que%20le%20prix%20moyen,%E2%82%AC)%20pour%20les%20festivals%20urbains.)

@@ -1,5 +1,6 @@
 alimentation:
   titre: Alimentation
+  icônes: 🍽️
   formule:
     somme:
       - repas
@@ -9,6 +10,10 @@ alimentation:
       - déchets
       - artistes
   unité: kgCO2e
+  description: |
+    C'est l'un des postes d'émissions les plus importants : l'impact des repas carnés est particulièrement important, 
+    privilégiez une **proposition végétarienne** pour vos repas.
+    Cette catégorie inclut également l'impact des **déchets** générés par la restauration du festival.
   note: |
     A ajouter dans une V2 ?
       - Part de nourriture bio sur l'ensemble des repas

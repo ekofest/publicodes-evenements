@@ -41,7 +41,7 @@ transport . public . distance AR:
   unité: km
   plancher: 0
   par défaut: 100
-  note: On inclue ici les festivaliers mais également les bénévoles et les organisateurs.
+  note: On inclut ici les festivaliers mais également les bénévoles et les organisateurs.
 
 transport . public . part mobilité douce:
   formule: 100% - parts totales modes de transport
