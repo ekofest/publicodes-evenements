@@ -1,7 +1,7 @@
 # Define the [categories] of the application
 # The order of the categories is the order of the display
 categories:
-  informations:
+  informations: []
   alimentation:
     - alimentation . repas
     - alimentation . petits déjeuners
