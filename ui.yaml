@@ -1,31 +1,45 @@
 # Define the [categories] of the application
 # The order of the categories is the order of the display
 categories:
-  informations: []
+  informations:
+    index: 0
+    sub: []
   alimentation:
-    - alimentation . repas
-    - alimentation . petits déjeuners
-    - alimentation . boissons
-    - alimentation . ecocups
-    - alimentation . déchets
-    - alimentation . artistes
+    index: 1
+    sub:
+      - alimentation . repas
+      - alimentation . petits déjeuners
+      - alimentation . boissons
+      - alimentation . ecocups
+      - alimentation . déchets
+      - alimentation . artistes
   transport:
-    - transport . public
-    - transport . artistes
+    index: 2
+    sub:
+      - transport . public
+      - transport . artistes
   infrastructures:
-    - infrastructures . bâtiments
-    - infrastructures . scénographie
+    index: 3
+    sub:
+      - infrastructures . bâtiments
+      - infrastructures . scénographie
   hébergement:
-    - hébergement . bénévoles
-    - hébergement . public
-    - hébergement . artistes
+    index: 4
+    sub:
+      - hébergement . bénévoles
+      - hébergement . public
+      - hébergement . artistes
   énergie:
-    - énergie . électricité
-    - énergie . autre
-    - énergie . groupes électrogènes
+    index: 5
+    sub:
+      - énergie . électricité
+      - énergie . autre
+      - énergie . groupes électrogènes
   communication:
-    - communication . merchandising
-    - communication .textile bénévoles
+    index: 6
+    sub:
+      - communication . merchandising
+      - communication . textile bénévoles
 
 # Define the order of the questions by category
 questions:
