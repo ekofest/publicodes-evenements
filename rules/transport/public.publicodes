@@ -24,7 +24,7 @@ transport . public . nombre de déplacements:
 transport . public . nombre de déplacements . festivaliers:
   formule:
     variations:
-      - si: hébergement . public . présent
+      - si: hébergement . public présent
         alors: hébergement . public . nombre de festivaliers journée + hébergement . public . nombre de festivaliers hébergés / informations . nombre de jours * 1 jour
       - sinon: informations . nombre de festivaliers
 

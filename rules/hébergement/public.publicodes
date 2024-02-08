@@ -5,12 +5,12 @@ importer!:
     - logement . vacances . camping . empreinte par nuit
 
 hébergement . public:
-  applicable si: présent
+  applicable si: public présent
   formule: nombre de nuits camping * nosgestesclimat . logement . vacances . camping . empreinte par nuit
   unité: kgCO2e
   note: On considère que l'hébergement se fait en camping.
 
-hébergement . public . présent:
+hébergement . public présent:
   titre: Hébergement des festivaliers en camping
   question: Prenez-vous en charge l'hébergement en camping des participants du festival ?
   par défaut: oui

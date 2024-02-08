@@ -39,7 +39,7 @@ alimentation . artistes . repas . type . viande uniquement:
   titre: Uniquement carné
 
 alimentation . artistes . petits déjeuners:
-  applicable si: hébergement . artistes . présent
+  applicable si: hébergement . artistes présent
   formule:
     recalcul:
       règle: alimentation . petits déjeuners
