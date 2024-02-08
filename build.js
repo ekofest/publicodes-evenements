@@ -1,6 +1,7 @@
-import { writeFileSync } from "fs"
+import { writeFileSync, readFileSync } from "fs"
 import { getModelFromSource } from "@publicodes/tools/compilation"
 import Engine from "publicodes"
+import yaml from "yaml"
 
 const srcFiles = "rules/**/*.publicodes"
 const destPath = "publicodes-evenements.model.json"
@@ -15,6 +16,8 @@ try {
   process.exit(-1)
 }
 
+const ui = yaml.parse(readFileSync("ui.yaml", "utf-8"))
+
 writeFileSync(destPath, JSON.stringify(model, null, 2))
 console.log(`✅ ${destPath} generated`)
 
@@ -22,6 +25,8 @@ writeFileSync(
   "index.js",
   `
 import rules from "./${destPath}" assert { type: "json" };
+
+export const ui = ${JSON.stringify(ui, null, 2)};
 
 export default rules;
 `,
@@ -38,6 +43,14 @@ export type DottedName =
 )
 
 indexDTypes += `
+
+declare let ui: {
+    categories: RuleName[];
+    questions: Record<RuleName, RuleName[]>;
+}
+
+export { ui }
+
 declare let rules: Record<DottedName, Rule>
 
 export default rules;
