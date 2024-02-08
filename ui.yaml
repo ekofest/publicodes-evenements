@@ -1,69 +1,115 @@
 # Define the [categories] of the application
 # The order of the categories is the order of the display
 categories:
-  - informations
-  - alimentation
-  - transport
-  - infrastructure
-  - hebergement
-  - énergie
-  - communication
+  informations:
+  alimentation:
+    - alimentation . repas
+    - alimentation . petits déjeuners
+    - alimentation . boissons
+    - alimentation . ecocups
+    - alimentation . déchets
+    - alimentation . artistes
+  transport:
+    - transport . public
+    - transport . artistes
+  infrastructures:
+    - infrastructures . bâtiments
+    - infrastructures . scénographie
+  hébergement:
+    - hébergement . bénévoles
+    - hébergement . public
+    - hébergement . artistes
+  énergie:
+    - énergie . électricité
+    - énergie . autre
+    - énergie . groupes électrogènes
+  communication:
+    - communication . merchandising
+    - communication .textile bénévoles
 
 # Define the order of the questions by category
 questions:
   informations:
-    - informations . nombre de jours
-    - informations . nombre de festivaliers
-    - informations . nombre de bénévoles
-    - informations . nombre artistes en voiture
-    - informations . nombre artistes en train
-    - informations . nombre artistes en tour bus
-    - informations . nombre artistes en avion
-    - informations . scènes . nombre petites scènes
-    - informations . scènes . nombre grandes scènes
+    [
+      [
+        informations . nombre de jours,
+        informations . nombre de festivaliers,
+        informations . nombre de bénévoles,
+        informations . scènes . nombre petites scènes,
+        informations . scènes . nombre grandes scènes,
+      ],
+      [
+        informations . nombre artistes en voiture,
+        informations . nombre artistes en train,
+        informations . nombre artistes en tour bus,
+        informations . nombre artistes en avion,
+      ],
+    ]
   alimentation:
-    - alimentation . repas . proposition
-    - alimentation . artistes . repas . type
-    - alimentation . repas . proposition . choix viande
-    - alimentation . repas . proposition . mixte végé viande . proportion végétarien
-    - alimentation . petits déjeuners présent
-    - alimentation . artistes . eau en bouteille . présent
-    - alimentation . boissons . froide . eau en bouteille bénévoles présent
-    - alimentation . boissons . chaude . café . quantité par jour et par personne
-    - alimentation . boissons . chaude . thé . quantité par jour et par personne
-    - alimentation . boissons . froide . alcool . quantité par jour et par personne
-    - alimentation . boissons . froide . soft . quantité par jour et par personne
-    - alimentation . déchets . assiettes . type
-    - alimentation . déchets . couverts . type
-    - alimentation . déchets . gobelets . type
-    - alimentation . déchets . recyclage
-    - alimentation . ecocups présent
-    - alimentation . ecocups . réutilisation
+    [
+      [
+        alimentation . repas . proposition,
+        alimentation . repas . proposition . choix viande,
+        alimentation . repas . proposition . mixte végé viande . proportion végétarien,
+        alimentation . petits déjeuners présent,
+      ],
+      [
+        alimentation . boissons . froide . eau en bouteille bénévoles présent,
+        alimentation . boissons . froide . alcool . quantité par jour et par personne,
+        alimentation . boissons . froide . soft . quantité par jour et par personne,
+        alimentation . artistes . eau en bouteille présent,
+        alimentation . boissons . chaude . café . quantité par jour et par personne,
+        alimentation . boissons . chaude . thé . quantité par jour et par personne,
+      ],
+      [alimentation . ecocups présent, alimentation . ecocups . réutilisation],
+      [
+        alimentation . déchets . recyclage,
+        alimentation . déchets . gobelets . type,
+        alimentation . déchets . assiettes . type,
+        alimentation . déchets . couverts . type,
+      ],
+    ]
   communication:
-    - communication . textile bénévoles . type
-    - communication . textile bénévoles . réutilisation
+    [
+      [
+        communication . textile bénévoles . type,
+        communication . textile bénévoles . réutilisation,
+      ],
+      [communication . merchandising . panier moyen par jour et par personne],
+    ]
   hébergement:
-    - hébergement . artistes . présent
-    - hébergement . bénévoles . type
-    - hébergement . public . présent
-    - hébergement . public . part
-  infrastructures:
-    - infrastructures . scénographie . matériel . dépenses
+    [
+      [hébergement . public présent, hébergement . public . part],
+      [hébergement . bénévoles . type, hébergement . artistes présent],
+    ]
+  infrastructures: [[infrastructures . scénographie . matériel . dépenses]]
   transport:
-    - transport . public . accessible en transports en commun
-    - transport . public . avion . part
-    - transport . public . commun . part
-    - transport . public . distance AR
-    - transport . public . train . part
-    - transport . public . voiture . part
-    - transport . artistes . avion . distance
-    - transport . artistes . tour bus . distance
-    - transport . artistes . train . distance
-    - transport . artistes . voiture . distance
+    [
+      [
+        transport . public . accessible en transports en commun,
+        transport . public . distance AR,
+        transport . public . voiture . part,
+        transport . public . train . part,
+        transport . public . commun . part,
+        transport . public . avion . part,
+      ],
+      [
+        transport . artistes . voiture . distance,
+        transport . artistes . train . distance,
+        transport . artistes . tour bus . distance,
+        transport . artistes . avion . distance,
+      ],
+    ]
   énergie:
-    - énergie . autre présent
-    - énergie . autre . fioul . consommation
-    - énergie . autre . gaz . consommation
-    - énergie . électricité . consommation
-    - énergie . groupes électrogènes présent
-    - énergie . groupes électrogènes . nombre
+    [
+      [énergie . électricité . consommation],
+      [
+        énergie . groupes électrogènes présent,
+        énergie . groupes électrogènes . nombre,
+      ],
+      [
+        énergie . autre présent,
+        énergie . autre . fioul . consommation,
+        énergie . autre . gaz . consommation,
+      ],
+    ]

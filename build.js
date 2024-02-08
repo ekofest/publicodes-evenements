@@ -45,8 +45,8 @@ export type DottedName =
 indexDTypes += `
 
 declare let ui: {
-    categories: RuleName[];
-    questions: Record<RuleName, RuleName[]>;
+    categories: Record<RuleName, RuleName[]>;
+    questions: Record<RuleName, RuleName[][]>;
 }
 
 export { ui }
