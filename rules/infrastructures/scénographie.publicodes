@@ -38,13 +38,13 @@ infrastructures . scénographie . fret:
   unité: kgCO2e
 
 infrastructures . scénographie . fret . nombre de camion par petite scène:
-  formule: 3
+  formule: 2
   unité: camion/scène
   note: |
     Nombre de camions nécessaires pour le transport d'une petite scène.
 
 infrastructures . scénographie . fret . nombre de camion par grande scène:
-  formule: 7
+  formule: 6
   unité: camion/scène
   note: |
     Nombre de camions nécessaires pour le transport d'une grande scène.
@@ -67,7 +67,7 @@ infrastructures . scénographie . fret . tonnes km par camion:
   unité: t.km/camion
 
 infrastructures . scénographie . fret . distance moyenne:
-  formule: 1500
+  formule: 1000
   unité: km
   note: |
     Distance moyenne parcourue par les semi-remorques pour le transport du matériel de scène en incluant le retour à vide.
