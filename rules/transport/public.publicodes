@@ -43,9 +43,29 @@ transport . public . distance AR:
   par défaut: 100
   note: On inclut ici les festivaliers mais également les bénévoles et les organisateurs.
 
-transport . public . part mobilité douce:
-  formule: 100% - parts totales modes de transport
+transport . public . parts totales:
+  titre: "Vérifiez que total est à 100% :"
+  question: Avez-vous bien vérifier que la somme des parts de transport est bien à 100% ?
+  valeur:
+    somme:
+      - voiture . part
+      - avion . part
+      - train . part
+      - commun . part
+      - mobilité douce . part
+
+transport . public . mobilité douce:
+transport . public . mobilité douce . part:
+  titre: Part des festivaliers venant à pied ou à vélo
+  question: Quelle part des festivaliers viennent à pied ou à vélo ?
+  plancher: 0
+  plafond: 100
   unité: "%"
+  par défaut:
+    variations:
+      - si: accessible en transports en commun
+        alors: 7
+      - sinon: 2
   note: On considère que l'impact de la marche ou du vélo est négligeable.
 
 transport . public . parts totales modes de transport:
@@ -67,8 +87,8 @@ transport . public . voiture . part:
   par défaut:
     variations:
       - si: accessible en transports en commun
-        alors: 20%
-      - sinon: 80%
+        alors: 20
+      - sinon: 80
 
 transport . public . avion . part:
   titre: Part des festivaliers venant en avion
@@ -79,8 +99,8 @@ transport . public . avion . part:
   par défaut:
     variations:
       - si: accessible en transports en commun
-        alors: 3%
-      - sinon: 3%
+        alors: 3
+      - sinon: 3
 
 transport . public . train . part:
   titre: Part des festivaliers venant en train
@@ -91,8 +111,8 @@ transport . public . train . part:
   par défaut:
     variations:
       - si: accessible en transports en commun
-        alors: 20%
-      - sinon: 10%
+        alors: 20
+      - sinon: 10
 
 transport . public . commun . part:
   titre: Part des festivaliers venant en transports en commun
@@ -103,8 +123,8 @@ transport . public . commun . part:
   par défaut:
     variations:
       - si: accessible en transports en commun
-        alors: 50%
-      - sinon: 5%
+        alors: 50
+      - sinon: 5
 
 transport . public . voiture:
   formule: part * nombre de déplacements * distance AR * voiture . empreinte par km / voiture . remplissage moyen

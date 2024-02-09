@@ -107,10 +107,14 @@ questions:
       [
         transport . public . accessible en transports en commun,
         transport . public . distance AR,
+      ],
+      [
         transport . public . voiture . part,
         transport . public . train . part,
         transport . public . commun . part,
         transport . public . avion . part,
+        transport . public . mobilité douce . part,
+        transport . public . parts totales,
       ],
       [
         transport . artistes . voiture . distance,
