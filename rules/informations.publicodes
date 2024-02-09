@@ -80,18 +80,3 @@ informations . nombre artistes:
 informations . nombre de nuits artistes:
   formule: nombre artistes * 1 nuit
   unité: nuit
-
-informations . scènes:
-informations . scènes . nombre petites scènes:
-  titre: Nombre de petites scènes
-  question: Quel est le nombre de petites scènes prévus pour l'événement ?
-  plancher: 0
-  par défaut: 2
-  unité: scène
-
-informations . scènes . nombre grandes scènes:
-  titre: Nombre de grandes scènes
-  question: Quel est le nombre de grandes scènes prévues pour l'événement ?
-  plancher: 0
-  par défaut: 2
-  unité: scène

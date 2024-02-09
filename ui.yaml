@@ -49,8 +49,6 @@ questions:
         informations . nombre de jours,
         informations . nombre de festivaliers,
         informations . nombre de bénévoles,
-        informations . scènes . nombre petites scènes,
-        informations . scènes . nombre grandes scènes,
       ],
       [
         informations . nombre artistes en voiture,
@@ -96,7 +94,14 @@ questions:
       [hébergement . public présent, hébergement . public . part],
       [hébergement . bénévoles . type, hébergement . artistes présent],
     ]
-  infrastructures: [[infrastructures . scénographie . matériel . dépenses]]
+  infrastructures:
+    [
+      [
+        infrastructures . scénographie . nombre petites scènes,
+        infrastructures . scénographie . nombre grandes scènes,
+      ],
+      [infrastructures . scénographie . matériel . dépenses],
+    ]
   transport:
     [
       [

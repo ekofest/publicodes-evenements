@@ -7,7 +7,20 @@ infrastructures . scénographie:
       - décor
   unité: kgCO2e
 
-# Prendre en compte le montage, démontage, l'empreinte amortie de la fabrication et dans énergie, la consommation associée.
+infrastructures . scénographie . nombre petites scènes:
+  titre: Nombre de petites scènes
+  question: Quel est le nombre de petites scènes prévus pour l'événement ?
+  plancher: 0
+  par défaut: 2
+  unité: scène
+
+infrastructures . scénographie . nombre grandes scènes:
+  titre: Nombre de grandes scènes
+  question: Quel est le nombre de grandes scènes prévues pour l'événement ?
+  plancher: 0
+  par défaut: 2
+  unité: scène
+
 infrastructures . scénographie . fret:
   formule: tonnes km total * empreinte par tonnes km
   note: |
@@ -45,8 +58,8 @@ infrastructures . scénographie . fret . empreinte par tonnes km:
 infrastructures . scénographie . fret . tonnes km total:
   formule:
     somme:
-      - informations . scènes . nombre petites scènes * fret . nombre de camion par petite scène * tonnes km par camion
-      - informations . scènes . nombre grandes scènes * fret . nombre de camion par grande scène * tonnes km par camion
+      - nombre petites scènes * fret . nombre de camion par petite scène * tonnes km par camion
+      - nombre grandes scènes * fret . nombre de camion par grande scène * tonnes km par camion
   unité: t.km
 
 infrastructures . scénographie . fret . tonnes km par camion:
