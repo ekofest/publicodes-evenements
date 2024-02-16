@@ -1,7 +1,7 @@
-import { writeFileSync, readFileSync } from "fs"
+import { writeFileSync } from "fs"
 import { getModelFromSource } from "@publicodes/tools/compilation"
 import Engine from "publicodes"
-import yaml from "yaml"
+import getUI from "./scripts/compile-ui.js"
 
 const srcFiles = "rules/**/*.publicodes"
 const destPath = "publicodes-evenements.model.json"
@@ -16,7 +16,7 @@ try {
   process.exit(-1)
 }
 
-const ui = yaml.parse(readFileSync("ui.yaml", "utf-8"))
+const ui = getUI(model)
 
 writeFileSync(destPath, JSON.stringify(model, null, 2))
 console.log(`✅ ${destPath} generated`)

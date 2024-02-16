@@ -7,39 +7,30 @@ categories:
   alimentation:
     index: 1
     sub:
-      - alimentation . repas
-      - alimentation . petits déjeuners
-      - alimentation . boissons
-      - alimentation . ecocups
-      - alimentation . déchets
-      - alimentation . artistes
+      [
+        alimentation . repas,
+        alimentation . petits déjeuners,
+        alimentation . boissons,
+        alimentation . ecocups,
+        alimentation . déchets,
+        alimentation . artistes,
+      ]
   transport:
     index: 2
-    sub:
-      - transport . public
-      - transport . artistes
+    sub: [transport . public, transport . artistes]
   infrastructures:
     index: 3
-    sub:
-      - infrastructures . bâtiments
-      - infrastructures . scénographie
+    sub: [bâtiments, infrastructures . scénographie]
   hébergement:
     index: 4
-    sub:
-      - hébergement . bénévoles
-      - hébergement . public
-      - hébergement . artistes
+    sub: [hébergement . bénévoles, hébergement . public, hébergement . artistes]
   énergie:
     index: 5
     sub:
-      - énergie . électricité
-      - énergie . autre
-      - énergie . groupes électrogènes
+      [énergie . électricité, énergie . autre, énergie . groupes électrogènes]
   communication:
     index: 6
-    sub:
-      - communication . merchandising
-      - communication . textile bénévoles
+    sub: [communication . merchandising, communication . textile bénévoles]
 
 # Define the order of the questions by category
 questions:
