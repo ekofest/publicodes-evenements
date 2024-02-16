@@ -9,12 +9,10 @@ alimentation . artistes:
     Par défaut, on considère que les artistes consomment un repas sur place, un petit déjeuner s'ils sont hébergés.
 
 alimentation . artistes . repas:
-  formule:
-    recalcul:
-      règle: alimentation . repas
-      avec:
-        informations . nombre de repas total: informations . nombre artistes * 1 repas
-        alimentation . repas . proposition: alimentation . artistes . repas . type
+  valeur: alimentation . repas
+  contexte:
+    informations . nombre de repas total: informations . nombre artistes * 1 repas
+    alimentation . repas . proposition: alimentation . artistes . repas . type
 
 alimentation . artistes . repas . type:
   titre: Régime alimentaire des artistes
@@ -40,11 +38,9 @@ alimentation . artistes . repas . type . viande uniquement:
 
 alimentation . artistes . petits déjeuners:
   applicable si: hébergement . artistes présent
-  formule:
-    recalcul:
-      règle: alimentation . petits déjeuners
-      avec:
-        alimentation . petits déjeuners . nombre: informations . nombre artistes * 1 repas
+  valeur: alimentation . petits déjeuners
+  contexte:
+    alimentation . petits déjeuners . nombre: informations . nombre artistes * 1 repas
 
 alimentation . artistes . eau en bouteille:
   applicable si: eau en bouteille présent

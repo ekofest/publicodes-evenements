@@ -1663,6 +1663,13 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@publicodes/react-ui@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@publicodes/react-ui/-/react-ui-1.0.1.tgz#6f86e5960a094bc4311e44b7f77a0e929cfa0f19"
+  integrity sha512-+fByE6jAnnn2tvhTMWjwzJRl6BUdj6YnrDCfeSvQTL3UGcaFniNf9zfMOrmlcFae5g4949Ew8MH1rB7To7YTtA==
+  dependencies:
+    styled-components "^6.1.1"
+
 "@remix-run/router@1.15.0":
   version "1.15.0"
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.15.0.tgz#461a952c2872dd82c8b2e9b74c4dfaff569123e2"
@@ -7937,17 +7944,10 @@ psl@^1.1.33:
   resolved "https://registry.yarnpkg.com/psl/-/psl-1.9.0.tgz#d0df2a137f00794565fcaf3b2c00cd09f8d5a5a7"
   integrity sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==
 
-publicodes-react@^1.0.0-beta.77:
-  version "1.0.0-beta.77"
-  resolved "https://registry.yarnpkg.com/publicodes-react/-/publicodes-react-1.0.0-beta.77.tgz#da9550b4fd8cbebc330336a11e6831317ece7db1"
-  integrity sha512-6DigDTzhiSDWG3MPuHe022ef7Vs1JLxezeH41bbjHT91I7xh2x2zTAFVlanyFSMm8QO0GhA9micCHkBUzfAIsw==
-  dependencies:
-    styled-components "^6.0.8"
-
-publicodes@1.0.0-beta.77:
-  version "1.0.0-beta.77"
-  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.77.tgz#45e3c4d2a46bfadcc932e1405ea037e659c28134"
-  integrity sha512-F8U3WGUWMo3/rxhWYS1gWIiG20g1Yy/+PpXdHM99d6ZHKWnnyh/4txVEuyVE75glgDs+mTjwZPnmoKWsTMXluA==
+publicodes@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.1.tgz#07c1e5d94b3609a2fe09b531490969c9f4960086"
+  integrity sha512-vrgnLCKeu3orxmBhyjll8/rxnL3k2EYtIYa7D7GiJVYWmOE08J5S6c/1j15LnC3cQkYqYgOJR5JnX5gxooQGLA==
 
 punycode@^2.1.0, punycode@^2.1.1:
   version "2.3.1"
@@ -9001,7 +9001,7 @@ style-to-object@^0.4.0:
   dependencies:
     inline-style-parser "0.1.1"
 
-styled-components@^6.0.8:
+styled-components@^6.1.1:
   version "6.1.8"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-6.1.8.tgz#c109d36aeea52d8f049e12de2f3be39a6fc86201"
   integrity sha512-PQ6Dn+QxlWyEGCKDS71NGsXoVLKfE1c3vApkvDYS5KAK+V8fNWGhbSUEo9Gg2iaID2tjLXegEW3bZDUGpofRWw==

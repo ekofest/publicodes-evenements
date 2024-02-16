@@ -52,6 +52,7 @@ transport . train . empreinte par km . TER:
   note: |
     Facteur d'émission issu de la base empreinte "TER/2022/Traction moyenne".
 
+transport . commun:
 transport . commun . empreinte par km:
   formule:
     moyenne:
