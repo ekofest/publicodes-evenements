@@ -1,4 +1,5 @@
 alimentation . ecocups:
+  titre: Ecocups
   applicable si: ecocups présent
   formule: 1 ecocup.jour * informations . nombre de personnes par jour * empreinte / amortissement
   unité: kgCO2e

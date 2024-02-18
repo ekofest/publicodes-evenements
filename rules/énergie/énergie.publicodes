@@ -28,6 +28,7 @@ importer!:
     qui propose une consommation électrique de 0,6 KWh par festivalier en moyenne.
 
 énergie . électricité:
+  titre: Électricité
   formule: consommation * commun . intensité électricité
   unité: kgCO2e
 
@@ -51,6 +52,7 @@ importer!:
       - sinon: consommation par défaut
 
 énergie . autre:
+  titre: Fioul et gaz
   applicable si: autre présent
   formule:
     somme:

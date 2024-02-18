@@ -5,6 +5,7 @@ importer!:
     - logement . vacances . camping . empreinte par nuit
 
 hébergement . public:
+  titre: Hébergement du public
   applicable si: public présent
   formule: nombre de nuits camping * nosgestesclimat . logement . vacances . camping . empreinte par nuit
   unité: kgCO2e

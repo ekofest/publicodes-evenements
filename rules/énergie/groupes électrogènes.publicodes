@@ -1,4 +1,5 @@
 énergie . groupes électrogènes:
+  titre: Groupes électrogènes
   applicable si: groupes électrogènes présent
   formule: nombre * empreinte par jour * informations . nombre de jours
   unité: kgCO2e
