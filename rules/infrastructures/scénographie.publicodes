@@ -4,7 +4,6 @@ infrastructures . scénographie:
     somme:
       - fret
       - matériel
-      - décor
   unité: kgCO2e
 
 infrastructures . scénographie . nombre petites scènes:
@@ -22,6 +21,7 @@ infrastructures . scénographie . nombre grandes scènes:
   unité: scène
 
 infrastructures . scénographie . fret:
+  titre: Transport des scènes
   formule: tonnes km total * empreinte par tonnes km
   note: |
     On considère que l'empreinte des scènes réside dans le fret.
@@ -79,6 +79,7 @@ infrastructures . scénographie . fret . charge moyenne:
     Charge moyenne des semi-remorques pour le transport du matériel de scène.
 
 infrastructures . scénographie . matériel:
+  titre: Location de matériel
   formule: dépenses * ratio monétaire * facteur amortissement
   unité: kgCO2e
   note: |

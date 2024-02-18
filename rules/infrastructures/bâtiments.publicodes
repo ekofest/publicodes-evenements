@@ -1,4 +1,4 @@
-bâtiments:
+infrastructures . bâtiments:
   titre: Bâtiments
   formule:
     somme:
@@ -7,47 +7,47 @@ bâtiments:
       - temporaire
   unité: kgCO2e
 
-bâtiments . facteur amortissement:
+infrastructures . bâtiments . facteur amortissement:
   formule: informations . nombre de jours / (commun . jours par an * 50)
   note: |
     Bâtiments amortis sur 50 ans. On fait l'hypothèse que le bâtiment reste "non amorti" 
     même s'il date de plus de 50 ans pour limiter les paramètres, au vu de l'impact négligeable.
 
-bâtiments . béton:
+infrastructures . bâtiments . béton:
   formule: surface * empreinte par m2 * facteur amortissement
   unité: kgCO2e
 
-bâtiments . béton . surface:
+infrastructures . bâtiments . béton . surface:
   titre: Surface des bâtiments béton
   question: Quelle est la surface des bâtiments "structure béton" utilisés pour l'événement ?
   plancher: 0
   par défaut: 0
   unité: m2
 
-bâtiments . béton . empreinte par m2:
+infrastructures . bâtiments . béton . empreinte par m2:
   formule: 825
   unité: kgCO2e/m2
   note: |
     Facteur d'émission issu de la base empreinte "Bâtiment industriel/structure en béton".
 
-bâtiments . métallique:
+infrastructures . bâtiments . métallique:
   formule: surface * empreinte par m2 * facteur amortissement
   unité: kgCO2e
 
-bâtiments . métallique . surface:
+infrastructures . bâtiments . métallique . surface:
   titre: Surface des bâtiments structure métallique
   question: Quelle est la surface des bâtiments "structure métallique" utilisés pour l'événement ?
   plancher: 0
   par défaut: 500
   unité: m2
 
-bâtiments . métallique . empreinte par m2:
+infrastructures . bâtiments . métallique . empreinte par m2:
   formule: 275
   unité: kgCO2e/m2
   note: |
     Facteur d'émission issu de la base empreinte "Bâtiment industriel/structure métallique".
 
-bâtiments . temporaire:
+infrastructures . bâtiments . temporaire:
   titre: Barnums
   formule: 0
   unité: kgCO2e

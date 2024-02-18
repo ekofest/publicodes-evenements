@@ -20,7 +20,12 @@ categories:
     sub: [transport . public, transport . artistes]
   infrastructures:
     index: 3
-    sub: [bâtiments, infrastructures . scénographie]
+    sub:
+      [
+        infrastructures . bâtiments,
+        infrastructures . scénographie . fret,
+        infrastructures . scénographie . matériel,
+      ]
   hébergement:
     index: 4
     sub: [hébergement . bénévoles, hébergement . public, hébergement . artistes]
