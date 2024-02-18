@@ -12,7 +12,7 @@ informations . nombre de jours:
   question: Combien de jours dure votre évènment ?
   description: Compter 1 jour pour une soirée.
   par défaut: 2
-  plancher: 0
+  plancher: 1
   unité: jour
 
 informations . nombre de nuits:
@@ -23,7 +23,7 @@ informations . nombre de festivaliers:
   titre: Nombre de festivaliers
   description: Compter 2 si une même personne vient 2 jours.
   question: Combien de participants attendez-vous sur l'ensemble de l'évènements (compter 2 entrées si une personne est présente 2 jours) ?
-  plancher: 0
+  plancher: 1
   note: On parle de la somme des entrées uniques par jour.
   par défaut: 25000
 
@@ -33,7 +33,7 @@ informations . nombre de festivaliers par jour:
 informations . nombre de bénévoles:
   titre: Nombre d'organisateurs et bénévoles
   question: Combien y aura-t-il d'organisateurs et bénévoles ?
-  plancher: 0
+  plancher: 1
   par défaut: 100
 
 informations . nombre de personnes par jour:
