@@ -44,7 +44,7 @@ transport . public . distance AR:
   note: On inclut ici les festivaliers mais également les bénévoles et les organisateurs.
 
 transport . public . parts totales:
-  titre: "Vérifiez que total est à 100% :"
+  titre: "Vérifiez que le total est à 100% :"
   question: Avez-vous bien vérifier que la somme des parts de transport est bien à 100% ?
   valeur:
     somme:
