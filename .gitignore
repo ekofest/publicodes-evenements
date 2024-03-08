@@ -1,6 +1,7 @@
 node_modules
 .yarn
 publicodes-evenements.model.json
+publicodes-evenements.personas.json
 index.d.ts
 index.js
 .DS_Store

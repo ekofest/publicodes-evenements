@@ -1,0 +1,71 @@
+grand festival urbain:
+  titre: Grand festival en centre-ville
+  description: |
+    Grand festival (100000 personnes) en centre-ville
+  situation:
+    alimentation . repas . proposition . mixte végé viande . proportion végétarien: 1000
+    alimentation . repas . proposition . choix viande: 1000
+    alimentation . repas . proposition: 1000
+    alimentation . petits déjeuners présent: 1000
+    alimentation . ecocups présent: 1000
+    alimentation . ecocups . réutilisation: 1000
+    alimentation . déchets . recyclage: 1000
+    alimentation . déchets . gobelets . type: 1000
+    alimentation . déchets . couverts . type: 1000
+    alimentation . déchets . assiettes . type: 1000
+    alimentation . boissons . froide . soft . quantité par jour et par personne: 1000
+    alimentation . boissons . froide . eau en bouteille bénévoles présent: 1000
+    alimentation . boissons . froide . alcool . quantité par jour et par personne: 1000
+    alimentation . boissons . chaude . thé . quantité par jour et par personne: 1000
+    alimentation . boissons . chaude . café . quantité par jour et par personne: 1000
+    alimentation . artistes . repas . type: 1000
+    alimentation . artistes . eau en bouteille . présent: 1000
+    communication . textile bénévoles . type: oui
+    communication . textile bénévoles . réutilisation: non
+    hébergement . public . présent: non
+    hébergement . bénévoles . type: oui
+    hébergement . artistes . présent: oui
+    informations . scènes . nombre petites scènes: 2
+    informations . scènes . nombre grandes scènes: 4
+    informations . nombre de jours: 3
+    informations . nombre de festivaliers: 100000
+    informations . nombre de bénévoles: 500
+    informations . nombre artistes en voiture: 20
+    informations . nombre artistes en train: 20
+    informations . nombre artistes en tour bus: 100
+    informations . nombre artistes en avion: 50
+    infrastructures . scénographie . matériel . dépenses: 1000000
+    transport . public . distance AR: 100
+    transport . public . voiture . part: 20
+    transport . public . train . part: 30
+    transport . public . commun . part: 30
+    transport . public . avion . part: 5
+    transport . public . accessible en transports en commun: oui
+    transport . artistes . voiture . distance: 800
+    transport . artistes . train . distance: 800
+    transport . artistes . tour bus . distance: 1000
+    transport . artistes . avion . distance: 2000
+
+petit festival urbain:
+  titre: Petit festival en centre-ville
+  description: |
+    Petit festival (moins de 3000 personnes) en centre-ville
+  situation:
+    informations . nombre de jours: 3
+    transport . public . accessible en transports en commun: oui
+
+grand festival rural:
+  titre: Grand festival en périphérie
+  description: |
+    Grand festival (250 000 personnes) en périphérie
+  situation:
+    informations . nombre de jours: 4
+    transport . public . accessible en transports en commun: non
+
+petit festival rural:
+  titre: Petit festival en périphérie
+  description: |
+    Petit festival (moins de 3000 personnes) en périphérie
+  situation:
+    informations . nombre de jours: 2
+    transport . public . accessible en transports en commun: non

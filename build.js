@@ -2,9 +2,11 @@ import { writeFileSync } from "fs"
 import { getModelFromSource } from "@publicodes/tools/compilation"
 import Engine from "publicodes"
 import getUI from "./scripts/compile-ui.js"
+import getPersonas from "./scripts/compile-personas.js"
 
 const srcFiles = "rules/**/*.publicodes"
-const destPath = "publicodes-evenements.model.json"
+const modelDestPath = "publicodes-evenements.model.json"
+const personasDestPath = "publicodes-evenements.personas.json"
 
 const model = getModelFromSource(srcFiles, { verbose: true })
 
@@ -16,20 +18,27 @@ try {
   process.exit(-1)
 }
 
-const ui = getUI(model)
+writeFileSync(modelDestPath, JSON.stringify(model, null, 2))
+console.log(`✅ ${modelDestPath} generated`)
 
-writeFileSync(destPath, JSON.stringify(model, null, 2))
-console.log(`✅ ${destPath} generated`)
+const personas = getPersonas(model)
+
+writeFileSync(personasDestPath, JSON.stringify(personas, null, 2))
+console.log(`✅ ${personasDestPath} generated`)
+
+const ui = getUI(model)
 
 writeFileSync(
   "index.js",
   `
-import rules from "./${destPath}" assert { type: "json" };
+import rules from "./${modelDestPath}" assert { type: "json" };
+
+import personas from "./${personasDestPath}" assert { type: "json" };
 
 export const ui = ${JSON.stringify(ui, null, 2)};
 
 export default rules;
-`,
+`
 )
 console.log(`✅ index.js generated`)
 
@@ -39,17 +48,25 @@ let indexDTypes = Object.keys(model).reduce(
 import { Rule } from "publicodes";
 
 export type DottedName = 
-`,
+`
 )
 
 indexDTypes += `
 
-declare let ui: {
-    categories: Record<RuleName, {index: number, sub: RuleName[]}>;
-    questions: Record<RuleName, RuleName[][]>;
+declare let personas: {
+    [key: string]: {
+      titre: string;
+      description: string;
+      situation: Situation;
+    }
 }
 
-export { ui }
+declare let ui: {
+  categories: Record<RuleName, {index: number, sub: RuleName[]}>;
+  questions: Record<RuleName, RuleName[][]>;
+}
+
+export { ui, personas }
 
 declare let rules: Record<DottedName, Rule>
 
