@@ -79,29 +79,29 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  # publish_on_npm:
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - create_github_release
-  #     - check_if_version_upgraded
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #       with:
-  #         ref: ${{ github.ref }}
-  #     - name: Set-up bun
-  #       uses: oven-sh/setup-bun@v1
-  #       with:
-  #         bun-version: latest
-  #     - name: Setup .npmrc file to publish to npm
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: "18.x"
-  #         registry-url: "https://registry.npmjs.org"
-  #     - name: Install dependencies and build
-  #       run: yarn install --immutable
-  #     - name: Build
-  #       run: yarn run build
-  #     - name: Publish to NPM
-  #       run: npm publish
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  publish_on_npm:
+    runs-on: ubuntu-latest
+    needs:
+      - create_github_release
+      - check_if_version_upgraded
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+      - name: Set-up bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - name: Setup .npmrc file to publish to npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install dependencies and build
+        run: yarn install --immutable
+      - name: Build
+        run: yarn run build
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
