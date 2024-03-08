@@ -37,6 +37,8 @@ import personas from "./${personasDestPath}" assert { type: "json" };
 
 export const ui = ${JSON.stringify(ui, null, 2)};
 
+export { personas };
+
 export default rules;
 `
 )
