@@ -11,7 +11,8 @@
     "@incubateur-ademe/nosgestesclimat": "^2.0.0",
     "@incubateur-ademe/publicodes-commun": "^1.1.1",
     "@publicodes/tools": "^1.0.6",
-    "publicodes": "^1.1.1"
+    "publicodes": "^1.1.1",
+    "yaml": "^2.4.1"
   },
   "authors": [
     "Clément Auger <clement.auger@beta.gouv.fr>",
