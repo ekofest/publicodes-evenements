@@ -8,10 +8,10 @@
   "main": "index.js",
   "module": "index.js",
   "devDependencies": {
-    "@incubateur-ademe/nosgestesclimat": "^2.0.0-rc.1",
-    "@incubateur-ademe/publicodes-commun": "^1.0.0",
-    "@publicodes/tools": "^1.0.0-rc.1",
-    "publicodes": "^1.0.1"
+    "@incubateur-ademe/nosgestesclimat": "^2.0.0",
+    "@incubateur-ademe/publicodes-commun": "^1.1.1",
+    "@publicodes/tools": "^1.0.6",
+    "publicodes": "^1.1.1"
   },
   "authors": [
     "Clément Auger <clement.auger@beta.gouv.fr>",
