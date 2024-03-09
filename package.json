@@ -36,6 +36,7 @@
   "scripts": {
     "clean": "rm -r publicodes-evenements.model.json index.d.ts index.js",
     "build": "node build.js",
+    "test:personas": "node tests/testPersonas.js",
     "build:watch": "nodemon -e \"publicodes\" --watch rules/ build.js & nodemon --watch publicodes-evenements.model.json copy.js",
     "doc:start": "node build && cp publicodes-evenements.model.json doc/src && cd doc && yarn run start",
     "doc:build": "node build && cp publicodes-evenements.model.json doc/src && cd doc && yarn run build"
