@@ -54,10 +54,12 @@ for (const personaName in localPersonas) {
     const safeSituation = safeGetSituation({
       situation: localSituation || {},
       parsedRulesNames: Object.keys(localEngine.getParsedRules()),
+      version: "local",
     })
     const safeProdSituation = safeGetSituation({
       situation: prodSituation || {},
       parsedRulesNames: Object.keys(prodEngine.getParsedRules()),
+      version: "latest",
     })
     localEngine.setSituation(safeSituation)
     prodEngine.setSituation(safeProdSituation)
