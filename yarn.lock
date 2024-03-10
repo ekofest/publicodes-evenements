@@ -617,10 +617,10 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-publicodes-evenements@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/publicodes-evenements/-/publicodes-evenements-0.5.4.tgz#421e911cf9d087d5cecba35dab2124cf4ad78a09"
-  integrity sha512-4EwmyfpIZtON+PTLZ6qDnHqqcsp9f4jAnDzVz5vorri7NBjctpiCY1OkTPjxHeQGEv/cSSU2zjJ+yoRV+/OzeQ==
+publicodes-evenements@^0.6.0-rc.2:
+  version "0.6.0-rc.2"
+  resolved "https://registry.yarnpkg.com/publicodes-evenements/-/publicodes-evenements-0.6.0-rc.2.tgz#5460372ec4f9aa2eee5de0df208eb5d35e6149cd"
+  integrity sha512-8X6cJorHyNSNxQc7tRkKgWbnG7dSIJksIvbMYNLotGDZ5AUZ6GMFWitssrq720SSvY8uuKD61+v1/otegswI9Q==
 
 publicodes@^1.1.0, publicodes@^1.1.1:
   version "1.1.1"
