@@ -1,4 +1,4 @@
-# Generates an artifact containing the result of the `yarn compile` command.
+# Generates an artifact containing the result of the `yarn build` and `yarn test:personas` command.
 
 name: Generate PR artifact
 
@@ -10,7 +10,7 @@ on:
       - "!master"
 
 jobs:
-  compile:
+  build:
     runs-on: ubuntu-latest
     outputs:
       test-personas-result: ${{ steps.test-personas.outputs.result }}
@@ -39,7 +39,7 @@ jobs:
 
   upload-artifact:
     runs-on: ubuntu-22.04
-    needs: compile
+    needs: build
     steps:
       - name: Create artifact
         run: |
@@ -54,7 +54,7 @@ jobs:
           <details open=true>
           <summary>In details</summary>
 
-          ${{ needs.compile.outputs.test-personas-result }}
+          ${{ needs.build.outputs.test-personas-result }}
 
           </details>
 
