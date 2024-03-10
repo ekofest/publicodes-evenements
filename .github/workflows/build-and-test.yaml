@@ -1,0 +1,66 @@
+# Generates an artifact containing the result of the `yarn build` and `yarn test:personas` command.
+
+name: Generate PR artifact
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches:
+      - "!master"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      test-personas-result: ${{ steps.test-personas.outputs.result }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "yarn"
+      - run: yarn install --immutable
+      - run: git log | head && git status
+      - id: build
+        name: Build
+        run: yarn run build
+      - id: test-personas
+        name: Test the personas bilans against production
+        run: |
+          yarn test:personas --markdown > test-personas.res
+          body="$(cat test-personas.res | tail --lines=+3 | head --lines=-1)"
+          body="${body//'%'/'%25'}"
+          body="${body//$'\n'/'%0A'}"
+          body="${body//$'\r'/'%0D'}"
+          echo "::set-output name=result::${body}"
+
+  upload-artifact:
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: Create artifact
+        run: |
+          mkdir -p artifacts
+          echo "
+          <h1 align="center">Report for the pull request #${{ github.event.pull_request.number }}</h2>
+
+          ## :couple: Personas changes
+
+          ### Test personas bilans against latest published version
+
+          <details open=true>
+          <summary>In details</summary>
+
+          ${{ needs.build.outputs.test-personas-result }}
+
+          </details>
+
+          " > artifacts/result.md
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: pr_message
+          path: artifacts

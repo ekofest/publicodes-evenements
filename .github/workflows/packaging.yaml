@@ -4,20 +4,10 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+
 jobs:
   check_if_version_upgraded:
     name: Check if version upgrade
-    # When someone forks the repo and opens a PR we want to enables the tests to be run (the previous jobs)
-    # but obviously only us should be allowed to release.
-    # In the following check we make sure that we own the branch this CI workflow is running on before continuing.
-    # Without this check, trying to release would fail anyway because only us have the correct secret.NPM_TOKEN but
-    # it's cleaner to stop the execution instead of letting the CI crash.
-    if: |
-      github.event_name == 'push' ||
-      github.event.pull_request.head.repo.owner.login == github.event.pull_request.base.repo.owner.login
     runs-on: ubuntu-latest
     outputs:
       from_version: ${{ steps.step1.outputs.from_version }}

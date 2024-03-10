@@ -1,0 +1,50 @@
+alimentation . repas . proposition . mixte végé viande . proportion végétarien:
+alimentation . repas . proposition . choix viande:
+alimentation . repas . proposition:
+alimentation . petits déjeuners présent:
+alimentation . ecocups présent:
+alimentation . ecocups . réutilisation:
+alimentation . déchets . recyclage:
+alimentation . déchets . gobelets . type:
+alimentation . déchets . couverts . type:
+alimentation . déchets . assiettes . type:
+alimentation . boissons . froide . soft . quantité par jour et par personne:
+alimentation . boissons . froide . eau en bouteille bénévoles présent:
+alimentation . boissons . froide . alcool . quantité par jour et par personne:
+alimentation . boissons . chaude . thé . quantité par jour et par personne:
+alimentation . boissons . chaude . café . quantité par jour et par personne:
+alimentation . artistes . repas . type:
+alimentation . artistes . eau en bouteille présent:
+communication . textile bénévoles . type:
+communication . textile bénévoles . réutilisation:
+communication . merchandising . panier moyen par jour et par personne:
+hébergement . public présent:
+hébergement . public . part:
+hébergement . bénévoles . type:
+hébergement . artistes présent:
+informations . nombre de jours:
+informations . nombre de festivaliers:
+informations . nombre de bénévoles:
+informations . nombre artistes en voiture:
+informations . nombre artistes en train:
+informations . nombre artistes en tour bus:
+informations . nombre artistes en avion:
+infrastructures . scénographie . matériel . dépenses:
+infrastructures . scénographie . nombre petites scènes:
+infrastructures . scénographie . nombre grandes scènes:
+transport . public . voiture . part:
+transport . public . train . part:
+transport . public . distance AR:
+transport . public . commun . part:
+transport . public . avion . part:
+transport . public . accessible en transports en commun:
+transport . artistes . voiture . distance:
+transport . artistes . train . distance:
+transport . artistes . tour bus . distance:
+transport . artistes . avion . distance:
+énergie . électricité . consommation:
+énergie . groupes électrogènes présent:
+énergie . groupes électrogènes . nombre:
+énergie . autre présent:
+énergie . autre . gaz . consommation:
+énergie . autre . fioul . consommation:
