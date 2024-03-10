@@ -31,7 +31,7 @@ jobs:
         name: Test the personas bilans against production
         run: |
           yarn test:personas --markdown > test-personas.res
-          body="$(cat test-personas-latest.res | tail --lines=+3 | head --lines=-1)"
+          body="$(cat test-personas.res | tail --lines=+3 | head --lines=-1)"
           body="${body//'%'/'%25'}"
           body="${body//$'\n'/'%0A'}"
           body="${body//$'\r'/'%0D'}"
