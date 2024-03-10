@@ -55,6 +55,7 @@ for (const personaName in localPersonas) {
       situation: localSituation || {},
       parsedRulesNames: Object.keys(localEngine.getParsedRules()),
       version: "local",
+      markdown: markdown,
     })
     const safeProdSituation = safeGetSituation({
       situation: prodSituation || {},

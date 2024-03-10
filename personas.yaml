@@ -8,6 +8,7 @@ grand festival urbain:
     transport . public . accessible en transports en commun: oui
     infrastructures . scénographie . nombre petites scènes: 2
     infrastructures . scénographie . nombre grandes scènes: 4
+    règle test: coucou
 
 petit festival urbain:
   titre: Petit festival en centre-ville

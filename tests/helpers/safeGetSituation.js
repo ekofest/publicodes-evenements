@@ -21,7 +21,7 @@ export default function safeGetSituation({
       if (!parsedRulesNames.includes(ruleName)) {
         if (markdown) {
           console.log(
-            `- **${ruleName}** n'existe pas dans le modèle (_**${version}**_)`
+            `- ‼️ **${ruleName}** n'existe pas dans le modèle (_**${version}**_)`
           )
         } else {
           console.warn(
@@ -46,7 +46,7 @@ export default function safeGetSituation({
       ) {
         if (markdown) {
           console.log(
-            `- la réponse **${value}** de **${ruleName}** n'existe pas dans le modèle (_**${version}**_)`
+            `- ‼️ la réponse **${value}** de **${ruleName}** n'existe pas dans le modèle (_**${version}**_)`
           )
         } else {
           console.warn(
