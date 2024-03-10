@@ -28,6 +28,7 @@
   "description": "",
   "files": [
     "publicodes-evenements.model.json",
+    "publicodes-evenements.personas.json",
     "index.js",
     "index.d.ts"
   ],
