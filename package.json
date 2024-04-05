@@ -1,6 +1,6 @@
 {
   "name": "publicodes-evenements",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/Ecofest/publicodes-evenements.git"
@@ -11,8 +11,12 @@
     "@incubateur-ademe/nosgestesclimat": "^2.0.0",
     "@incubateur-ademe/publicodes-commun": "^1.1.1",
     "@publicodes/tools": "^1.0.6",
+    "ansi-colors": "^4.1.3",
+    "eslint": "^8.57.0",
     "publicodes": "^1.1.1",
-    "yaml": "^2.4.1"
+    "publicodes-evenements": "^0.6.0-rc.2",
+    "yaml": "^2.4.1",
+    "yargs": "^17.7.2"
   },
   "authors": [
     "Clément Auger <clement.auger@beta.gouv.fr>",
@@ -24,6 +28,7 @@
   "description": "",
   "files": [
     "publicodes-evenements.model.json",
+    "publicodes-evenements.personas.json",
     "index.js",
     "index.d.ts"
   ],
@@ -32,6 +37,7 @@
   "scripts": {
     "clean": "rm -r publicodes-evenements.model.json index.d.ts index.js",
     "build": "node build.js",
+    "test:personas": "node tests/testPersonas.js",
     "build:watch": "nodemon -e \"publicodes\" --watch rules/ build.js & nodemon --watch publicodes-evenements.model.json copy.js",
     "doc:start": "node build && cp publicodes-evenements.model.json doc/src && cd doc && yarn run start",
     "doc:build": "node build && cp publicodes-evenements.model.json doc/src && cd doc && yarn run build"

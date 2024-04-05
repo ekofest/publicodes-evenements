@@ -1,0 +1,43 @@
+grand festival urbain:
+  titre: Grand festival en centre-ville
+  description: |
+    Grand festival (100 000 personnes) en centre-ville
+  situation:
+    informations . nombre de festivaliers: 100000
+    informations . nombre de jours: 3
+    transport . public . accessible en transports en commun: oui
+    infrastructures . scénographie . nombre petites scènes: 2
+    infrastructures . scénographie . nombre grandes scènes: 4
+
+petit festival urbain:
+  titre: Petit festival en centre-ville
+  description: |
+    Petit festival (moins de 3 000 personnes) en centre-ville
+  situation:
+    informations . nombre de festivaliers: 3000
+    informations . nombre de jours: 3
+    transport . public . accessible en transports en commun: oui
+    infrastructures . scénographie . nombre petites scènes: 1
+    infrastructures . scénographie . nombre grandes scènes: 0
+
+grand festival rural:
+  titre: Grand festival en périphérie
+  description: |
+    Grand festival (250 000 personnes) en périphérie
+  situation:
+    informations . nombre de festivaliers: 250000
+    informations . nombre de jours: 4
+    transport . public . accessible en transports en commun: non
+    infrastructures . scénographie . nombre petites scènes: 4
+    infrastructures . scénographie . nombre grandes scènes: 4
+
+petit festival rural:
+  titre: Petit festival en périphérie
+  description: |
+    Petit festival (moins de 3 000 personnes) en périphérie
+  situation:
+    informations . nombre de festivaliers: 3000
+    informations . nombre de jours: 3
+    transport . public . accessible en transports en commun: non
+    infrastructures . scénographie . nombre petites scènes: 0
+    infrastructures . scénographie . nombre grandes scènes: 1
