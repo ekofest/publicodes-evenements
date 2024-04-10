@@ -11,7 +11,7 @@ communication . merchandising:
     mais également des produits dérivés "plastiques".
 
     D'après [le baromètre 2023 de Weezevent](https://weezevent.com/fr/blog/barometre-festivals-2023/#:~:text=Notons%20que%20le%20prix%20moyen,%E2%82%AC)%20pour%20les%20festivals%20urbains.)
-    sur les consommations et les achats des festivaliers, le panier moyen pour du merch est de 4€ par jour et par personne.
+    sur les consommations et les achats des festivalier·ères, le panier moyen pour du merch est de 4€ par jour et par personne.
 
     Dans une V2, il s'agira d'affiner l'empreinte carbone associée aux produits vendu en passant par des FE "physiques"
     et en incluant des variations selon l'approvisionnement des produits.
@@ -35,8 +35,8 @@ communication . merchandising . chiffre d affaires . part plastique:
   formule: 30%
 
 communication . merchandising . panier moyen par jour et par personne:
-  titre: Montant du panier moyen d'un festivalier par jour pour le merch.
-  question: Quel est le montant du panier moyen d'un festivalier par jour ?
+  titre: Montant du panier moyen d'une festivalière ou d'un festivalier par jour pour le merch.
+  question: Quel est le montant du panier moyen d'un ou d'une festivalière par jour ?
   par défaut: 4
   unité: €
   note: |

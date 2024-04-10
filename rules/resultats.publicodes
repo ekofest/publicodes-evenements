@@ -14,6 +14,6 @@ resultats . bilan total:
   unité: kgCO2e
 
 resultats . bilan par festivalier:
-  titre: Bilan Carbone par festivalier et par jour
+  titre: Bilan Carbone par festivalier·ères et par jour
   formule: bilan total / informations . nombre de festivaliers
   unité: kgCO2e

@@ -17,7 +17,7 @@ hébergement . bénévoles:
 
 hébergement . bénévoles . type:
   titre: Hébergement des bénévoles
-  question: Prenez-vous en charge l'hébergement en hôtel des organisateurs et bénévoles du festival ?
+  question: Prenez-vous en charge l'hébergement en hôtel des organisateur·ices et bénévoles du festival ?
   formule:
     une possibilité:
       choix obligatoire: oui

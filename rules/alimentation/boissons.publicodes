@@ -59,8 +59,9 @@ alimentation . boissons . froide . eau en bouteille bénévoles . quantité par 
 alimentation . boissons . froide . soft:
   formule: quantité * nosgestesclimat . alimentation . boisson . sucrées . facteur
   note: |
-    A priori, le facteur d'émission d'agribalyse considère bien une part d'emballage qui correspond à la bouteille. 
-    On suppose que ce sont des grands formats.
+    A priori, le facteur d'émission d'agribalyse considère bien une part
+    d'emballage qui correspond à la bouteille. On suppose que ce sont des
+    grands formats.
 
 alimentation . boissons . froide . soft . quantité:
   formule: quantité par jour * informations . nombre de jours
@@ -78,8 +79,10 @@ alimentation . boissons . froide . soft . quantité par jour et par personne:
 alimentation . boissons . froide . alcool:
   formule: quantité * nosgestesclimat . alimentation . boisson . alcool . facteur
   note: |
-    On considère ici une moyenne de plusieurs types d'alcool dont le facteur d'émission est néanmoins très proche.
-    On pourrait imaginer séparer la bière du reste ouo considérer seulement la bière.
+    On considère ici une moyenne de plusieurs types d'alcool dont le facteur
+    d'émission est néanmoins très proche.
+    On pourrait imaginer séparer la bière du reste ou considérer seulement la
+    bière.
 
 alimentation . boissons . froide . alcool . quantité:
   formule: quantité par jour * informations . nombre de jours

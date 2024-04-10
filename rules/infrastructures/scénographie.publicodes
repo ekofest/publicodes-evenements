@@ -88,11 +88,11 @@ infrastructures . scénographie . matériel:
     dépensés pour leur location puis amorties sur via la durée de location et leur durée de vie.
 
     A titre indicatif:
-      - Projecteur : 600€ soit 240kgCO2e  
-      - Enceinte : 500€ soit 200kgCO2e 
-      - Console : 1500€ soit 600kgCO2e 
-      - Machine à fumée : 400€ soit 160kgCO2e  
-      - Micros : 200€ soit 80kgCO2e  
+      - Projecteur : 600€ soit 240kgCO2e
+      - Enceinte : 500€ soit 200kgCO2e
+      - Console : 1500€ soit 600kgCO2e
+      - Machine à fumée : 400€ soit 160kgCO2e
+      - Micros : 200€ soit 80kgCO2e
       - Vidéoprojecteur : 145kgCO2e (déjà présent dans la base ADEME)
 
 infrastructures . scénographie . matériel . facteur amortissement:
@@ -110,14 +110,16 @@ infrastructures . scénographie . matériel . ratio monétaire:
   formule: 0.400
   unité: kgCO2e/€HT
   note: |
-    Ratio monétaire issu de la Base Empreinte "Service/Produits informatiques, électroniques et optiques".
+    Ratio monétaire issu de la Base Empreinte "Service/Produits informatiques,
+    électroniques et optiques".
 
 infrastructures . scénographie . décor:
   applicable si: décor présent
   formule: 0
   unité: kgCO2e
   note: |
-    Pour le moment, nous faisons l'hypothèse que les décors et costumes sont de la responsabilité des artistes.
+    Pour le moment, nous faisons l'hypothèse que les décors et costumes sont de
+    la responsabilité des artistes.
 
 infrastructures . scénographie . décor présent:
   # titre: Décors et costumes

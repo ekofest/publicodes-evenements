@@ -6,10 +6,14 @@ transport:
       - public
       - artistes
   description: |
-    Le transport des festivaliers et des artistes est **LE** poste important du bilan carbone d'un festival. 
-    Estimez les distances parcourues par les festivaliers et les artistes pour venir au festival et les modes de transport utilisés.
+    Le transport des festivalier·ères et des artistes est **LE** poste
+    important du bilan carbone d'un festival.
+    Estimez les distances parcourues par les festivalier·ères et les artistes pour
+    venir au festival et les modes de transport utilisés.
 
-    *L'**avion** est de loin le mode de transport le plus émetteur de CO2e, mais la **voiture** n'est pas en reste. Encouragez le train ou le covoiturage pour vos déplacements.*
+    *L'**avion** est de loin le mode de transport le plus émetteur de CO2e,
+    mais la **voiture** n'est pas en reste. Encouragez le train ou le
+    covoiturage pour vos déplacements.*
   unité: kgCO2e
 
 transport . voiture:
