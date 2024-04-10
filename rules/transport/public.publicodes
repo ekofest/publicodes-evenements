@@ -37,11 +37,11 @@ transport . public . nombre de déplacements . bénévoles:
 
 transport . public . distance AR:
   titre: Distance moyenne aller/retour parcourue par un festivalier (hors avion)
-  question: Quelle est la distane moyenne aller/retour parcourue par un festivalier ?
+  question: Quelle est la distane moyenne aller/retour parcourue par un ou une festivalière ?
   unité: km
   plancher: 0
   par défaut: 100
-  note: On inclut ici les festivaliers mais également les bénévoles et les organisateurs.
+  note: On inclut ici les festivalier·ères mais également les bénévoles et les organisateur·ices.
 
 transport . public . parts totales:
   titre: "Vérifiez que le total est à 100% :"
@@ -56,8 +56,8 @@ transport . public . parts totales:
 
 transport . public . mobilité douce:
 transport . public . mobilité douce . part:
-  titre: Part des festivaliers venant à pied ou à vélo
-  question: Quelle part des festivaliers viennent à pied ou à vélo ?
+  titre: Part des festivalier·ères venant à pied ou à vélo
+  question: Quelle part des festivalier·ères viennent à pied ou à vélo ?
   plancher: 0
   plafond: 100
   unité: "%"
@@ -79,8 +79,8 @@ transport . public . parts totales modes de transport:
   unité: "%"
 
 transport . public . voiture . part:
-  titre: Part des festivaliers venant en voiture
-  question: Quelle part des festivaliers viennent en voiture ?
+  titre: Part des festivalier·ères venant en voiture
+  question: Quelle part des festivalier·ères viennent en voiture ?
   plancher: 0
   plafond: 100
   unité: "%"
@@ -91,8 +91,8 @@ transport . public . voiture . part:
       - sinon: 80
 
 transport . public . avion . part:
-  titre: Part des festivaliers venant en avion
-  question: Quelle part des festivaliers viennent en avion ?
+  titre: Part des festivalier·ères venant en avion
+  question: Quelle part des festivalier·ères viennent en avion ?
   plancher: 0
   plafond: 100
   unité: "%"
@@ -103,8 +103,8 @@ transport . public . avion . part:
       - sinon: 3
 
 transport . public . train . part:
-  titre: Part des festivaliers venant en train
-  question: Quelle part des festivaliers viennent en train ?
+  titre: Part des festivalier·ères venant en train
+  question: Quelle part des festivalier·ères viennent en train ?
   plancher: 0
   plafond: 100
   unité: "%"
@@ -115,8 +115,8 @@ transport . public . train . part:
       - sinon: 10
 
 transport . public . commun . part:
-  titre: Part des festivaliers venant en transports en commun
-  question: Quelle part des festivaliers viennent en transports en commun (bus, tramway, métro) ?
+  titre: Part des festivalier·ères venant en transports en commun
+  question: Quelle part des festivalier·ères viennent en transports en commun (bus, tramway, métro) ?
   plancher: 0
   plafond: 100
   unité: "%"
@@ -129,7 +129,7 @@ transport . public . commun . part:
 transport . public . voiture:
   formule: part * nombre de déplacements * distance AR * voiture . empreinte par km / voiture . remplissage moyen
   unité: kgCO2e
-  note: On fait l'hypothèse d'un aller/retour par festivalier.
+  note: On fait l'hypothèse d'un aller/retour par festivalier·ère.
 
 transport . public . avion:
   formule: part * nombre de déplacements * distance avion AR * avion . empreinte par km

@@ -13,7 +13,7 @@ hébergement . public:
 
 hébergement . public présent:
   titre: Hébergement des festivaliers en camping
-  question: Prenez-vous en charge l'hébergement en camping des participants du festival ?
+  question: Prenez-vous en charge l'hébergement en camping des participant·es du festival ?
   par défaut: oui
 
 hébergement . public . nombre de nuits camping:
@@ -27,8 +27,8 @@ hébergement . public . nombre de festivaliers journée:
   formule: (100% - part) * informations . nombre de festivaliers
 
 hébergement . public . part:
-  titre: Part des festivaliers qui dorment sur place
-  question: Quelle part des festivaliers dorment sur place ?
+  titre: Part des festivalier·ères qui dorment sur place
+  question: Quelle part des festivalier·ères dorment sur place ?
   par défaut: 30
   plancher: 0
   plafond: 100

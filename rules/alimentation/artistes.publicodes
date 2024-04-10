@@ -6,7 +6,8 @@ alimentation . artistes:
       - petits déjeuners
       - eau en bouteille
   note: |
-    Par défaut, on considère que les artistes consomment un repas sur place, un petit déjeuner s'ils sont hébergés.
+    Par défaut, on considère que les artistes consomment un repas sur place, un
+    petit déjeuner s'ils sont hébergés.
 
 alimentation . artistes . repas:
   valeur: alimentation . repas
