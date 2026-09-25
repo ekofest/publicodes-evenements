@@ -25,7 +25,7 @@ environmental impact of the festival. The model is written in
 share calculation models and quickly build online calculators.
 
 > [!WARNING]
-> This model is a work in progress and is not yet ready for production use.
+> This model is a work in progress, results should not be considered as a reference and do not replace a "Bilan Carbone®"
 
 ## Local development
 
